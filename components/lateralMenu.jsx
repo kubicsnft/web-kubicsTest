@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router}-dom';
 
 const LateralMenu = () => {
     const style={
@@ -9,24 +9,24 @@ const LateralMenu = () => {
 
     return (
         <div className=''>
-            <Link href="#inicio">
+            <a href="#inicio">
                 <div className={style.item} >Inicio</div>
-            </Link>
-            <Link href="#kubics?">
+            </a>
+            <a href="#kubics?">
                 <div className={style.item}>¿Que es kubics?</div>
-            </Link>
-            <Link href="#proyectos">
+            </a>
+            <a href="#proyectos">
                 <div className={style.item}>Proyectos</div>
-            </Link>
-            <Link href="#nosotros">
+            </a>
+            <a href="#nosotros">
                 <div className={style.item}>Nosotros</div>
-            </Link>
-            <Link href="#roadmap">
+            </a>
+            <a href="#roadmap">
                 <div className={style.item}>Roadmap</div>
-            </Link>
-            <Link href="#contacto">
+            </a>
+            <a href="#contacto">
                 <div className={style.item}>Contacto</div>
-            </Link>
+            </a>
         </div>
     );
 }
