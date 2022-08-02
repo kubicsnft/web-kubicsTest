@@ -1,5 +1,5 @@
 import React from 'react'
-import LateralMenu from '../components/LateralMenu'
+import LateralMenu from '../components/lateralMenu'
 
 export default function test() {
   return (
