@@ -1,13 +1,13 @@
 import React from "react";
 import Image from 'next/image';
 import Link from 'next/link'
-// import { urlSource } from "ipfs-http-client";
+
 
 
 function Cube(props) {
 
 const style ={
-  cube:'flex cursor-pointer h-[12rem] w-[12rem] cube  box'
+  cube:'flex cursor-pointer h-[13rem] w-[13rem] cube  box'
 }
   
 

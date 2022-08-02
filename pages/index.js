@@ -25,7 +25,7 @@ export default function Home() {
       <AppLayout>
       {/* Menú lateral y redes sociales */}
         <div className='flex justify-center '>
-          <div className='fixed bottom-0 flex flex-row items-end justify-between w-full max-w-[100em] px-4 py-16'>
+          <div className='fixed bottom-0 flex flex-row items-end justify-between w-full max-w-[100em] px-8 py-16'>
             <div><LateralMenu /></div>
             <div className='w-32'><SocialNetworks /></div>
           </div>
