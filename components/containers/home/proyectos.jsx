@@ -6,7 +6,7 @@ const style = {
     container: '',
     header: 'mb-8 mt-4 text-3xl',
     wraaper: 'h-4/5 max-h-full w-full flex flex-wrap flex-row justify-around overflow-auto barra-scroll scroll-smooth py-4 ',
-    cube: 'mr-8 mb-4 w-56 h-56'  
+    cube: 'mr-8 mb-4 '  
     
 
 
