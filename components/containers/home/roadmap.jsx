@@ -3,7 +3,7 @@ import React from 'react';
 const Roadmap = () => {
 
     const style={
-        wraaper:'flex flex-col w-full sm:max-h-full sm:overflow-auto sm:barra-scroll sm:h-4/5 sm:scroll-smooth',
+        wraaper:'flex flex-col w-full sm:max-h-full sm:overflow-auto barra-scroll sm:h-4/5 scroll-smooth',
         row:'flex flex-row justify-center',
         row_r:'hidden sm:flex flex-row justify-center',
         text_l:'w-32 h-32 mr-8 text-xs text-justify',

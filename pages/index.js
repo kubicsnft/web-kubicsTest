@@ -15,8 +15,8 @@ import Carrusel from '../components/carousel'
 const style = {
   // shadow-lg bg-white
   // kubics : ' w-9/12 min-h-screen px-16 py-4 text-center border-b-2 border-primary ',
-  section: 'w-11/12 xl:w-9/12 text-center py-12 sm:py-4  border-b border-primary sm:min-h-screen h-full  bg-white shadow-2xl shadow-gray-500',
-  sectionLast: 'w-11/12 xl:w-9/12 text-center py-4  sm:min-h-screen  bg-white shadow-2xl shadow-gray-500 hidden',
+  section: 'w-11/12 xl:w-9/12 text-center py-12 sm:py-4  border-b border-primary sm:min-h-screen max-w-screen-2xl h-full  bg-white shadow-2xl shadow-gray-500 z-10',
+  sectionLast: 'w-11/12 xl:w-9/12 text-center py-4  sm:min-h-screen  bg-white shadow-2xl shadow-gray-500 max-w-screen-2xl hidden md:block z-10',
 
 }
 
@@ -26,7 +26,7 @@ export default function Home() {
       <AppLayout>
         {/* Menú lateral y redes sociales */}
 
-        <div className='hidden xl:flex  relative  justify-between w-full max-w-[100em] pl-2 pr-36 '>
+        <div className='hidden xl:flex  relative  justify-between w-full max-w-[100em] pl-2 pr-36 z-50'>
           <div>
             <div className='fixed bottom-10'><LateralMenu /></div>
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
               <WhayIsKubics />
             </div>
             {/*Section 2: Proyectos */}
-            <div id='proyectos' className='flex justify-center w-11/12 py-4 text-center bg-white border-b shadow-2xl sm:min-h-screen xl:w-9/12 border-primary shadow-gray-500'>
+            <div id='proyectos' className='z-10 flex justify-center w-11/12 py-4 text-center bg-white border-b shadow-2xl sm:min-h-screen xl:w-9/12 border-primary shadow-gray-500'>
               {/* <Proyectos /> */}
               <div className=''>
                 <h2 className='text-3xl '>PROYECTOS</h2>

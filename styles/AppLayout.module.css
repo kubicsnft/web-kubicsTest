@@ -14,7 +14,7 @@
     padding: 30px;
     width: 100%;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-    
+    z-index: 2;
     
 }
 
@@ -36,5 +36,6 @@
     background-color:#7094b1;
     color:rgb(253, 253, 253);
     width: 100%;
+    z-index:2;
     /* max-width: 1536px; */
 }
