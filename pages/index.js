@@ -24,12 +24,16 @@ export default function Home() {
     <>
       <AppLayout>
       {/* Menú lateral y redes sociales */}
-        <div className='flex justify-center '>
-          <div className='fixed bottom-0 flex flex-row items-end justify-between w-full max-w-[100em] px-8 py-16'>
-            <div><LateralMenu /></div>
-            <div className='w-32'><SocialNetworks /></div>
+        
+          <div className='hidden lg:flex  relative  justify-between w-full max-w-[100em] pl-2 pr-36  bg-slate-500'>
+            <div>
+              <div className='fixed bottom-10'><LateralMenu /></div>
+            </div>
+            <div>
+              <div className='fixed w-32 bottom-10'><SocialNetworks /></div>
+            </div>
           </div>
-        </div>
+        
         
         <div className='grid justify-items-center'>
           {/*Sectión1: Qué es kubics?? */}
