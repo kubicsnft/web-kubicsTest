@@ -7,8 +7,8 @@ import { FormattedMessage } from "react-intl"
 const Header = () => {
     return (
         <div className='grid content-between w-full min-h-screen max-w-screen-2xl'>
-            <div className='grid items-center grid-cols-2 -center' >
-                <div className="text-lg text-start">
+            <div className='grid sm:items-center sm:grid-cols-2 -center' >
+                <div className="hidden text-lg text-start sm:flex">
                     <FormattedMessage
                         id='app.slogan'
                         defaultMessage='The world will never be round again'
