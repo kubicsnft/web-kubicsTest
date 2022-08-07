@@ -29,9 +29,9 @@ export default function Newsletters()  {
                     defaultMessage='JOIN OUR WHITELIST'
                 />
             </p>
-            <div className="flex w-2/2 lg:w-3/12 justify-center mt-2 flex-col lg:flex-row">
+            <div className="flex flex-col justify-center mt-2 w-2/2 lg:w-5/12 lg:flex-row">
                 <input
-                    className="appearance-none mb-2 lg:mb-0 w-full lg:w-2/3 border border-[#7098b7] rounded py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:border-gray-600 "
+                    className="bg-white appearance-none mb-2 lg:mb-0 w-full lg:w-2/3 border border-[#7098b7] rounded py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:border-gray-600 "
                     type="text"
                     placeholder="Enter Email"
                     value={email}
@@ -50,8 +50,8 @@ export default function Newsletters()  {
                     />
                 </button>
             </div>
-            <div className="text-center flex justify-center">
-                {state === "ERROR" && <p className=" mt-2 text-red-600">{errorMessage}</p>}
+            <div className="flex justify-center text-center">
+                {state === "ERROR" && <p className="mt-2 text-red-600 ">{errorMessage}</p>}
                 {state === "SUCCESS" && <p className="w-1/2 mt-2 text-green-600">Success!</p>}
             </div>
         </div>
