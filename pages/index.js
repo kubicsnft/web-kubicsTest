@@ -30,6 +30,7 @@ export default function Home() {
             <div className='w-32'><SocialNetworks /></div>
           </div>
         </div>
+        
         <div className='grid justify-items-center'>
           {/*Sectión1: Qué es kubics?? */}
           <div id='kubics?' className={style.section}>
