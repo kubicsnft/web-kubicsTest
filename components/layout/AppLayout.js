@@ -5,6 +5,9 @@ import Header from '../containers/header'
 import Footer from '../containers/footer'
 
 export default function AppLayout({ children }) {
+    const style={
+        main:'p-4 sm:p-8 md:p-12'
+    }
     return (
         <div className={styles.container}>
             <Head>
@@ -15,7 +18,7 @@ export default function AppLayout({ children }) {
             <header id='inicio' className={styles.header}>
                <Header />
             </header>
-            <main className={styles.main}>
+            <main className={`${styles.main}${style.main}`}>
                 { children }
             </main>
             <footer id='contacto' className={styles.footer}>

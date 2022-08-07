@@ -1735,7 +1735,7 @@ punycode@^2.1.0:
 
 pure-react-carousel@^1.29.0:
   version "1.29.0"
-  resolved "https://registry.npmjs.org/pure-react-carousel/-/pure-react-carousel-1.29.0.tgz"
+  resolved "https://registry.yarnpkg.com/pure-react-carousel/-/pure-react-carousel-1.29.0.tgz#562b08c90c158fb194837d29cefb0c9d3b0ccc33"
   integrity sha512-cdGh1ZRSj3mK4T9OKEMo/tnSm+39UhG9IFt21uAZiyW2iRzLa9om8/DSA17ZCCEksclOYPKTTb2aWkRSRcj0WA==
   dependencies:
     "@babel/runtime" "^7.5.5"

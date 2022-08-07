@@ -3,8 +3,9 @@ import React from 'react';
 const Roadmap = () => {
 
     const style={
-        wraaper:'flex flex-col w-full max-h-full overflow-auto barra-scroll h-4/5 scroll-smooth',
+        wraaper:'flex flex-col w-full sm:max-h-full sm:overflow-auto sm:barra-scroll sm:h-4/5 sm:scroll-smooth',
         row:'flex flex-row justify-center',
+        row_r:'hidden sm:flex flex-row justify-center',
         text_l:'w-32 h-32 mr-8 text-xs text-justify',
         text_r:'w-32 h-32 ml-8 text-xs text-justify',
         horizontal:'h-16 border-b-2 w-44 border-primary',
@@ -27,7 +28,7 @@ const Roadmap = () => {
                 <div className='w-32'></div>
 
             </div>
-            <div className={style.row}>
+            <div className={style.row_r}>
                 <div className='w-32'></div>
                 <div className='w-32'></div>
                 <div className='w-44'></div>
@@ -50,7 +51,7 @@ const Roadmap = () => {
                 <div className='w-32'></div>
 
             </div>
-            <div className={style.row}>
+            <div className={style.row_r}>
                 <div className='w-32'></div>
                 <div className='w-32'></div>
                 <div className='w-44'></div>
