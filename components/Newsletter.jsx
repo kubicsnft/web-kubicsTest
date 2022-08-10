@@ -38,7 +38,7 @@ export default function Newsletters()  {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
-                    className={`lg:ml-2 w-full lg:w-1/3 shadow bg-brand2  text-center text-white font-bold border  rounded  bg-[#7098b7] hover:text-[#E1B649] transition hover:-translate-y-1 hover:scale-110 ease-in-out delay-100 duration-300${state === "LOADING" ? "button-gradient-loading" : ""
+                    className={`lg:ml-2 w-full lg:w-1/3 shadow bg-brand2  text-center text-white font-bold border  rounded  bg-[#7098b7] hover:text-[#E1B649] transition hover:-translate-y-1 hover:scale-105 ease-in-out hover:shadow-xl  duration-300${state === "LOADING" ? "button-gradient-loading" : ""
                         }`}
                     type="button"
                     disabled={state === "LOADING"}

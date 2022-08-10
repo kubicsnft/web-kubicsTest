@@ -1,5 +1,5 @@
 import React from 'react';
-import Cube from '../../cube';
+import Cube from '../cube';
 
 const Nosotros = () => {
 
@@ -9,9 +9,9 @@ const Nosotros = () => {
 
     return (
         <>
-            <h2 className='mt-4 mb-8 text-3xl'>NOSOTROS</h2>
+            <h2 className='mt-4 text-3xl'>NOSOTROS</h2>
             <div className='flex flex-wrap items-center justify-between h-full felx-row '>
-                <div className='flex flex-wrap items-center justify-around w-full sm:w-6/12 sm:felx-row'>
+                <div className='flex flex-wrap items-center justify-around w-full mb-12 sm:w-6/12 sm:felx-row'>
                     <div className='flex flex-col justify-center w-56 p-2 mb-4'>
                         <div className='flex justify-center mb-4'>
                             <Cube link='./test' img='/avatar.png' />
@@ -29,7 +29,7 @@ const Nosotros = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-wrap items-center justify-around w-full sm:w-6/12 felx-row'>
+                <div className='flex flex-wrap items-center justify-around w-full mb-12 sm:w-6/12 felx-row'>
                     <div className='flex flex-col justify-center w-56 p-2 mb-4'>
                         <div className='flex justify-center mb-4 '>
                             <Cube link='./test' img='/avatar.png' />
