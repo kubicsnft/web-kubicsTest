@@ -16,7 +16,7 @@ function Cube(props) {
         <Link href={props.link} >
           
             {/* ? <div className={style.cube} style={{backgroundImage: `url(${props.imag})`}} > */}
-          {props.link
+          {props.img
             ? <div className={style.cubeOn} >
               <img src={props.img} className='object-cover duration-150 ease-in ef-img'/>
             </div>

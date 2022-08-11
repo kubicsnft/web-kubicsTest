@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
 import AppLayoutHead from '../components/layout/AppLayoutHead'
 import LateralMenu from '../components/lateralMenu'
@@ -10,7 +11,7 @@ import Nosotros from '../components/home/nosotros'
 import Roadmap from '../components/home/roadmap'
 import WhayIsKubics from '../components/home/whayIsKubics'
 // import Carrusel from '../components/carousel'
-import CarruselPro from '../components/carrusel3d/carruselPro'
+// import CarruselPro from '../components/carrusel3d/carruselPro'
 import Header from '../components/containers/header'
 
 
@@ -21,6 +22,8 @@ const style = {
   // sectionLast: 'w-full   text-center py-4  sm:min-h-screen sm:max-h-[55em] sm:h-screen  bg-white  max-w-screen-2xl hidden md:block z-10',
   separador: 'h-1  w-4/5 border-b-2 border-primary',
 }
+
+const CarruselPro =dynamic(()=>import('../components/carrusel3d/carruselPro'),{ssr:false})
 
 export default function Home() {
   return (

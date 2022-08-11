@@ -1,13 +1,15 @@
 import React from 'react';
+import dynamic from 'next/dynamic'
 import { FormattedMessage } from 'react-intl';
 import AppLayout from '../components/layout/AppLayout';
 import Swich from '../components/toggleSwitch';
 import { BiArrowBack } from 'react-icons/bi'
 import ReactPlayer from 'react-player';
 import Roadmap from '../components/home/roadmap'
-import Carrusel3d from '../components/carrusel3d/carrusel3d'
+// import Carrusel3d from '../components/carrusel3d/carrusel3d'
 import Image from 'next/image'
 import Cube from '../components/cube';
+import { Link } from 'react-router-dom';
 
 
 const style = {
@@ -18,7 +20,7 @@ const style = {
 }
 
 
-
+const Carrusel3d =dynamic(()=>import('../components/carrusel3d/carrusel3d'),{ssr:false})
 
 const Proyecto = () => {
     return (
@@ -30,14 +32,17 @@ const Proyecto = () => {
                         {/* buttoms */}
                         <div className='grid items-center w-full grid-cols-2' >
                             <div className="text-lg text-start">
-                                <button
-                                    className='flex flex-row items-center p-1 ml-4 text-xl text-center transition duration-300 ease-in-out border-2 rounded-full border-primary text-secondary hover:-translate-x-2 '
-                                    type="button"
-                                // disabled={state === "LOADING"}
-                                // onClick={volver}
+                                {/* <Link url='/index'> */}
+                                <a src='../pages/index.js'
+                                    
+                                    
                                 >
-                                    <BiArrowBack />
-                                </button>
+                                
+                                    <div className='w-8 p-1 ml-4 text-xl text-center transition duration-300 ease-in-out border-2 rounded-full border-primary text-secondary hover:-translate-x-2'>
+                                        <BiArrowBack />
+                                    </div>
+                                </a>
+                                {/* </Link> */}
                             </div>
                             <div className="flex justify-end">
                                 <Swich />
