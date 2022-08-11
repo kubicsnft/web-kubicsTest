@@ -76,7 +76,7 @@ const Proyecto = () => {
 
                         {/* NFT */}
                         <div className='flex-col mt-8 items-center w-4/5 p-6 mb-8 rounded-xl shadow-lg shadow-[#7094b1] bg-gray-100  border-primary' >
-                            <h2 className='mb-8 text-3xl '>NFT'S</h2>
+                            <h2 className='mb-8 text-3xl '>NFTs</h2>
                             <div className=''>
                             <div>Category A</div>
                                 <Carrusel3d />
