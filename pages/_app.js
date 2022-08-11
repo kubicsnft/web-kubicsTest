@@ -5,6 +5,7 @@ import '../styles/theme.css'
 import { LangProvider } from '../context/langContext';
 
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <LangProvider>

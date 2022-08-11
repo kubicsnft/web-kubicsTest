@@ -7,7 +7,7 @@ import { FormattedMessage } from "react-intl"
 const Header = () => {
     return (
         <div className='grid content-between w-full min-h-screen max-w-screen-2xl'>
-            <div className='grid sm:items-center sm:grid-cols-2 -center' >
+            <div className='grid sm:items-center sm:grid-cols-2 ' >
                 <div className="hidden text-lg text-start sm:flex">
                     <FormattedMessage
                         id='app.slogan'

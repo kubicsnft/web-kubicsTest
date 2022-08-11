@@ -48,20 +48,31 @@ a {
 /* Class ----------------- */
 .cube{
   clip-path: polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%);
-  
   background: linear-gradient(90deg,  rgba(87,87,87,1) 0%, rgba(163,163,163,1) 35%, rgba(240,239,242,1)100%);
-  /* background-size: cover; */
-  /* background-position: center; */
-  
-
 }
 
 
+
+/* Agrandar imagen al hacer hover */
 .box:hover  .shad2{
   transform: rotate(6deg);
   transform: matrix(1, 0.1, -0.1, 1, 0, 8);
 }
 .box:hover  .ef-img{
   transform: scale(1.1);
-
+  filter:brightness(0.5);
 }
+
+
+/* .animate-back:hover{animation: back 1s infinite;}
+
+@keyframes back {
+  0%, 100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+} */

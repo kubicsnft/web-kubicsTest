@@ -15,7 +15,7 @@ const SocialNetworks = (props) => {
 
 
     const style = {
-        icono: 'text-2xl p-1 flex justify-center border border-white rounded   hover:text-[#E1B649] transition hover:-translate-y-1 hover:scale-110 ease-in-out delay-100 duration-500',
+        icono: 'text-2xl p-1 flex justify-center border border-white rounded hover:shadow-xl  hover:text-[#E1B649] transition hover:-translate-y-1 hover:scale-105 ease-in-out  duration-500',
     }
 
     style.icono = style.icono + color

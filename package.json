@@ -9,16 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "3d-react-carousal": "^5.0.0",
     "axios": "^0.27.2",
     "next": "12.2.3",
-    "pure-react-carousel": "^1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-intl": "^6.0.5",
     "react-particles": "^2.1.4",
+    "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
-    "tsparticles": "^2.1.4"
+    "react-spring-3d-carousel": "^1.2.1",
+    "tsparticles": "^2.1.4",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
