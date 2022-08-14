@@ -10,6 +10,7 @@ import Roadmap from '../components/home/roadmap'
 import Image from 'next/image'
 import Cube from '../components/cube';
 import { Link } from 'react-router-dom';
+import titulo from '../public/titulo.png'
 
 
 const style = {
@@ -49,12 +50,12 @@ const Proyecto = () => {
                             </div>
                         </div>
                         {/* Img - Title */}
-                        <div className='flex justify-center w-full mb-2'>
-                            <img
-                                className=''
-                                src="titulo.png"
+                        <div className='flex justify-center w-2/5 mb-2'>
+                            <Image
+                                src={titulo}
                                 alt="Título película"
-                                width={350}
+                                 
+                                
                             />
                         </div>
                         {/* Video */}
@@ -81,7 +82,7 @@ const Proyecto = () => {
                             <div>Category A</div>
                                 <Carrusel3d />
                             </div>
-                            <div className='flex flex-row justify-between mt-24'>
+                            {/* <div className='flex flex-row justify-between mt-24'>
                                 <div className='w-44 h-44'>
                                 <div>Category B</div>
                                 <Cube link='./test' img='/nft/dragon1.png' />
@@ -98,14 +99,14 @@ const Proyecto = () => {
                                 <div>Category E</div>
                                 <Cube link='./test' img='/nft/dragon4.png' />
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='flex flex-row justify-between mt-24'>
                                 <div className='w-56 cursor-pointer box'><img src='/nft/dragon2.png' className='object-cover duration-150 ease-in ef-img' /></div>
                                 <div className='w-56 cursor-pointer box'><img src='/nft/dragon1.png' className='object-cover duration-150 ease-in ef-img' /></div>
                                 <div className='w-56 cursor-pointer box'><img src='/nft/dragon3.png' className='object-cover duration-150 ease-in ef-img' /></div>
                                 <div className='w-56 cursor-pointer box'><img src='/nft/dragon4.png' className='object-cover duration-150 ease-in ef-img' /></div>
                             </div>
-                            <div className='flex flex-row justify-between mt-24'>
+                            {/* <div className='flex flex-row justify-between mt-24'>
                                 <div className='w-52 py-8 border-2 rounded-lg cursor-pointer bg-gradient-to-r from-[#7094b1] via-gray-200 to-[#7094b1] border-primary box'>
                                     
                                     <img src='/nft/dragon2.png' className='object-cover mb-8 duration-150 ease-in ef-img' />
@@ -134,6 +135,11 @@ const Proyecto = () => {
                                         <p>Category</p>
                                         <p>price</p>
                                     </div>
+                                </div>
+                            </div> */}
+                            <div>
+                                <div className=''>
+                                    Página de minteo
                                 </div>
                             </div>
                         </div>
