@@ -20,7 +20,7 @@
     right: 0;
     bottom: 0;
     border-radius:4px;
-    border:solid 2px #7098b7;
+    border:solid 2px #7B94b1;
     /* background-color: rgb(206, 205, 205); */
     -webkit-transition: .4s;
     transition: .4s;
@@ -34,8 +34,8 @@
     left: 15%;
     right: 15%;
     bottom: 50%;
-    border:solid 1px #7098b7;
-    background-color: #7098b7;
+    border:solid 1px #7B94b1;
+    background-color: #7B94b1;
     
     
   }

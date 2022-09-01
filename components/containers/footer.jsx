@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import logo from '../../public/Kubics.webp'
+import logo from '../../public/logo_loop_SO.gif'
 import Newsletters from '../Newsletter';
 import SocialNetworks from '../SocialNetworks';
 
@@ -31,8 +31,8 @@ const Footer = () => {
                 </div>
                 
                 
-                <div className='w-3/5 justify-self-center'>
-                    <Newsletters/>
+                <div className='w-full justify-self-center'>
+                    <Newsletters color='butt-color2'/>
                 </div>
             </div>
         </>

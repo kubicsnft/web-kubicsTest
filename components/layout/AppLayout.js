@@ -57,7 +57,7 @@ export default function AppLayout({ children }) {
                             },
                             modes: {
                                 push: {
-                                    quantity: 4,
+                                    quantity: 0,
                                 },
                                 repulse: {
                                     distance: 200,
@@ -67,10 +67,10 @@ export default function AppLayout({ children }) {
                         },
                         particles: {
                             color: {
-                                value: "#7094b1",
+                                value: "#7B94b1",
                             },
                             links: {
-                                color: "#7094b1",
+                                color: "#7B94b1",
                                 distance: 260,
                                 enable: true,
                                 opacity: 1,

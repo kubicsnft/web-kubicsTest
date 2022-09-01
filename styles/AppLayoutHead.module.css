@@ -11,7 +11,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 30px;
+    padding: 15px;
     width: 100%;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
     z-index: 2;
@@ -34,7 +34,7 @@
     text-align: center;
     height: 100vh;
     padding: 30px;
-    background-color:#7094b1;
+    background-color:#7B94b1;
     color:rgb(253, 253, 253);
     width: 100%;
     z-index:2;

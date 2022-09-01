@@ -1,16 +1,23 @@
-import React, { Component,useEffect  } from "react";
-
+import React, { Component, useEffect } from "react";
 import Carousel from 'react-spring-3d-carousel';
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
-import Cube from "../cube";
+import Cube3d from "../cube3d";
+import Link from 'next/link'
+import Image from "next/image";
+import { MdOutlineArrowBackIosNew } from 'react-icons/md'
+import { MdOutlineArrowForwardIos } from 'react-icons/md'
+
+
+
+
 
 
 export default class Example extends Component {
     state = {
         goToSlide: 0,
         offsetRadius: 2,
-        showNavigation: true,
+        showNavigation: false,
         config: config.slow
     };
 
@@ -18,52 +25,61 @@ export default class Example extends Component {
         {
             key: uuidv4(),
             content:
-                <div className="w-full h-full">
-                    <div className="relative flex justify-center overflow-hidden lg:w-36 lg:h-36 xl:w-48 xl:h-48 2xl:h-60 2xl:w-60 ">
-                    <Cube link='./dragonKeeper' img='/img.png' />
+                <Link href='/dragonKeeper'>
+                    <div className="flex flex-col items-center w-48 p-1 xl:w-60 md:w-52 2xl:w-72 ">
+                        <Image
+                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+                            src='/cubos/Cubo_DK.png'
+                            alt='dragon Keeper'
+                            width={400}
+                            height={400} />
+                        <div className='w-full p-2 text-sm text-justify text-white rounded-lg shadow-xl bg-primary'>
+                            <h3 className="mb-1 text-xl text-center text-white border-b border-secondary">DRAGONKEEPER</h3>
+                            Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.</div>
                     </div>
-                    <div className='p-4 mt-4 text-sm text-justify text-white rounded-lg shadow-xl lg:w-36 xl:w-48 2xl:w-60 bg-primary'>
-                        <h3 className="mb-1 text-xl text-center text-white border-b border-secondary">DRAGONKEEPER</h3>
-                        Lorem Ipsum is simply dummy text of the is simply dummy text of the  ever since the 1500s, and scrambled it to make a type specimen book. It has survived not only five centuries.
+                </Link>
+        },
+        {
+            key: uuidv4(),
+            content:
+                <div className="flex flex-col items-start w-48 xl:w-60 md:w-52 2xl:w-72 ">
+                    <Image
+                        className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+                        src='/cubos/Cubo_FUT.png'
+                        alt='dragon Keeper'
+                        width={400}
+                        height={400} />
+                    <div className='w-full p-2 text-sm text-justify text-white rounded-lg shadow-xl bg-primary'>
+                        <h3 className="mb-1 text-xl text-center text-white border-b border-secondary">EL FUTURO YA ESTA AQUÍ</h3>
+                        Largometraje de imágen real dirigido por Juan Vicente Córdoba.
+                        A finales de los años 70 y principios de los 80 en Madrid algunas emisoras de radio estaban estrechamente vinculadas a la divulgación de lo que estaba fraguándose. Una peculiar explosión creativa que constituyó todo un fenómeno social que cobró su verdadera dimensión y su total plenitud en la calle. 
                     </div>
                 </div>
         },
         {
             key: uuidv4(),
             content:
-                <div className="w-full hfull"><div className="relative flex overflow-hidden lg:w-36 lg:h-36 xl:w-48 xl:h-48 2xl:h-60 2xl:w-60 ">
-                    <Cube link='./test' />
+                <div className="flex flex-col items-center justify-center w-full p-4 bg-white rounded-lg sm:p-0 xl:w-60 md:w-52 2xl:w-72">
+                    <Cube3d/>
+                    <h3 className="absolute mb-1 text-2xl font-bold text-center text-secondary ">COMING SOON...</h3>
+                    
                 </div>
-                    <div className='p-3 mt-4 mb-48 text-sm text-justify text-white rounded-lg shadow-xl lg:w-36 xl:w-48 2xl:w-60 bg-primary'>
-                        <h3 className="mb-1 text-xl text-center ">COMING SOON...</h3>
-                    </div></div>
         },
         {
             key: uuidv4(),
             content:
-                <div className="w-full hfull"><div className="relative flex overflow-hidden lg:w-36 lg:h-36 xl:w-48 xl:h-48 2xl:h-60 2xl:w-60 ">
-                    <Cube link='./test' />
-                </div>
-                    <div className='p-3 mt-4 mb-48 text-sm text-justify text-white rounded-lg shadow-xl lg:w-36 xl:w-48 2xl:w-60 bg-primary'>
-                        <h3 className="mb-1 text-xl text-center ">COMING SOON...</h3>
-                    </div></div>
-        },
-        {
-            key: uuidv4(),
-            content:
-                <div className="w-full hfull"><div className="relative flex overflow-hidden lg:w-36 lg:h-36 xl:w-48 xl:h-48 2xl:h-60 2xl:w-60 ">
-                    <Cube link='./test' />
-                </div>
-                    <div className='p-3 mt-4 mb-48 text-sm text-justify text-white rounded-lg shadow-xl lg:w-36 xl:w-48 2xl:w-60 bg-primary'>
-                        <h3 className="mb-1 text-xl text-center ">COMING SOON...</h3>
-                    </div></div>
+            <div className="flex flex-col items-center justify-center w-full p-4 bg-white rounded-lg sm:p-0 xl:w-60 md:w-52 2xl:w-72">
+            <Cube3d/>
+            <h3 className="absolute mb-1 text-2xl font-bold text-center text-secondary ">COMING SOON...</h3>
+            
+        </div>
         },
     ]
 
 
     render() {
         return (
-            <div style={{ width: "100%", height: "545px", margin: "0 auto" }} className='flex flex-col items-center '>
+            <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex flex-col items-start '>
                 <Carousel
                     slides={this.slides}
                     goToSlide={this.state.goToSlide}
@@ -71,7 +87,23 @@ export default class Example extends Component {
                     showNavigation={this.state.showNavigation}
                     animationConfig={this.state.config}
                 />
-
+                <div className='z-10 flex flex-row justify-between w-full'>
+                    {/* Button left */}
+                    <div className="z-50 md:-ml-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150  text-[#E1B649]"
+                        onClick={() => {
+                            this.setState({ goToSlide: this.state.goToSlide - 1 });
+                        }}>
+                        <MdOutlineArrowBackIosNew />
+                    </div>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    {/* button right */}
+                    <div className="z-50 md:-mr-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150  text-[#E1B649]"
+                        onClick={() => {
+                            this.setState({ goToSlide: this.state.goToSlide + 1 });
+                        }}>
+                        <MdOutlineArrowForwardIos />
+                    </div>
+                </div>
             </div>
         );
     }
