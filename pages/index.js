@@ -51,7 +51,7 @@ export default function Home() {
               <div>
                 <h2 id='proyectos' className={style.titulo}>PROYECTOS</h2>
               </div>
-              <div className='grid items-center w-9/12 h-full '>
+              <div className='grid items-center w-9/12 h-full'>
                 <CarruselPro />
               </div>
             </div>
