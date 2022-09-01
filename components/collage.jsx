@@ -3,7 +3,7 @@ import React from 'react'
 
 function collage() {
   const style ={
-      container:'hidden xl:block absolute h-64 w-80 transition ease-in-out duration-500  border-8 shadow-2xl hover:shadow-black hover:scale-110 hover:z-10 border-slate-200 ',
+      container:'hidden xl:block absolute h-64 w-80 transition ease-in-out duration-500 delay-100 border-8 shadow-2xl hover:shadow-black hover:scale-110 hover:z-10 border-slate-200 ',
       photo1:'translate-y-40 translate-x-52  rotate-6',
       photo2:'translate-y-44 -translate-x-52  -rotate-12',
       photo3:'-translate-y-12 translate-x-28  -rotate-6',
