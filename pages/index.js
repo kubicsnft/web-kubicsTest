@@ -15,7 +15,7 @@ const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro')
 
 const style = {
   section: 'w-full sm:px-4 lg:px-8 xl:px-10 flex flex-col items-center  text-center  min-h-[45em]    max-w-screen-2xl   bg-white  z-10',
-  titulo: 'mt-4 mb-6 text-3xl pt-4',
+  titulo: 'mt-4 mb-6 text-3xl pt-14 sm-p-3',
   separador: 'h-1  w-4/5 border-b-2 border-primary ',
 }
 

@@ -18,7 +18,7 @@ export default class Example extends Component {
         goToSlide: 0,
         offsetRadius: 2,
         showNavigation: false,
-        config: config.slow
+        config: config.default
     };
 
     slides = [
@@ -89,7 +89,7 @@ export default class Example extends Component {
                 />
                 <div className='z-10 flex flex-row justify-between w-full'>
                     {/* Button left */}
-                    <div className="z-50 md:-ml-20 sm:-ml-4 -ml-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150 text-[#e1b6497b] sm:text-[#E1B649]"
+                    <div className="z-50 md:-ml-20 sm:-ml-4 -ml-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150 text-[#E1B649]"
                         onClick={() => {
                             this.setState({ goToSlide: this.state.goToSlide - 1 });
                         }}>
@@ -97,7 +97,7 @@ export default class Example extends Component {
                     </div>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     {/* button right */}
-                    <div className="z-50 md:-mr-20 sm:-mr-4 -mr-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150   text-[#e1b6497b] sm:text-[#E1B649]"
+                    <div className="z-50 md:-mr-20 sm:-mr-4 -mr-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150   text-[#E1B649]"
                         onClick={() => {
                             this.setState({ goToSlide: this.state.goToSlide + 1 });
                         }}>

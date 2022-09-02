@@ -21,7 +21,7 @@ const Header = () => {
             <div className="mb-40 text-center">
                 <CenterLogo />
             </div>
-            <div className='w-full mb-24 justify-self-center'>
+            <div className='w-full mb-24 justify-self-center '>
                 <Newsletter color='butt-color'/>
             </div>
 
