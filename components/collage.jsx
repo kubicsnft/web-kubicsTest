@@ -47,7 +47,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo4}`} >
           <Image
-            src='/animals/Toro_05_DOF.png'
+            src='/animals/Cow_09.png'
             className=''
             width={320}
             height={253}
@@ -79,7 +79,7 @@ function collage() {
           </div>
           <div className={`${style.container}${style.photo4}`} >
             <Image
-             src='/animals/Toro_05_DOF.png'
+             src='/animals/Cow_09.png'
               className=''
               width={190}
               height={140}
