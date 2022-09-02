@@ -10,7 +10,7 @@ const WhayIsKubics = () => {
   return (
     <>
       <div className='grid items-center w-full h-full px-2 sm:px-8 '>
-        <div className='p-4 text-justify text-white rounded-lg shadow-xl mb-44 bg-primary'>
+        <div className='p-4 mb-6 text-justify text-white rounded-lg shadow-xl bg-primary'>
           <p className='mb-2'>Kubics es una plataforma dentro del ecosistema Blockchain que nace con el objetivo de financiar total o parcialmente largometrajes cinematográficos ya sean de animación o imagen real.</p>
           <p className='mb-2'>De cada proyecto lanzamos una colección de NFT´s Kubics relacionados con  la película . Estos NFT´S ayudarán  a financiarla o levantarla financieramente, ya sea en una o en otra de sus fases : Desarrollo / preproducciòn , Producción o Postproducciòn</p>
           {/* <div className="contenedor">

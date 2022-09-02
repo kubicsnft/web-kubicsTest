@@ -5,9 +5,10 @@ import { FormattedMessage } from "react-intl"
 
 export default function Newsletters(props) {
     // Button subcribe styles
-        const style ={
-            color:props.color,
-            style:' border-2 border-primary butt '}
+    const style = {
+        color: props.color,
+        style: ' border-2 border-primary butt '
+    }
     // ---------------------
 
     const [email, setEmail] = useState("")
@@ -55,14 +56,22 @@ export default function Newsletters(props) {
                         defaultMessage='To Subcribe'
                     />
                 </button> */}
-                <button className={`${style.color}${style.style}`}>
-                    <p>Subscribe</p>
+                <button
+                    className={`${style.color}${style.style}`}
+                    type="button"
+                    disabled={state === "LOADING"}
+                    onClick={subscribe}>
+                    <p>
+                        <FormattedMessage
+                            id='app.button'
+                            defaultMessage='Subcribe'/>
+                    </p>
                     <svg strokeWidth="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinejoin="round" strokeLinecap="round"></path>
                     </svg>
                 </button>
             </div>
-            <div className="flex justify-center text-center">
+            <div className="flex justify-center text-sm text-center">
                 {state === "ERROR" && <p className="mt-2 text-red-600 ">{errorMessage}</p>}
                 {state === "SUCCESS" && <p className="w-1/2 mt-2 text-green-600">Success!</p>}
             </div>
