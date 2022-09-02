@@ -15,10 +15,16 @@ function Cube(props) {
     return (
         <Link href={props.link} >
           
-            {/* ? <div className={style.cube} style={{backgroundImage: `url(${props.imag})`}} > */}
+            {/* <div 
+            className={style.cubeOn} 
+            style={{
+              backgroundImage: `url(${props.img})`,
+              backgroundRepeat: `no-repeat`,
+              backgroundSize: `100% 100%`}} > */}
           {props.img
-            ? <div className={style.cubeOn} >
-              <img src={props.img} className='object-cover duration-150 ease-in ef-img'/>
+            ? <div 
+            className={style.cubeOn}>
+              <img src={props.img} width='100%' height={100} className='object-cover duration-150 ease-in ef-img'alt="cubo"/>
             </div>
             : <div className={style.cubeOff} ></div>
           }

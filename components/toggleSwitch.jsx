@@ -26,9 +26,9 @@ const ToggleSwitch = () => {
 
 
     return (
-        <div className='flex flex-row p-3 items-center'>
+        <div className='z-50 flex flex-row items-center p-3'>
             <div>EN</div>
-            <label className="switch ml-1 mr-1">
+            <label className="ml-1 mr-1 switch">
                 <input
                     type="checkbox"
                     checked={isChecked}

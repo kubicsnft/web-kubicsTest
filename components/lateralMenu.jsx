@@ -3,7 +3,7 @@ import React from 'react';
 
 const LateralMenu = () => {
     const style={
-    item:'w-full bg-primary   rounded px-1 mb-1 border border-white  text-white hover:text-[#E1B649] ease-in-out hover:translate-x-3 duration-300'
+    item:'w-full bg-primary   rounded px-1  mb-1 border border-white  text-white hover:text-[#E1B649] ease-in-out hover:translate-x-3 duration-300'
     } 
 
 

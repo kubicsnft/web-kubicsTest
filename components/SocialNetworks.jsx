@@ -2,11 +2,12 @@ import React from 'react';
 import { AiFillInstagram } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { SiDiscord } from 'react-icons/si';
+import Cube from "react-3d-cube";
 
 const SocialNetworks = (props) => {
 
-    var color = 'bg-[#7094b1]'
-    var text = 'text-white'
+    var color = 'text-white bg-[#7094b1]'
+    var text = ''
 
     if (props.color)
         color = props.color
@@ -15,7 +16,7 @@ const SocialNetworks = (props) => {
 
 
     const style = {
-        icono: 'text-2xl p-1 flex justify-center border border-white rounded hover:shadow-xl  hover:text-[#E1B649] transition hover:-translate-y-1 hover:scale-105 ease-in-out  duration-500',
+        icono: 'text-2xl p-1 flex justify-center border border-white rounded-lg hover:shadow-xl  hover:text-[#E1B649] transition  hover:scale-110 ease-in-out  duration-500',
     }
 
     style.icono = style.icono + color
