@@ -7,7 +7,7 @@ import Nosotros from '../components/home/nosotros'
 import Roadmap from '../components/home/roadmap'
 import WhayIsKubics from '../components/home/whayIsKubics'
 import MenuMovil from "../components/MenuMovil";
-import Cube3d from "../components/Cube3d";
+
 
 
 // Importación dinamica de carrusel3d
