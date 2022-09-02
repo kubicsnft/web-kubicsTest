@@ -41,7 +41,7 @@ export default function AppLayoutHead({ children }) {
             <header id='inicio' className={styles.header}>  
                 <Header />
             </header>
-            <main className={`${styles.main}${style.main}`}>
+            <main className={`${styles.main}${style.main} hidden md:flex`}>
                 <Particles
                     id="tsparticles"
                     init={particlesInit}
@@ -119,6 +119,10 @@ export default function AppLayoutHead({ children }) {
                         detectRetina: true,
                     }}
                 />
+                {children}
+            </main>
+            <main className={`${styles.main}${style.main} md:hidden`}>
+                
                 {children}
             </main>
             <footer id='contacto' className={styles.footer}>
