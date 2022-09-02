@@ -14,7 +14,7 @@ import Cube3d from "../components/Cube3d";
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
 
 const style = {
-  section: 'w-full sm:px-4 lg:px-8 xl:px-10 flex flex-col items-center  text-center  min-h-[45em]    max-w-screen-2xl h-full  bg-white  z-10',
+  section: 'w-full sm:px-4 lg:px-8 xl:px-10 flex flex-col items-center  text-center  min-h-[45em]    max-w-screen-2xl   bg-white  z-10',
   titulo: 'mt-4 mb-6 text-3xl pt-4',
   separador: 'h-1  w-4/5 border-b-2 border-primary ',
 }
@@ -38,7 +38,7 @@ export default function Home() {
         
         {/*========================= Contenedor =============================*/}
         <div className='flex justify-center'>
-          <div className='grid w-full bg-white shadow-2xl md:w-11/12 xl:w-10/12 shadow-gray-500 justify-items-center'>
+          <div className='flex flex-col w-full bg-white shadow-2xl md:w-11/12 xl:w-10/12 shadow-gray-500 justify-items-center'>
             {/*================= Sectión1: =================*/}
             <div  className={style.section}>
               <h2 id='kubics?' className={style.titulo}>¿ QUÉ ES <span className="may" translate='no'>KUBICS</span> ?</h2>
@@ -51,7 +51,7 @@ export default function Home() {
               <div>
                 <h2 id='proyectos' className={style.titulo}>PROYECTOS</h2>
               </div>
-              <div className='grid items-center w-9/12 h-full'>
+              <div className='grid items-center w-5/12 h-full sm:w-10/12 md:w-9/12'>
                 <CarruselPro />
               </div>
             </div>

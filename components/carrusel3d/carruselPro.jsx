@@ -26,7 +26,7 @@ export default class Example extends Component {
             key: uuidv4(),
             content:
                 <Link href='/dragonKeeper'>
-                    <div className="flex flex-col items-center xl:w-60 md:w-52 2xl:w-72 w-[17rem] rounded-lg bg-white sm:bg-inherit sm:p-1 p-5  ">
+                    <div className="flex flex-col items-center xl:w-60 md:w-52 2xl:w-72 w-[17rem]  rounded-lg bg-white sm:bg-inherit sm:p-1 p-5  ">
                         <Image
                             className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
                             src='/cubos/Cubo_DK.png'
@@ -79,7 +79,7 @@ export default class Example extends Component {
 
     render() {
         return (
-            <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex flex-col items-start '>
+            <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex flex-col items-start'>
                 <Carousel
                     slides={this.slides}
                     goToSlide={this.state.goToSlide}
@@ -89,7 +89,7 @@ export default class Example extends Component {
                 />
                 <div className='z-10 flex flex-row justify-between w-full'>
                     {/* Button left */}
-                    <div className="z-50 md:-ml-20 -ml-4 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150 text-[#e1b6497b] sm:text-[#E1B649]"
+                    <div className="z-50 md:-ml-20 sm:-ml-4 -ml-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150 text-[#e1b6497b] sm:text-[#E1B649]"
                         onClick={() => {
                             this.setState({ goToSlide: this.state.goToSlide - 1 });
                         }}>
@@ -97,7 +97,7 @@ export default class Example extends Component {
                     </div>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     {/* button right */}
-                    <div className="z-50 md:-mr-20 -mr-4 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150   text-[#e1b6497b] sm:text-[#E1B649]"
+                    <div className="z-50 md:-mr-20 sm:-mr-4 -mr-20 text-3xl transition duration-300 ease-in-out cursor-pointer  hover:scale-150   text-[#e1b6497b] sm:text-[#E1B649]"
                         onClick={() => {
                             this.setState({ goToSlide: this.state.goToSlide + 1 });
                         }}>
