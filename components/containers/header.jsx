@@ -6,7 +6,7 @@ import { FormattedMessage } from "react-intl"
 
 const Header = () => {
     return (
-        <div className='grid content-between w-full min-h-screen max-w-screen-2xl'>
+        <div className='grid content-between w-full min-h-screen max-w-screen-2xl text-primary'>
             <div className='grid sm:items-center sm:grid-cols-2 ' >
                 <div className="hidden ml-10 text-lg xl:ml-0 2xl:-ml-2 text-start sm:flex">
                     <FormattedMessage
@@ -21,7 +21,7 @@ const Header = () => {
             <div className="mb-40 text-center">
                 <CenterLogo />
             </div>
-            <div className='w-full mb-24 justify-self-center '>
+            <div className='w-full mb-24 justify-self-center'>
                 <Newsletter color='butt-color'/>
             </div>
 

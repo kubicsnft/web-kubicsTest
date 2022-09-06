@@ -379,3 +379,16 @@ a {
     0% { transform: rotateX(  0deg) rotateY(  0deg); }
   100% { transform: rotateX(360deg) rotateY(360deg); }
 }
+
+
+
+
+.bord {
+  
+  border: solid black;
+  border-image-width: 70px;
+  border-image-source: url('../public/FILM_FRAME.png');
+  border-image-slice: 100;
+  border-image-outset: 0px;
+  border-image-repeat: round;
+}
