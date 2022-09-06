@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 function MobileNav({ open, setOpen }) {
     return (
-        <div className={`xl:hidden absolute  backdrop-blur-3xl  top-0 left-0 h-auto pb-4 w-full sm:w-80  z-50 border-b  shadow-slate-400 shadow-xl transform ${open ? "-translate-y-0 mt-4" : "-translate-y-full "} transition-transform duration-500 ease-in-out filter drop-shadow-md `}>
+        <div className={`xl:hidden absolute  backdrop-blur-3xl  top-0 left-0 h-auto pb-4 w-full sm:w-80  z-50 border-b  shadow-slate-400 shadow-xl transform ${open ? "-translate-y-0 mt-4" : "-translate-y-full "} transition-transform duration-150 ease-in-out filter drop-shadow-md `}>
             <div className="flex flex-col items-center    shadow-[#484848] bg-[#7B94b1] h-16 ">
                 <div className='flex flex-row items-center justify-start h-full text-2xl may'>
                     {/* <Image src='/logos/logo_primary.png' alt='logo' width={66} height={57}/> */}
