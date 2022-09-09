@@ -1,19 +1,15 @@
-import '../styles/globals.css'
-import '../styles/tggleSwitch.css'
-import '../styles/barraScroll.css'
-import '../styles/theme.css'
-import { LangProvider } from '../context/langContext';
-
+import "../styles/globals.css";
+import "../styles/tggleSwitch.css";
+import "../styles/barraScroll.css";
+import "../styles/theme.css";
+import { LangProvider } from "../context/langContext";
 
 function MyApp({ Component, pageProps }) {
   return (
     <LangProvider>
-      
-        <Component {...pageProps} />
-      
+      <Component {...pageProps} />
     </LangProvider>
-  )
-
+  );
 }
 
-export default MyApp
+export default MyApp;
