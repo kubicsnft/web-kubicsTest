@@ -16,7 +16,7 @@ import Carrusel1 from "../components/whitOut_using/carousel";
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
 
 const style = {
-  section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord  bg-white pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
+  section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord   pb-8 min-h-[45em] bg-[#fffc]    max-w-screen-2xl    z-10',
   titulo: 'mt-4 mb-6 text-3xl pt-14 sm-p-3 text-primary',
   // separador: 'h-2  w-full bg-primary border-primary ',
 }
@@ -28,7 +28,7 @@ export default function Home() {
       
         {/*================= Menú lateral y redes sociales =================*/}
         <MenuMovil />
-        <div className='hidden xl:flex   relative  justify-between w-full max-w-[100em]  pr-24 z-50'>
+        <div className='hidden xl:flex   relative  justify-between w-full max-w-[100em] pr-24 z-50'>
           <div>
             <div className='fixed -ml-8 bottom-10'><LateralMenu /></div>
           </div>
