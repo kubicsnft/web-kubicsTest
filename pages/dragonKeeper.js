@@ -19,7 +19,7 @@ import dragon4 from '../public//nft/dragon4.png'
 
 
 const style = {
-    section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord  bg-[#fffc] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
+    section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
     separador: 'h-1  w-4/5 border-b-2 border-primary',
 }
 
