@@ -65,7 +65,7 @@ export default function Home() {
             {/*================= Section 3: ================= */}
             <div className={style.section}>
               <div className={style.separador}></div>
-              <h2 id='nosotros' className={style.titulo}>NOSOTROS</h2>
+              <h2 id='nosotros' className={style.titulo}>EL EQUIPO</h2>
               <Nosotros />
             </div>
             {/*================= Section 4: ===================*/}
