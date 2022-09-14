@@ -77,11 +77,10 @@ const Explore = () => {
 
       <section className="flex flex-wrap justify-center">
         {NFTs ? (
-          NFTs.map((NFT, i) => {
+          NFTs.map((NFT) => {
             return (
-              <div key={i}>
+              <div key={NFT.id.tokenId}>
                 <NftCard
-                  key={i}
                   image={NFT.media[0].gateway}
                   id={NFT.id.tokenId}
                   title={NFT.title}
