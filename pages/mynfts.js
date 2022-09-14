@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import NftCard from "../components/nftcard";
+import NftCard from "../components/NFTCard";
 import { fetchNFTs } from "./api/fechtnfts";
 import { nftminting_v2 } from "../constants";
 
