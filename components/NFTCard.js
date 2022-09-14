@@ -31,9 +31,9 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
       </div>
       <div className="flex flex-wrap justify-center items-center p-3 ">
         {attributes?.length > 0 &&
-          attributes.map((attribute) => {
+          attributes.map((attribute, i) => {
             return (
-              <div className="w-1/2 mb-2 flex justify-start flex-col">
+              <div key={i} className="w-1/2 mb-2 flex justify-start flex-col">
                 <p className="mr-2 font-bold">{attribute.trait_type}:</p>
                 <p className="text-sm">{attribute.value}</p>
               </div>
