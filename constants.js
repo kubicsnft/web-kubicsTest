@@ -1,1 +1,1 @@
-export const nftminting_v2 = "0x115fB9F0eA7F2168953815B8E2A4f82f5d2d8001"
+export const nftminting_v2 = "0x75F6a02a3B9e418bD0B4aa0bFB679210B11BC6Df"

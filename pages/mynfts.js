@@ -49,14 +49,17 @@ const Explore = () => {
         {NFTs ? (
           NFTs.map((NFT, i) => {
             return (
-              <NftCard
-                image={NFT.media[0].gateway}
-                id={NFT.id.tokenId}
-                title={NFT.title}
-                address={NFT.contract.address}
-                description={NFT.description}
-                attributes={NFT.metadata.attributes}
-              ></NftCard>
+              <div key={i}>
+                <NftCard
+                  //key={i}
+                  image={NFT.media[0].gateway}
+                  id={NFT.id.tokenId}
+                  title={NFT.title}
+                  address={NFT.contract.address}
+                  description={NFT.description}
+                  //attributes={NFT.metadata.attributes}
+                ></NftCard>
+              </div>
             );
           })
         ) : (

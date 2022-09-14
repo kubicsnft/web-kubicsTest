@@ -174,12 +174,12 @@ export default function Test() {
       console.log(`Token ID Category C: ${tokenId_C.toString()}`);
 
       const contentIdMetadata_C =
-        "QmavgrqXWwJ2gF1zkGs6cacUQkNS2VAVnufv8mw4xdgymQ1";
+        "QmXULEzuP1aHfgbtRMDVwH2L2qG76K48cDd8s4S3uZsHxu";
       const metadataURI = `${contentIdMetadata_C}/${tokenId_C}.json`;
       console.log(metadataURI);
 
       const contentIdImages_C =
-        "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
+        "QmQtxEB6H1PZRHSAQA4rFyUxUW4fiHbwDTVAMfw8SKkRVA";
       const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_C}/${tokenId_C}.png`;
 
       const openSeaURL = `https://testnets.opensea.io/assets/rinkeby/${nftminting_v2}/${tokenID_Collection}`;
@@ -376,7 +376,7 @@ export default function Test() {
       {/* NFT Category C */}
       <div className="ml-5">
         <div>Categoría C</div>
-        <img src="./2.png"></img>
+        <img src="./Rare_Example.png" className="h-80 w-90"></img>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -436,7 +436,7 @@ export default function Test() {
         {imageURI ? (
           <div>
             <div>Congratulations! You have adquired a DragonKeeper NFT</div>
-            <img src={imageURI} className="h-1/2 w-1/2"></img>
+            <img src={imageURI} className="h-80 w-90"></img>
             <Link href={openseaURL}>
               <a
                 target="_blank"
@@ -449,11 +449,7 @@ export default function Test() {
               </a>
             </Link>
             <Link href={openseaURL}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-item"
-              >
+              <a target="_blank" rel="noreferrer" className="link-item">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                   See it on Opensea
                 </button>
@@ -469,4 +465,4 @@ export default function Test() {
   );
 }
 
-// Rinkeby test contract = "0xf808901D01dc14348E7bbcc5Fc46CC3CA4F6efF6";
+// Rinkeby test contract = "0x115fB9F0eA7F2168953815B8E2A4f82f5d2d8001";

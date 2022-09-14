@@ -1,12 +1,13 @@
 // Hay que arreglar para que lea las env
 
+const endpoint = process.env.NEXT_PUBLIC_ENV_RINKEBY_URL;
+
 export const fetchNFTs = async (
   owner,
   contractAddress,
   setNFTs,
   retryAttempt
 ) => {
-  const endpoint = process.env.RINKEBY_URL;
   if (retryAttempt === 5) {
     return;
   }
@@ -25,7 +26,6 @@ export const fetchNFTs = async (
     } catch (e) {
       fetchNFTs(endpoint, owner, contractAddress, setNFTs, retryAttempt + 1);
     }
-    console.log(process.env.RINKEBY_URL);
     setNFTs(data.ownedNfts);
     return data;
   }
