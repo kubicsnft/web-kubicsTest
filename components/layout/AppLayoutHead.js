@@ -42,7 +42,7 @@ export default function AppLayoutHead({ children }) {
                 <Header />
             </header>
             <main className={`${styles.main}${style.main} `}>
-                <div className='hidden md:flex'>
+                <div className=''>
                     <Particles
                         id="tsparticles"
                         init={particlesInit}

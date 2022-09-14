@@ -5,7 +5,7 @@ import Collage from '../collage'
 
 
 const style = {
-  titulo: 'text-xl mt-6 mb-2 font-bold text-tertiary text-center sm:text-start ',
+  titulo: 'text-lg sm:text-xl mt-6 mb-2 font-bold text-tertiary text-center sm:text-start ',
   parrafo: 'mb-2 ml-2'
 }
 
@@ -14,7 +14,7 @@ const WhayIsKubics = () => {
   return (
     <>
       <div className='flex items-center w-11/12 h-full px-2 sm:px-4 '>
-        <div className='p-4 mb-6 text-justify text-white rounded shadow-xl bg-primary'>
+        <div className='p-1 mb-6 text-justify text-white rounded shadow-xl sm:p-4 bg-primary'>
           <div className={style.titulo}>
             <FormattedMessage
               id='k?.titulo1'
