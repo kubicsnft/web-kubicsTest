@@ -342,7 +342,12 @@ export default function Test() {
       {/* NFT Category A */}
       <div className="ml-5">
         <div>Categoría A</div>
-        <img src="./0.png"></img>
+        <Image
+          src="/0.png"
+          width="400%"
+          height="300%"
+          //className="h-80 w-90"
+        ></Image>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -359,7 +364,12 @@ export default function Test() {
       {/* NFT Category B */}
       <div className="ml-5">
         <div>Categoría B</div>
-        <img src="./1.png"></img>
+        <Image
+          src="/1.png"
+          width="400%"
+          height="300%"
+          //className="h-80 w-90"
+        ></Image>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -376,7 +386,12 @@ export default function Test() {
       {/* NFT Category C */}
       <div className="ml-5">
         <div>Categoría C</div>
-        <img src="./Rare_Example.png" className="h-80 w-90"></img>
+        <Image
+          src="/Rare_Example.png"
+          width="400%"
+          height="300%"
+          //className="h-80 w-90"
+        ></Image>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -393,7 +408,12 @@ export default function Test() {
       {/* NFT Category D */}
       <div className="ml-5">
         <div>DragonKeeper Ultra Rare</div>
-        <img src="./UltraRare_Image.png" className="h-80 w-90"></img>
+        <Image
+          src="/UltraRare_Image.png"
+          width="400%"
+          height="300%"
+          //className="h-80 w-90"
+        ></Image>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -410,7 +430,12 @@ export default function Test() {
       {/* NFT Category E */}
       <div className="ml-5">
         <div>DragonKeeper Legendary</div>
-        <img src="./Legendary_Image.png" className="h-80 w-90"></img>
+        <Image
+          src="/Legendary_Image.png"
+          width="400%"
+          height="300%"
+          //className="h-80 w-90"
+        ></Image>
         <div>Descripción</div>
         <div>Precio: 0,005 ETH</div>
         {isConnected ? (
@@ -436,7 +461,7 @@ export default function Test() {
         {imageURI ? (
           <div>
             <div>Congratulations! You have adquired a DragonKeeper NFT</div>
-            <img src={imageURI} className="h-80 w-90"></img>
+            <Image src={imageURI} width="400%" height="300%"></Image>
             <Link href={openseaURL}>
               <a
                 target="_blank"
@@ -449,7 +474,11 @@ export default function Test() {
               </a>
             </Link>
             <Link href={openseaURL}>
-              <a target="_blank" rel="noreferrer" className="link-item">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-item"
+              >
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                   See it on Opensea
                 </button>

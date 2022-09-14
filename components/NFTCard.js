@@ -1,7 +1,15 @@
+import Image from "next/image";
+
 const NftCard = ({ image, id, title, address, description, attributes }) => {
   return (
-    <div className="w-1/4 mr-3 mb-4 bg-slate-100 rounded-md">
-      <img className="w-full rounded-t-md" key={id} src={image}></img>
+    <div className="w-1/2 mb-4 bg-slate-100 rounded-md">
+      <Image
+        src={image}
+        width="100%"
+        height="100%"
+        className="w-full rounded-t-md"
+        key={id}
+      ></Image>
       <div className="p-3">
         <div className="flex mb-3">
           <div className="flex-grow">
@@ -11,6 +19,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
           <div className="flex mr-3">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-700"
               href={`https://etherscan.io/token/${address}`}
             >{`${address.slice(0, 4)}...${address.slice(

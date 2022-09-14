@@ -6,6 +6,12 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
+module.exports = {
+  images: {
+    domains: ["ipfs.io", "kubicsnft.mypinata.cloud"],
+  },
+};
+
 /* module.exports = {
   env: {
     RINKEBY_URL: process.env.RINKEBY_URL,
