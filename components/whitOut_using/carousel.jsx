@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import Cube from "../cube";
 import Image from "next/image";
 import Cube3d from "../cube3d";
 import Link from "next/link";
 import { config } from "react-spring";
-import { Component } from "react";
 
-/* Install pure-react-carousel using -> npm i pure-react-carousel */
+
+
 
 export default function Carrusel1() {
 
