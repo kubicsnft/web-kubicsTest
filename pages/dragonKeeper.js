@@ -3,11 +3,12 @@ import dynamic from 'next/dynamic'
 import { FormattedMessage } from 'react-intl';
 import AppLayout from '../components/layout/AppLayout';
 import Swich from '../components/toggleSwitch';
+import Premium from '../components/mint_page/premium';
 import { BiArrowBack } from 'react-icons/bi'
 import ReactPlayer from 'react-player';
 import Roadmap from '../components/home/roadmap'
 import Image from 'next/image'
-import Cube from '../components/cube';
+// import Cube from '../components/cube';
 import Link from 'next/link';
 // =========== Imagenes =================
 import titulo from '../public/titulo.png'
@@ -18,7 +19,7 @@ import dragon4 from '../public//nft/dragon4.png'
 
 
 const style = {
-    section: 'w-full sm:w-11/12 text-center py-12 sm:py-4 flex flex-col items-center max-w-screen-2xl h-full  bg-white shadow-2xl shadow-gray-500 z-10 ',
+    section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
     separador: 'h-1  w-4/5 border-b-2 border-primary',
 }
 
@@ -29,7 +30,7 @@ const Proyecto = () => {
     return (
         <>
             <AppLayout>
-                <div className='flex justify-center w-full '>
+                <div className='flex flex-col justify-center w-full '>
                     <div className={style.section}>
                         {/*  =========== buttons =============== */}
                         <div className='grid items-center w-full grid-cols-2' >
@@ -56,10 +57,10 @@ const Proyecto = () => {
                         {/* ============= Video ============== */}
                         <div className='flex flex-col items-center w-4/5 p-2 border-t-2 border-b-2 border-primary'>
                             <div className='flex justify-center w-full '>
-                                <ReactPlayer
+                                {/* <ReactPlayer
                                     url='https://www.youtube.com/watch?v=UYNH-_3SEPg'
                                     controls
-                                />
+                                /> */}
                             </div>
                             {/* ---- Sinopsis ---- */}
                             <div className='w-full mt-2 text-justify'>
@@ -87,24 +88,6 @@ const Proyecto = () => {
                                 <Carrusel3d />
                             </div>
                             {/* --------- Categorys --------- */}
-                            {/* <div className='flex flex-row justify-between mt-24'>
-                                <div className='w-44 h-44'>
-                                <div>Category B</div>
-                                <Cube link='./test' img='/nft/dragon1.png' />
-                                </div>
-                                <div className='w-44 h-44'>
-                                <div>Category C</div>
-                                <Cube link='./test' img='/nft/dragon2.png' />
-                                </div>
-                                <div className='w-44 h-44'>
-                                <div>Category D</div>
-                                <Cube link='./test' img='/nft/dragon3.png' />
-                                </div>
-                                <div className='w-44 h-44'>
-                                <div>Category E</div>
-                                <Cube link='./test' img='/nft/dragon4.png' />
-                                </div>
-                            </div> */}
                             <div className='flex flex-row justify-between mt-24'>
                                 <div className='w-56 mr-2 border-2 rounded-lg cursor-pointer border-primary box'>
                                     <div className='mb-2'>Category B</div>
@@ -123,46 +106,10 @@ const Proyecto = () => {
                                     <Image src={dragon4} className='object-cover duration-150 ease-in ef-img' alt='nft' />
                                 </div>
                             </div>
-                            {/* <div className='flex flex-row justify-between mt-24'>
-                                <div className='w-52 py-8 border-2 rounded-lg cursor-pointer bg-gradient-to-r from-[#7B94b1] via-gray-200 to-[#7B94b1] border-primary box'>
-                                    
-                                    <img src='/nft/dragon2.png' className='object-cover mb-8 duration-150 ease-in ef-img' />
-                                    <div className='flex flex-col ml-3 text-white text-start'>
-                                        <p>Category</p>
-                                        <p>price</p>
-                                    </div>
-                                </div>
-                                <div className='w-52 py-8 border-2 rounded-lg cursor-pointer bg-gradient-to-r from-[#7B94b1] via-gray-200 to-[#7B94b1] border-primary box'>
-                                    <img src='/nft/dragon1.png' className='object-cover mb-8 duration-150 ease-in ef-img' />
-                                    <div className='flex flex-col ml-3 text-white text-start'>
-                                        <p>Category</p>
-                                        <p>price</p>
-                                    </div>
-                                </div>
-                                <div className='w-52 py-8 border-2 rounded-lg cursor-pointer bg-gradient-to-r from-[#7B94b1] via-gray-200 to-[#7B94b1] border-primary box'>
-                                    <img src='/nft/dragon3.png' className='object-cover mb-8 duration-150 ease-in ef-img' />
-                                    <div className='flex flex-col ml-3 text-white text-start'>
-                                        <p>Category</p>
-                                        <p>price</p>
-                                    </div>
-                                </div>
-                                <div className='w-52 py-8 border-2 rounded-lg cursor-pointer bg-gradient-to-r from-[#7B94b1] via-gray-200 to-[#7B94b1] border-primary box'>
-                                    <img src='/nft/dragon4.png' className='object-cover mb-8 duration-150 ease-in ef-img' />
-                                    <div className='flex flex-col ml-3 text-white text-start'>
-                                        <p>Category</p>
-                                        <p>price</p>
-                                    </div>
-                                </div>
-                            </div> */}
+                            
                             {/* ---------- Button Mint ------------ */}
                             <div className='flex justify-center mt-10'>
-                                {/* <div className='butt w-68'>
-                                    Página de minteo
-                                </div> */}
-                                {/* <button data-text="Awesome" className="button">
-                                    <span className="actual-text">&nbsp;Mintear&nbsp;</span>
-                                    <span className="hover-text" aria-hidden="true">&nbsp;mintear&nbsp;</span>
-                                </button> */}
+                                
                                 <button className="mt-4 learn-more button" onClick={() => addToWhitelist()}>
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -180,6 +127,9 @@ const Proyecto = () => {
                             <h2 className='mt-8 mb-8 text-3xl'>PROYECTO</h2>
 
                         </div>
+                    </div>
+                    <div className={style.section}>
+                                <Premium/>
                     </div>
                 </div>
 
