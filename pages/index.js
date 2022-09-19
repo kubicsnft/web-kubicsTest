@@ -7,15 +7,15 @@ import Nosotros from '../components/home/nosotros'
 import Roadmap from '../components/home/roadmap'
 import WhayIsKubics from '../components/home/whayIsKubics'
 import MenuMovil from "../components/MenuMovil";
-import Cube3d from "../components/cube3d";
-import Carrusel1 from "../components/whitOut_using/carousel";
+// import Carrusel1 from "../components/whitOut_using/carousel";
 import { FormattedMessage } from "react-intl";
-import SliderTest from "../components/sliderTest";
+
 
 
 
 // Importación dinamica de carrusel3d
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
+const Carrusel1 = dynamic(() => import('../components/whitOut_using/carousel'), { ssr: false })
 
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffd8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',
@@ -68,7 +68,7 @@ export default function Home() {
               <div className='flex items-center justify-center w-full h-full p-2 md:w-11/12'>
                 
                   {/* <CarruselPro /> */}
-                  {/* <SliderTest/> */}
+                  
                   <Carrusel1/>
                 
                 {/* <div className="sm:hidden ">
