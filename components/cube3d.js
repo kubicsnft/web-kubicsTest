@@ -3,24 +3,30 @@ import Radium from "radium";
 
 const styles = {
   cubeContainer: {
-    height: "200px",
-    width: "200px",
-    position: "relative",
-    perspective: "1000px"
-  },
-  cube: {
     height: "100%",
     width: "100%",
-    position: "absolute",
+    position: "relative",
+    perspective: "2500px",
+    display: "flex",
+    justifyContent: 'center',
+    alignItems: 'center'
+    
+  },
+  cube: {
+    height: "50%",
+    width: "50%",
+    position: "relative",
     transformStyle: "preserve-3d",
     transform: "translateZ(-300px)",
+    marginBottom:'200px',
+    marginLeft:'-200px',
     ":hover": {},
     // transition: "transform 0.5s, rotate 0.5s"
   },
   face: {
     width: "200px",
     height: "200px",
-    display: "block",
+    display: "absolute",
     position: "absolute",
     border: "1px solid hsl(212, 26%, 59%,0.5)",
     // transition: "transform 1s",
@@ -29,8 +35,7 @@ const styles = {
     textAlign: "center",
     lineHeight: "200px",
     background: "hsl(212, 26%, 59%,0.2)",
-    // backgroundImage: "url(../public/nft/dragon1.png)",
-    boxShadow: "0px 0px 80px 10px hsl(212, 26%, 59%,0.5)"
+    boxShadow: "0px 0px 70px 10px hsl(212, 26%, 59%,0.5)"
   },
   front: {
     transform: "rotateY(   0deg ) translateZ( 100px )"
@@ -77,22 +82,24 @@ class Cube extends Component {
   render() {
     const { degX } = this.state;
     return (
-      <div style={styles.cubeContainer}>
-        <div
-          style={[
-            styles.cube,
-            {
-              // transform: `translateZ(-400px) rotate3d(0, 1, 1, ${degX}deg)`
-              transform: `translateZ(-400px) rotate3d(-1,2, 0, 15deg)`
-            }
-          ]}
-        >
-          <div style={[styles.face, styles.front]}>front</div>
-          <div style={[styles.face, styles.back]}>back</div>
-          <div style={[styles.face, styles.left]}>left</div>
-          <div style={[styles.face, styles.right]}>right</div>
-          <div style={[styles.face, styles.top]}>top</div>
-          <div style={[styles.face, styles.bottom]}>bottom</div>
+      <div className="flex justify-center">
+        <div style={styles.cubeContainer}>
+          <div
+            style={[
+              styles.cube,
+              {
+                // transform: `translateZ(-400px) rotate3d(0, 1, 1, ${degX}deg)`
+                transform: `translateZ(-400px) rotate3d(-1,2, 0, 15deg)`
+              }
+            ]}
+          >
+            <div style={[styles.face, styles.front]}>front</div>
+            <div style={[styles.face, styles.back]}>back</div>
+            <div style={[styles.face, styles.left]}>left</div>
+            <div style={[styles.face, styles.right]}>right</div>
+            <div style={[styles.face, styles.top]}>top</div>
+            <div style={[styles.face, styles.bottom]}>bottom</div>
+          </div>
         </div>
       </div>
     );

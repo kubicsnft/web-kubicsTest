@@ -17,7 +17,7 @@ import dragon4 from '../../public//nft/dragon4.png'
 
 
 
-export default function Example(props) {
+export default function Slider(props) {
 
   
   return (

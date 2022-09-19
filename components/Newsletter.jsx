@@ -63,8 +63,8 @@ export default function Newsletters(props) {
                     onClick={subscribe}>
                     <p>
                         <FormattedMessage
-                            id='app.button'
-                            defaultMessage='Subcribe'/>
+                            id='app.butto'
+                            defaultMessage='Subscribe'/>
                     </p>
                     <svg strokeWidth="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinejoin="round" strokeLinecap="round"></path>

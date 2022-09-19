@@ -11,8 +11,8 @@ const langContext = React.createContext();
 // Se crea provedor
 const LangProvider = ({ children }) => {
 
-    const [mensajes, setMensajes] = useState(MensajesEn);
-    const [locale, setLocale] = useState('en');
+    const [mensajes, setMensajes] = useState(MensajesSp);
+    const [locale, setLocale] = useState('sp');
 
     const establecerIdioma = (idioma) => {
         switch (idioma) {

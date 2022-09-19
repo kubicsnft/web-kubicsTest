@@ -11,6 +11,7 @@
   "dependencies": {
     "3d-react-carousal": "^5.0.0",
     "axios": "^0.27.2",
+    "jquery": "^3.6.1",
     "next": "12.2.3",
     "pure-react-carousel": "^1.29.0",
     "radium": "^0.26.2",
@@ -19,6 +20,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-intl": "^6.0.5",
+    "react-owl-carousel": "^2.3.3",
     "react-particles": "^2.1.4",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
