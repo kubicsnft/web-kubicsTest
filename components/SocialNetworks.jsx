@@ -6,7 +6,7 @@ import Cube from "react-3d-cube";
 
 const SocialNetworks = (props) => {
 
-    var color = 'text-white bg-[#7094b1]'
+    var color = 'text-white bg-[#7B94b1]'
     var text = ''
 
     if (props.color)

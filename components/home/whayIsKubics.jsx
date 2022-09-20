@@ -14,7 +14,7 @@ const WhayIsKubics = () => {
   return (
     <>
       <div className='flex items-center w-11/12 h-full px-2 sm:px-4 '>
-        <div className='p-1 mb-6 text-justify text-white rounded shadow-xl sm:p-4 bg-primary'>
+        <div className='p-1 mb-6 text-justify text-white rounded shadow-lg shadow-gray-400 sm:p-4 bg-primary'>
           <div className={style.titulo}>
             <FormattedMessage
               id='k?.titulo1'
