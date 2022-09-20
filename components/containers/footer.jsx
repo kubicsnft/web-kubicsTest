@@ -25,14 +25,14 @@ const Footer = () => {
                         <Image src={logo} width={144} height={130} alt="logo" />
                     </div>
                     <div className='flex flex-col items-center self-center mt-4 justify-self-center'>
-                        <div className='mb-2 text-lg '>info@kubics.com</div>
-                        <div className='mb-4 text-lg '>submit_project@kubics.com</div>
+                        <div className='mb-2 text-lg text-tertiary'>info@kubics.com</div>
+                        <div className='mb-4 text-lg text-tertiary'>submit_project@kubics.com</div>
                         <SocialNetworks color='bg-white' text='text-primary' />
                     </div>
                 </div>
 
 
-                <div className='w-full justify-self-center'>
+                <div className='w-full justify-self-center '>
                     <Newsletters color='butt-color2' />
                 </div>
             </div>
