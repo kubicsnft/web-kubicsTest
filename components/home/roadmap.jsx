@@ -7,17 +7,18 @@ const Roadmap = () => {
         wraaper: 'flex flex-col items-center w-10/12  mb-8',
         row_l: 'flex flex-row justify-start md:items-center w-full ',
         row_r: 'flex md:flex-row flex-col justify-start md:items-center w-full ',
-        text_l: 'w-8/12  text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
-        text_r: 'w-8/12    text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
+        text: 'w-9/12  text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
+        text_m: 'flex justify-center w-10/12 mb-10 text-xs text-start  shadow-md p-2 rounded-lg bg-white',
         div6_l: 'hidden w-6/12 h-full border-l-2 flex justify-center  border-primary md:flex ',
         div6_r: 'hidden w-6/12 h-full border-r-2 flex justify-center  border-primary md:flex',
         forMobile_l: 'flex flex-col justify-start w-full   border-l-4 border-primary h-full md:hidden',
-        forMobile_r: 'flex flex-col justify-end items-end  w-10/12   border-l-4 border-primary h-full md:hidden',
+        forMobile_r: 'flex flex-col justify-start i  w-full   border-l-4 border-primary h-full md:hidden',
         forScreem: 'flex-row items-center justify-center hidden w-6/12 h-full border-r-2 border-primary md:flex',
         line: 'h-6  border-b-2 w-full    border-primary',
-        // vertical_r: ' border border-primary ml-4 h-56 xl:h-44 bg-primary',
         image_l: ' -mr-4 md:h-24 h-16 ',
         image_r: ' -ml-4 md:h-24 h-12',
+        phase:'mb-1 text-lg may text-primary'
+
 
     }
     return (
@@ -31,7 +32,7 @@ const Roadmap = () => {
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
-                            height={123}
+                            height={120}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
@@ -54,9 +55,9 @@ const Roadmap = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                    <div className={style.text_m} >
                         <div className='w-9/12'>
-                            <p className='mt-1 mb-1 text-lg'>Pahse 0</p>
+                            <p className='mt-1 mb-1 text-lg may '>phase 0 <span className='text-secondary'>✔</span></p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Social Networks Setup</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Landing Page</li></div>
@@ -72,8 +73,8 @@ const Roadmap = () => {
             {/* ================================================ right colums 1 =========================================== */}
             <div className={style.row_r}>
                 <div className={style.div6_r}>
-                    <div className={style.text_l}>
-                        <p className='mb-1 text-lg'>Pahse 0</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>phase 0 <span className='text-secondary'>✔</span></p>
                         <ul className=''>
                             <div className='flex flex-row'><span className='mr-2'>▪</span><li> Social Networks Setup</li></div>
                             <div className='flex flex-row'><span className='mr-2'>▪</span><li> Website Kubics Landing Page</li></div>
@@ -109,9 +110,9 @@ const Roadmap = () => {
 
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                    <div className={style.text_m} >
                         <div className='w-9/12 '>
-                            <p className='mb-1 text-lg'>Pahse I</p>
+                            <p className={style.phase}>phase I <span className='text-secondary'>✔</span></p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> First Project Definition “Dragonkeeper”.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Main and Minting page.</li></div>
@@ -133,15 +134,15 @@ const Roadmap = () => {
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
-                            height={123}
+                            height={120}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
 
                 </div>
                 <div className={style.div6_l}>
-                    <div className={style.text_r}>
-                        <p className='mb-1 text-lg'>Pahse I</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase I <span className='text-secondary'>✔</span></p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> First Project Definition “Dragonkeeper”.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Main and Minting page.</li></div>
@@ -166,10 +167,10 @@ const Roadmap = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                    <div className={style.text_m}>
                         <div className='w-9/12'>
 
-                            <p className='mb-1 text-lg'>Phase II - Q3 2022</p>
+                            <p className={style.phase}>Phase II - Q3 2022</p>
                             <ul className=''>
                                 <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitelist Release.</li></div>
                                 <div className='flex flex-row'><span className='mr-2'>▪</span><li> NFT Launch First Film project.</li></div>
@@ -187,8 +188,8 @@ const Roadmap = () => {
             {/* ================================================ right colums 2 =========================================== */}
             <div className={style.row_r}>
                 <div className={style.div6_r}>
-                    <div className={style.text_l}>
-                        <p className='mb-1 text-lg'>Phase II - Q3 2022</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase II <span className='text-primary'>- Q3 2022</span></p>
                         <ul className=''>
                             <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitelist Release.</li></div>
                             <div className='flex flex-row'><span className='mr-2'>▪</span><li> NFT Launch First Film project.</li></div>
@@ -226,9 +227,9 @@ const Roadmap = () => {
 
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                    <div className={style.text_m} >
                         <div className='w-9/12 '>
-                            <p className='mb-1 text-lg'>Phase III - Q1 2023</p>
+                            <p className={style.phase}>Phase III <span className='text-primary'>- Q1 2023</span></p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Second Film Project.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops to first project holders.</li></div>
@@ -251,15 +252,15 @@ const Roadmap = () => {
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
-                            height={123}
+                            height={120}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
 
                 </div>
                 <div className={style.div6_l}>
-                    <div className={style.text_r}>
-                        <p className='mb-1 text-lg'>Phase III - Q1 2023</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase III - Q1 2023</p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Second Film Project.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops to first project holders.</li></div>
@@ -285,9 +286,9 @@ const Roadmap = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                    <div className={style.text_m}>
                         <div className='w-9/12'>
-                            <p className='mb-1 text-lg'>Phase IV - Q2 2023</p>
+                            <p className={style.phase}>Phase IV - Q2 2023</p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Third Film Project.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops project holders.</li></div>
@@ -304,8 +305,8 @@ const Roadmap = () => {
             {/* ================================================ right colums 1 =========================================== */}
             <div className={style.row_r}>
                 <div className={style.div6_r}>
-                    <div className={style.text_l}>
-                        <p className='text-lg'>Phase IV - Q2 2023</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase IV - Q2 2023</p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Third Film Project.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops project holders.</li></div>
@@ -342,9 +343,9 @@ const Roadmap = () => {
 
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                    <div className={style.text_m} >
                         <div className='w-9/12 '>
-                            <p className='mb-1 text-lg'>Phase V - Q3 2023</p>
+                            <p className={style.phase}>Phase V - Q3 2023</p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> “Dragonkeeper” theatrical release.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> DAO follow up all projects.</li></div>
@@ -365,15 +366,15 @@ const Roadmap = () => {
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
-                            height={123}
+                            height={120}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
 
                 </div>
                 <div className={style.div6_l}>
-                    <div className={style.text_r}>
-                        <p className='mb-1 text-lg'>Phase V - Q3 2023</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase V - Q3 2023</p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> “Dragonkeeper” theatrical release.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> DAO follow up all projects.</li></div>
@@ -397,9 +398,9 @@ const Roadmap = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                    <div className={style.text_m}>
                         <div className='w-9/12'>
-                            <p className='mb-1 text-lg'>Phase VI - Q3 2022</p>
+                            <p className={style.phase}>Phase VI - Q3 2022</p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Fifth Film Project Launch.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
@@ -413,8 +414,8 @@ const Roadmap = () => {
             {/* ================================================ right colums 1 =========================================== */}
             <div className={style.row_r}>
                 <div className={style.div6_r}>
-                    <div className={style.text_l}>
-                        <p className='mb-1 text-lg'>Phase VI - Q3 2022</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase VI - Q3 2022</p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Fifth Film Project Launch.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
@@ -448,9 +449,9 @@ const Roadmap = () => {
 
                         </div>
                     </div>
-                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                    <div className={style.text_m} >
                         <div className='w-9/12 '>
-                            <p className='mb-1 text-lg'>Phase VII - Q4 2023</p>
+                            <p className={style.phase}>Phase VII - Q4 2023</p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Sixth Film Project Launch.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
@@ -468,8 +469,8 @@ const Roadmap = () => {
                 <div className={style.forScreem}>
                 </div>
                 <div className={style.div6_l}>
-                    <div className={style.text_r}>
-                        <p className='mb-1 text-lg'>Phase VII - Q4 2023</p>
+                    <div className={style.text}>
+                        <p className={style.phase}>Phase VII - Q4 2023</p>
                         <ul className=''>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Sixth Film Project Launch.</li></div>
                             <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>

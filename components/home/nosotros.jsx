@@ -13,7 +13,7 @@ const Nosotros = () => {
                 
                     <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
                         <div className='flex justify-center mb-4 w-52 h-52'>
-                            <Cube link='./test' img='/team/Salvador.jpg' />
+                            <Cube link='' img='/team/Salvador.jpg' />
                         </div>
                         <p className='text-lg text-secondary may'>Salvador</p>
                         <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
@@ -22,16 +22,18 @@ const Nosotros = () => {
                     </div>
                     <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
                         <div className='flex justify-center mb-4 w-52 h-52'>
-                            <Cube link='./test' img='/team/Pedro.jpg' />
+                            <Cube link='' img='/team/Pedro.jpg' />
                         </div>
                         <p className='text-lg text-secondary may'>Pedro</p>
                         <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
-                        Head of Research @ DappRadar involved in the blockchain industry since 2017; NFT collector, gamer, and Metaverse enthusiast. Web3 Advisor. Previously worked 6 years at EY as Sr. Financial/Data Consultant. Also passionate about sports, analytics, and Sci Fi content.                        </div>
+                        {/* Head of Research @ DappRadar involved in the blockchain industry since 2017; NFT collector, gamer, and Metaverse enthusiast. Web3 Advisor. Previously worked 6 years at EY as Sr. Financial/Data Consultant. Also passionate about sports, analytics, and Sci Fi content.                         */}
+                        Jefe de Investigación @DappRadar involucrado en la industria de blockchain desde 2017; Coleccionista de NFT, jugador y entusiasta del metaverso. Asesor Web3. Anteriormente, trabajó 6 años en EY como consultor financiero/de datos sénior. También apasionado por los deportes, el análisis y el contenido de ciencia ficción.
+                        </div>
                     </div>
                 
                     <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
                         <div className='flex justify-center mb-4 w-52 h-52 backdrop-grayscale'>
-                            <Cube link='./test' img='/team/Miguel.jpeg' />
+                            <Cube link='' img='/team/Miguel.jpeg' />
                         </div>
                         <p className='text-lg text-secondary may'>Miguel</p>
                         <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>

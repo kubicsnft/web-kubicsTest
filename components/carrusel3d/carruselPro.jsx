@@ -44,15 +44,15 @@ export default function Slider(props) {
         {
             key: uuidv4(),
             content:
-                <div className="flex flex-col items-center p-2 w-72 sm:w-96 ">
-                    <Link href='/dragonKeeper'>
+                <div className="flex flex-col items-center p-2 bg-white w-72 sm:w-96 ">
+                    {/* <Link href='/dragonKeeper'> */}
                         <Image
                             className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
                             src='/cubos/Cubo_DK.png'
                             alt='dragon Keeper'
                             width={250}
                             height={250} />
-                    </Link>
+                    {/* </Link> */}
                     <h3 className="text-xl tracking-widest text-center text-secondary text-shadow">DRAGONKEEPER</h3>
                     <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
                         Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.</div>
@@ -62,7 +62,7 @@ export default function Slider(props) {
             key: uuidv4(),
             content:
 
-                <div className="flex flex-col items-center rounded-lg w-72 sm:w-96 ">
+                <div className="flex flex-col items-center bg-white rounded-lg w-72 sm:w-96 ">
                     {/* <Link href=''> */}
                     <Image
                         className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
@@ -89,7 +89,7 @@ export default function Slider(props) {
             key: uuidv4(),
             content:
             
-            <div className="flex flex-col items-center justify-center h-full rounded-lg w-72">
+            <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
                 <Cube3d />
                 <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
             </div>
@@ -98,7 +98,7 @@ export default function Slider(props) {
         {
             key: uuidv4(),
             content:
-            <div className="flex flex-col items-center justify-center h-full rounded-lg w-72">
+            <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
             <Cube3d />
             <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
         </div>
@@ -109,7 +109,7 @@ export default function Slider(props) {
 
     return (
         <div className="flex items-center justify-center w-11/12 h-full p-8 ">
-        <div className="absolute border   h-[32rem] shadow w-72 sm:w-[27rem] rounded-lg bg-white"></div>
+        {/* <div className="absolute border   h-[32rem] shadow w-72 sm:w-[27rem] rounded-lg bg-white"></div> */}
             <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex-col items-center '>
                 <Carousel
                     slides={slides}

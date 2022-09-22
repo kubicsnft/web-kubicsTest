@@ -7,20 +7,13 @@ import Link from 'next/link'
 function Cube(props) {
 
   const style ={
-    cubeOn:'flex  h-full w-full cube  box  cursor-pointer z-50 ',
+    cubeOn:'flex  h-full w-full cube  box   z-50 ',
     cubeOff:'flex  h-full w-full cube  box'
   }
     
   
     return (
-        <Link href={props.link} >
-          
-            {/* <div 
-            className={style.cubeOn} 
-            style={{
-              backgroundImage: `url(${props.img})`,
-              backgroundRepeat: `no-repeat`,
-              backgroundSize: `100% 100%`}} > */}
+        <>
           {props.img
             ? <div 
             className={style.cubeOn}>
@@ -28,9 +21,7 @@ function Cube(props) {
             </div>
             : <div className={style.cubeOff} ></div>
           }
-            
-          
-        </Link>
+        </>
     );
   }
   

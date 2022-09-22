@@ -15,7 +15,7 @@ import { FormattedMessage } from "react-intl";
 
 // Importación dinamica de carrusel3d
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
-const Carrusel1 = dynamic(() => import('../components/whitOut_using/carousel'), { ssr: false })
+const Carrusel1 = dynamic(() => import('../components/carrusel3d/carousel'), { ssr: false })
 
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffd8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',

@@ -5,7 +5,7 @@ import Collage from '../collage'
 
 
 const style = {
-  titulo: 'text-lg sm:text-xl mt-6 mb-2 font-bold text-tertiary text-center sm:text-start ',
+  titulo: ' mt-6 mb-2 font-bold text-secondary  may text-center sm:text-start ',
   parrafo: 'mb-2 ml-2'
 }
 

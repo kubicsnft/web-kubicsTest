@@ -33,7 +33,7 @@
 
 .footer{
     text-align: center;
-    height: 100vh;
+    /* height: 500px; */
     padding: 30px;
     background-color:#7B94b1;
     color:rgb(253, 253, 253);
