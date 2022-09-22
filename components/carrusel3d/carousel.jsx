@@ -41,80 +41,80 @@ export default function Carrusel1() {
 
 
     // Components
-    const Slid = (
-        <Slider>
-            <div id="slider" className="flex items-start justify-center w-full h-full gap-6 p-8 transition duration-700 ease-out ">
-                <Slide index={0}>
+    // const Slid = (
+    //     <Slider>
+    //         <div id="slider" className="flex items-start justify-center w-full h-full gap-6 p-8 transition duration-700 ease-out ">
+    //             <Slide index={0}>
 
-                    <div className="p-6 bg-white ">
-                        {/* <Link href='/dragonKeeper'> */}
-                            <Image
-                                className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                                src='/cubos/Cubo_DK.png'
-                                alt='dragon Keeper'
-                                width={270}
-                                height={250} />
-                        {/* </Link> */}
-                        <h3 className="tracking-widest text-center xl:text-xl text-secondary may">DRAGONKEEPER</h3>
-                        <div className='w-full p-2 text-justify text-white rounded-lg bg-primary '>
-                            Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.
-                        </div>
-                    </div>
-
-
-                </Slide>
-                <Slide index={1}>
-
-                    <div className="p-6 bg-white ">
-                        {/* <Link href=''> */}
-                        <Image
-                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                            src='/cubos/Cubo_FUT.png'
-                            alt='dragon Keeper'
-                            width={270}
-                            height={250} />
-                        {/* </Link> */}
-                        <h3 className="tracking-widest text-center xl:text-xl text-secondary may">EL FUTURO YA ESTA AQUÍ</h3>
-                        <p className='w-full p-2 text-justify text-white rounded-lg bg-primary '>
-                            Largometraje de imágen real dirigido por Juan Vicente Córdoba. A finales de los años 70 y principios de los 80 en Madrid algunas emisoras de radio estaban estrechamente vinculadas a la divulgación de lo que
-                            <span id='{desplegar}' className={desplegar.desplegar}>
-                            estaba fraguándose.Una peculiar explosión creativa que constituyó todo un fenómeno social que cobró su verdadera dimensión y su total plenitud en la calle.
-                                <div onClick={changueText} id="menos" className="cursor-pointer text-tertiary">... [leer menos]</div>
-                            </span>
-                            <p onClick={changueText} className={desplegar.mas}>... [leer más]</p>
-                        </p>
-                    </div>
+    //                 <div className="p-6 bg-white ">
+    //                     {/* <Link href='/dragonKeeper'> */}
+    //                         <Image
+    //                             className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+    //                             src='/cubos/Cubo_DK.png'
+    //                             alt='dragon Keeper'
+    //                             width={270}
+    //                             height={250} />
+    //                     {/* </Link> */}
+    //                     <h3 className="tracking-widest text-center xl:text-xl text-secondary may">DRAGONKEEPER</h3>
+    //                     <div className='w-full p-2 text-justify text-white rounded-lg bg-primary '>
+    //                         Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.
+    //                     </div>
+    //                 </div>
 
 
-                </Slide>
-                <Slide index={2}>
+    //             </Slide>
+    //             <Slide index={1}>
 
-                    <div className="h-[29.4rem]  bg-white ">
-                        <div className="flex flex-col items-center justify-center h-full rounded-lg ">
-                            <Cube3d />
-                            <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
-                        </div>
-                    </div>
+    //                 <div className="p-6 bg-white ">
+    //                     {/* <Link href=''> */}
+    //                     <Image
+    //                         className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+    //                         src='/cubos/Cubo_FUT.png'
+    //                         alt='dragon Keeper'
+    //                         width={270}
+    //                         height={250} />
+    //                     {/* </Link> */}
+    //                     <h3 className="tracking-widest text-center xl:text-xl text-secondary may">EL FUTURO YA ESTA AQUÍ</h3>
+    //                     <p className='w-full p-2 text-justify text-white rounded-lg bg-primary '>
+    //                         Largometraje de imágen real dirigido por Juan Vicente Córdoba. A finales de los años 70 y principios de los 80 en Madrid algunas emisoras de radio estaban estrechamente vinculadas a la divulgación de lo que
+    //                         <span id='{desplegar}' className={desplegar.desplegar}>
+    //                         estaba fraguándose.Una peculiar explosión creativa que constituyó todo un fenómeno social que cobró su verdadera dimensión y su total plenitud en la calle.
+    //                             <div onClick={changueText} id="menos" className="cursor-pointer text-tertiary">... [leer menos]</div>
+    //                         </span>
+    //                         <p onClick={changueText} className={desplegar.mas}>... [leer más]</p>
+    //                     </p>
+    //                 </div>
 
-                </Slide>
-                <Slide index={3}>
-                    <div className="h-[29.4rem]  bg-white ">
-                        <div className="flex flex-col items-center justify-center h-full rounded-lg ">
-                            <Cube3d />
-                            <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
-                        </div>
-                    </div>
-                </Slide>
 
-            </div>
-        </Slider>)
+    //             </Slide>
+    //             <Slide index={2}>
+
+    //                 <div className="h-[29.4rem]  bg-white ">
+    //                     <div className="flex flex-col items-center justify-center h-full rounded-lg ">
+    //                         <Cube3d />
+    //                         <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+    //                     </div>
+    //                 </div>
+
+    //             </Slide>
+    //             <Slide index={3}>
+    //                 <div className="h-[29.4rem]  bg-white ">
+    //                     <div className="flex flex-col items-center justify-center h-full rounded-lg ">
+    //                         <Cube3d />
+    //                         <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+    //                     </div>
+    //                 </div>
+    //             </Slide>
+
+    //         </div>
+    //     </Slider>)
 
     const SlidMovil = (
         <Slider>
             <div id="slider" className="flex items-start justify-center w-full h-full transition duration-700 ease-out">
                 <Slide index={0}>
 
-                    <div className="flex flex-col items-center py-6 bg-white border rounded-lg shadow-lg shadow-gray-400">
+                    <div className="flex flex-col items-center py-6">
                         {/* <Link href='/dragonKeeper'> */}
                             <Image
                                 className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
@@ -133,7 +133,7 @@ export default function Carrusel1() {
                 </Slide>
                 <Slide index={1}>
 
-                    <div className="flex flex-col items-center py-6 bg-white border rounded-lg shadow-lg shadow-gray-400">
+                    <div className="flex flex-col items-center py-6">
                         {/* <Link href=''> */}
                         <Image
                             className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
@@ -158,7 +158,7 @@ export default function Carrusel1() {
                 </Slide>
                 <Slide index={2}>
 
-                    <div className="h-[26.9rem]  bg-white border rounded-lg shadow-lg shadow-gray-400">
+                    <div className="h-[26.9rem] ">
                         <div className="flex flex-col items-center justify-center h-full rounded-lg ">
                             <Cube3d />
                             <div className="absolute ml-8 text-2xl tracking-widest text-center mb-14 xl:text-3xl -rotate-12 text-secondary may">COMING SOON...</div>
@@ -167,7 +167,7 @@ export default function Carrusel1() {
 
                 </Slide>
                 <Slide index={3}>
-                    <div className="h-[26.8rem]  bg-white border rounded-lg shadow-lg shadow-gray-400">
+                    <div className="h-[26.8rem] ">
                         <div className="flex flex-col items-center justify-center h-full rounded-lg ">
                             <Cube3d />
                             <div className="absolute ml-8 text-2xl tracking-widest text-center mb-14 xl:text-3xl -rotate-12 text-secondary may">COMING SOON...</div>
@@ -201,7 +201,7 @@ export default function Carrusel1() {
 
                     {/* ==================== Carousel for desktop and large size devices ===================================*/}
 
-                    <CarouselProvider className="hidden lg:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={2} step={1} infinite={true}>
+                    {/* <CarouselProvider className="hidden lg:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={2} step={1} infinite={true}>
                         <div className="relative flex justify-center w-full">
                             {ButtomB}
                             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden bg-white border rounded-lg shadow-lg shadow-gray-400">
@@ -209,11 +209,11 @@ export default function Carrusel1() {
                             </div>
                             {ButtomN}
                         </div>
-                    </CarouselProvider>
+                    </CarouselProvider> */}
 
                     {/* ==================== Carousel for mobile and Small size Devices =================================*/}
 
-                    <CarouselProvider className="block lg:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={true}>
+                    <CarouselProvider className="block bg-white border rounded-lg shadow-lg w-12/12 lg:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={true}>
                         <div className="relative flex justify-center w-full">
                             {ButtomB}
                             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">

@@ -45,13 +45,19 @@ a {
   }
 }
 
-/* ============= cubo ==================*/
+/* ======================= My class ===========================*/
 .cube{
   clip-path: polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%);
   background: linear-gradient(90deg,  rgba(87,87,87,1) 0%, rgba(163,163,163,1) 35%, rgba(240,239,242,1)100%);
 }
 
+.text-shadow{
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 1);
+}
 
+.lista{
+  list-style-type:square;
+}
 
 /*========= Agrandar imagen al hacer hover =============0 */
 .box:hover  .shad2{
