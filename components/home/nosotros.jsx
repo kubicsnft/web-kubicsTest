@@ -26,8 +26,7 @@ const Nosotros = () => {
                         </div>
                         <p className='text-lg text-secondary may'>Pedro</p>
                         <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
-                            Lorem Ipsum is simply dummy text of the  ever since the 1500s,Lorem Ipsum is simply dummy text of the  ever since the 1500s, and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        </div>
+                        Head of Research @ DappRadar involved in the blockchain industry since 2017; NFT collector, gamer, and Metaverse enthusiast. Web3 Advisor. Previously worked 6 years at EY as Sr. Financial/Data Consultant. Also passionate about sports, analytics, and Sci Fi content.                        </div>
                     </div>
                 
                     <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>

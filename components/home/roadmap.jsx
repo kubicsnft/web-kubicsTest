@@ -4,206 +4,488 @@ import React from 'react';
 const Roadmap = () => {
 
     const style = {
-        wraaper: 'flex flex-col items-center w-9/12 xl:w-full mb-8',
-        row_l: 'flex flex-row justify-start xl:items-center w-full xl:w-auto',
-        row_r: 'flex flex-row justify-start xl:items-center w-full xl:w-auto',
-        text_l: 'w-32 h-32 mr-8 text-xs text-justify',
-        text_r: 'w-32 h-32 ml-2 xl:ml-8 text-xs text-justify hidden xl:flex',
-        text_m: 'w-52 h-32 mt-4 ml-2 xl:ml-8 text-xs text-justify xl:hidden ',
-        text_m2: 'w-52 h-32  xl:ml-8 text-xs text-justify xl:hidden -ml-28',
-        horizontal: 'h-6  border-b-2 w-full xl:w-44   border-primary',
-        horizontal2: 'h-6 flex border-b-2 w-1/5  border-primary',
-        vertical_l: 'border-2 border-primary mr-4 h-44 bg-primary',
-        vertical_r: ' border-2 border-primary ml-4 h-56 xl:h-44 bg-primary',
-        cube: 'w-10 h-10 sm:w-16 sm:h-16 xl:w-28 xl:h-28 bg-primary mb-2',
-        cubetest: 'w-10 h-10 sm:w-16 sm:h-16 xl:w-28 xl:h-28  mb-10 sm:mb-8',
-        div4: '',
+        wraaper: 'flex flex-col items-center w-10/12  mb-8',
+        row_l: 'flex flex-row justify-start md:items-center w-full ',
+        row_r: 'flex md:flex-row flex-col justify-start md:items-center w-full ',
+        text_l: 'w-8/12  text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
+        text_r: 'w-8/12    text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
+        div6_l: 'hidden w-6/12 h-full border-l-2 flex justify-center  border-primary md:flex ',
+        div6_r: 'hidden w-6/12 h-full border-r-2 flex justify-center  border-primary md:flex',
+        forMobile_l: 'flex flex-col justify-start w-full   border-l-4 border-primary h-full md:hidden',
+        forMobile_r: 'flex flex-col justify-end items-end  w-10/12   border-l-4 border-primary h-full md:hidden',
+        forScreem: 'flex-row items-center justify-center hidden w-6/12 h-full border-r-2 border-primary md:flex',
+        line: 'h-6  border-b-2 w-full    border-primary',
+        // vertical_r: ' border border-primary ml-4 h-56 xl:h-44 bg-primary',
+        image_l: ' -mr-4 md:h-24 h-16 ',
+        image_r: ' -ml-4 md:h-24 h-12',
+
     }
     return (
         <div className={style.wraaper}>
-        {/* ==================== left colums ====================  */}
+            {/* ================================================ left colums 1 ===========================================  */}
             <div className={style.row_l}>
-                <div className='flex-row items-center justify-center hidden xl:flex'>
-                    <div className={style.text_l}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-                    </div>
-                    {/* <div className={style.cube} style={{ clipPath: 'polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%)' }}> */}
-                    <div className={style.cubetest} >
-                        <div className='absolute '>
-                            <Image
+                {/*------------- For Screem 💻 ------------*/}
+                <div className={style.forScreem}>
+                    <div className={style.image_l} >
+                        <Image
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
-                            height={120}
-                            alt='logo'/>
-                        </div>
+                            height={123}
+                            alt='logo' />
+                    </div>
+                    <div className={style.line}></div>
 
-                    </div>
-                    <div className={style.horizontal}></div>
-                    <div className={style.vertical_l}></div>
-                    <div className='w-32 '></div>
-                    <div className='w-44'></div>
-                    <div className='w-32'></div>
                 </div>
-                {/*------------- For Mobile ------------*/}
-                <div className='flex flex-row justify-start w-full xl:items-center xl:hidden'>
-                    <div className={style.vertical_r}></div>
-                    <div className={style.horizontal2}></div>
-                    <div>
-                    <div className={style.cubetest} >
-                        <div className='absolute -ml-2'>
-                            <Image
-                            className=''
-                            src='/logos/logo_primary.png'
-                            width={90}
-                            height={80}
-                            alt='logo'/>
-                        </div>
-                    </div>                        
-                    <div className={style.text_m}>
-                            Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                <div className={style.div6_l}></div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_l} >
+
+                    <div className='flex flex-row w-2/12'>
+                        <div className={style.line}></div>
+                        <div className={style.image_l} >
+                            <div className='absolute -ml-2'>
+                                <Image
+                                    className=''
+                                    src='/logos/logo_primary.png'
+                                    width={70}
+                                    height={65}
+                                    alt='logo' />
+                            </div>
                         </div>
                     </div>
-                    <div className={style.text_r}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                        <div className='w-9/12'>
+                            <p className='mt-1 mb-1 text-lg'>Pahse 0</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Social Networks Setup</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Landing Page</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelisting</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitepaper</li></div>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
                 {/* ------------------------------------- */}
             </div>
-            {/* ========================== right colums ====================== */}
+            {/* ================================================ right colums 1 =========================================== */}
             <div className={style.row_r}>
-                <div className='hidden w-32 xl:flex'></div>
-                <div className='hidden w-32 xl:flex'></div>
-                <div className='hidden w-44 xl:flex'></div>
-                <div className={style.vertical_r}></div>
-                <div className={style.horizontal}></div>
-                <div>
-                    <div className={style.cube} style={{ clipPath: 'polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%)' }}></div>
-                    <div className={style.text_m2}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                    </div>
-                </div>
-                <div className={style.text_r}>
-                    Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-                </div>
-            </div>
-            {/* ==================== left colums ====================  */}
-            <div className={style.row_l}>
-                <div className='flex-row items-center justify-center hidden xl:flex'>
+                <div className={style.div6_r}>
                     <div className={style.text_l}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                        <p className='mb-1 text-lg'>Pahse 0</p>
+                        <ul className=''>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Social Networks Setup</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Website Kubics Landing Page</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitelisting</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitepaper</li></div>
+                        </ul>
                     </div>
-                    {/* <div className={style.cube} style={{ clipPath: 'polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%)' }}> */}
-                    <div className={style.cubetest} >
-                        <div className='absolute '>
-                            <Image
+                </div>
+                <div className='flex-row items-center justify-center hidden w-6/12 h-full border-l-2 border-primary md:flex'>
+                    <div className={style.line}></div>
+                    <div className={style.image_r} >
+                        <Image
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
                             height={120}
-                            alt='logo'/>
-                        </div>
-
+                            alt='logo' />
                     </div>
-                    <div className={style.horizontal}></div>
-                    <div className={style.vertical_l}></div>
-                    <div className='w-32 '></div>
-                    <div className='w-44'></div>
-                    <div className='w-32'></div>
                 </div>
-                {/*------------- For Mobile ------------*/}
-                <div className='flex flex-row justify-start w-full xl:items-center xl:hidden'>
-                    <div className={style.vertical_r}></div>
-                    <div className={style.horizontal2}></div>
-                    <div>
-                    <div className={style.cubetest} >
-                        <div className='absolute -ml-2'>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_r} >
+
+                    <div className='flex flex-row w-full'>
+                        <div className={style.line}></div>
+                        <div className={style.image_r} >
+
                             <Image
-                            className=''
-                            src='/logos/logo_primary.png'
-                            width={90}
-                            height={80}
-                            alt='logo'/>
-                        </div>
-                    </div>                        
-                    <div className={style.text_m}>
-                            Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                className=''
+                                src='/logos/logo_primary.png'
+                                width={50}
+                                height={45}
+                                alt='logo' />
+
                         </div>
                     </div>
-                    <div className={style.text_r}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                        <div className='w-9/12 '>
+                            <p className='mb-1 text-lg'>Pahse I</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> First Project Definition “Dragonkeeper”.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Main and Minting page.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Whitelisting</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Whitepaper</li></div>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
                 {/* ------------------------------------- */}
             </div>
+            {/* ================================================ left colums 2 ===========================================  */}
+            <div className={style.row_l}>
+                {/*------------- For Screem 💻 ------------*/}
+                <div className={style.forScreem}>
+                    <div className={style.image_l} >
+                        <Image
+                            className=''
+                            src='/logos/logo_primary.png'
+                            width={135}
+                            height={123}
+                            alt='logo' />
+                    </div>
+                    <div className={style.line}></div>
+
+                </div>
+                <div className={style.div6_l}>
+                    <div className={style.text_r}>
+                        <p className='mb-1 text-lg'>Pahse I</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> First Project Definition “Dragonkeeper”.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Main and Minting page.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Whitelisting</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Whitepaper</li></div>
+                        </ul>
+                    </div>
+                </div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_l} >
+
+                    <div className='flex flex-row w-2/12'>
+                        <div className={style.line}></div>
+                        <div className={style.image_l} >
+                            <div className='absolute -ml-2'>
+                                <Image
+                                    className=''
+                                    src='/logos/logo_primary.png'
+                                    width={70}
+                                    height={65}
+                                    alt='logo' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                        <div className='w-9/12'>
+
+                            <p className='mb-1 text-lg'>Phase II - Q3 2022</p>
+                            <ul className=''>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitelist Release.</li></div>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> NFT Launch First Film project.</li></div>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> Art material, teasers release.</li></div>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> Discord activity.</li></div>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> Preparation Second Project.</li></div>
+                                <div className='flex flex-row'><span className='mr-2'>▪</span><li> DAO setup.</li></div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                {/* ------------------------------------- */}
+            </div>
+            {/* ================================================ right colums 2 =========================================== */}
             <div className={style.row_r}>
-                <div className='hidden w-32 xl:flex'></div>
-                <div className='hidden w-32 xl:flex'></div>
-                <div className='hidden w-44 xl:flex'></div>
-                <div className={style.vertical_r}></div>
-                <div className={style.horizontal}></div>
-                <div>
-                    <div className={style.cube} style={{ clipPath: 'polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%)' }}></div>
-                    <div className={style.text_m2}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                    </div>
-                </div>
-                <div className={style.text_r}>
-                    Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-                </div>
-            </div>
-            {/* ==================== left colums ====================0 */}
-            <div className={style.row_l}>
-                <div className='flex-row items-center justify-center hidden xl:flex'>
+                <div className={style.div6_r}>
                     <div className={style.text_l}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                        <p className='mb-1 text-lg'>Phase II - Q3 2022</p>
+                        <ul className=''>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Whitelist Release.</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> NFT Launch First Film project.</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Art material, teasers release.</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Discord activity.</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> Preparation Second Project.</li></div>
+                            <div className='flex flex-row'><span className='mr-2'>▪</span><li> DAO setup.</li></div>
+                        </ul>
                     </div>
-                    {/* <div className={style.cube} style={{ clipPath: 'polygon(0 7%, 66% 0, 100% 17%, 100% 88%, 33% 100%, 0 74%)' }}> */}
-                    <div className={style.cubetest} >
-                        <div className='absolute '>
-                            <Image
+                </div>
+                <div className='flex-row items-center justify-center hidden w-6/12 h-full border-l-2 border-primary md:flex'>
+                    <div className={style.line}></div>
+                    <div className={style.image_r} >
+                        <Image
                             className=''
                             src='/logos/logo_primary.png'
                             width={135}
                             height={120}
-                            alt='logo'/>
-                        </div>
-
+                            alt='logo' />
                     </div>
-                    <div className={style.horizontal}></div>
-                    <div className={style.vertical_l}></div>
-                    <div className='w-32 '></div>
-                    <div className='w-44'></div>
-                    <div className='w-32'></div>
                 </div>
-                {/*------------- For Mobile ------------*/}
-                <div className='flex flex-row justify-start w-full xl:items-center xl:hidden'>
-                    <div className={style.vertical_r}></div>
-                    <div className={style.horizontal2}></div>
-                    <div>
-                    <div className={style.cubetest} >
-                        <div className='absolute -ml-2'>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_r} >
+
+                    <div className='flex flex-row w-full'>
+                        <div className={style.line}></div>
+                        <div className={style.image_r} >
+
                             <Image
-                            className=''
-                            src='/logos/logo_primary.png'
-                            width={90}
-                            height={80}
-                            alt='logo'/>
-                        </div>
-                    </div>                        
-                    <div className={style.text_m}>
-                            Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                className=''
+                                src='/logos/logo_primary.png'
+                                width={50}
+                                height={45}
+                                alt='logo' />
+
                         </div>
                     </div>
-                    <div className={style.text_r}>
-                        Lorem Ipsum has been the  standard dummy text ever since the 1500s,e a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                        <div className='w-9/12 '>
+                            <p className='mb-1 text-lg'>Phase III - Q1 2023</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Second Film Project.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops to first project holders.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  End Q1 Second project Launch.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  First project exclusive material in Discord.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Third Project Preparation.</li></div>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
                 {/* ------------------------------------- */}
             </div>
+            {/* ================================================ left colums 3 ===========================================  */}
+            <div className={style.row_l}>
+                {/*------------- For Screem 💻 ------------*/}
+                <div className={style.forScreem}>
+                    <div className={style.image_l} >
+                        <Image
+                            className=''
+                            src='/logos/logo_primary.png'
+                            width={135}
+                            height={123}
+                            alt='logo' />
+                    </div>
+                    <div className={style.line}></div>
 
+                </div>
+                <div className={style.div6_l}>
+                    <div className={style.text_r}>
+                        <p className='mb-1 text-lg'>Phase III - Q1 2023</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Second Film Project.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops to first project holders.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  End Q1 Second project Launch.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  First project exclusive material in Discord.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Third Project Preparation.</li></div>
+                        </ul>
+                    </div>
+                </div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_l} >
 
+                    <div className='flex flex-row w-2/12'>
+                        <div className={style.line}></div>
+                        <div className={style.image_l} >
+                            <div className='absolute -ml-2'>
+                                <Image
+                                    className=''
+                                    src='/logos/logo_primary.png'
+                                    width={70}
+                                    height={65}
+                                    alt='logo' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                        <div className='w-9/12'>
+                            <p className='mb-1 text-lg'>Phase IV - Q2 2023</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Third Film Project.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops project holders.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  End Q2 Second Third Launch.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Discord channel activity.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Ticket Rafles for “Dragonkeeper”.</li></div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                {/* ------------------------------------- */}
+            </div>
+            {/* ================================================ right colums 1 =========================================== */}
+            <div className={style.row_r}>
+                <div className={style.div6_r}>
+                    <div className={style.text_l}>
+                        <p className='text-lg'>Phase IV - Q2 2023</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Whitelist Third Film Project.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Air drops project holders.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  End Q2 Second Third Launch.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Discord channel activity.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Ticket Rafles for “Dragonkeeper”.</li></div>
+                        </ul>
+                    </div>
+                </div>
+                <div className='flex-row items-center justify-center hidden w-6/12 h-full border-l-2 border-primary md:flex'>
+                    <div className={style.line}></div>
+                    <div className={style.image_r} >
+                        <Image
+                            className=''
+                            src='/logos/logo_primary.png'
+                            width={135}
+                            height={120}
+                            alt='logo' />
+                    </div>
+                </div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_r} >
+
+                    <div className='flex flex-row w-full'>
+                        <div className={style.line}></div>
+                        <div className={style.image_r} >
+
+                            <Image
+                                className=''
+                                src='/logos/logo_primary.png'
+                                width={50}
+                                height={45}
+                                alt='logo' />
+
+                        </div>
+                    </div>
+                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                        <div className='w-9/12 '>
+                            <p className='mb-1 text-lg'>Phase V - Q3 2023</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> “Dragonkeeper” theatrical release.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> DAO follow up all projects.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Fourth Film Project Launch.</li></div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                {/* ------------------------------------- */}
+            </div>
+            {/* ================================================ left colums 2 ===========================================  */}
+            <div className={style.row_l}>
+                {/*------------- For Screem 💻 ------------*/}
+                <div className={style.forScreem}>
+                    <div className={style.image_l} >
+                        <Image
+                            className=''
+                            src='/logos/logo_primary.png'
+                            width={135}
+                            height={123}
+                            alt='logo' />
+                    </div>
+                    <div className={style.line}></div>
+
+                </div>
+                <div className={style.div6_l}>
+                    <div className={style.text_r}>
+                        <p className='mb-1 text-lg'>Phase V - Q3 2023</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> “Dragonkeeper” theatrical release.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> DAO follow up all projects.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li>  Fourth Film Project Launch.</li></div>
+                        </ul>
+                    </div>
+                </div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_l} >
+
+                    <div className='flex flex-row w-2/12'>
+                        <div className={style.line}></div>
+                        <div className={style.image_l} >
+                            <div className='absolute -ml-2'>
+                                <Image
+                                    className=''
+                                    src='/logos/logo_primary.png'
+                                    width={70}
+                                    height={65}
+                                    alt='logo' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center w-full mb-10 text-xs text-start'>
+                        <div className='w-9/12'>
+                            <p className='mb-1 text-lg'>Phase VI - Q3 2022</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Fifth Film Project Launch.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                {/* ------------------------------------- */}
+            </div>
+            {/* ================================================ right colums 1 =========================================== */}
+            <div className={style.row_r}>
+                <div className={style.div6_r}>
+                    <div className={style.text_l}>
+                        <p className='mb-1 text-lg'>Phase VI - Q3 2022</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Fifth Film Project Launch.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
+                        </ul>
+                    </div>
+                </div>
+                <div className='flex-row items-center justify-center hidden w-6/12 h-full border-l-2 border-primary md:flex'>
+                    <div className={style.line}></div>
+                    <div className={style.image_r} >
+                        <Image
+                            className=''
+                            src='/logos/logo_primary.png'
+                            width={135}
+                            height={120}
+                            alt='logo' />
+                    </div>
+                </div>
+                {/*------------- For Mobile 📱 ------------*/}
+                <div className={style.forMobile_r} >
+
+                    <div className='flex flex-row w-full'>
+                        <div className={style.line}></div>
+                        <div className={style.image_r} >
+
+                            <Image
+                                className=''
+                                src='/logos/logo_primary.png'
+                                width={50}
+                                height={45}
+                                alt='logo' />
+
+                        </div>
+                    </div>
+                    <div className='flex justify-center w-full mb-10 text-xs text-start '>
+                        <div className='w-9/12 '>
+                            <p className='mb-1 text-lg'>Phase VII - Q4 2023</p>
+                            <ul className=''>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Sixth Film Project Launch.</li></div>
+                                <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                {/* ------------------------------------- */}
+            </div>
+            {/* ================================================ left colums 2 ===========================================  */}
+            <div className={style.row_l}>
+                {/*------------- For Screem 💻 ------------*/}
+                <div className={style.forScreem}>
+                </div>
+                <div className={style.div6_l}>
+                    <div className={style.text_r}>
+                        <p className='mb-1 text-lg'>Phase VII - Q4 2023</p>
+                        <ul className=''>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Sixth Film Project Launch.</li></div>
+                            <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {/* ------------------------------------- */}
         </div>
+
+
+
+
+
+
+
     );
 }
 

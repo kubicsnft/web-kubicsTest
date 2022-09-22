@@ -19,7 +19,7 @@ const Carrusel1 = dynamic(() => import('../components/whitOut_using/carousel'), 
 
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffd8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',
-  titulo: 'mt-4 mb-6 text-2xl sm:text-3xl pt-14 sm-p-3 text-primary may',
+  titulo: 'text-shadow mt-4 mb-6 text-2xl sm:text-3xl pt-14 sm-p-3 text-primary may',
   // separador: 'h-2  w-full bg-primary border-primary ',
 }
 
@@ -56,7 +56,7 @@ export default function Home() {
             {/*================= Section 2: =================*/}
             <div className={style.section}>
               {/* <Proyectos /> */}
-              <div className={style.separador}></div>
+              
               <div>
                 <h2 id='proyectos' className={style.titulo}>
                   <FormattedMessage
@@ -65,20 +65,16 @@ export default function Home() {
                   />
                 </h2>
               </div>
-              <div className='flex items-center justify-center w-full h-full p-2 md:w-11/12'>
-                
-                  {/* <CarruselPro /> */}
-                  
-                  <Carrusel1/>
-                
-                {/* <div className="sm:hidden ">
-                  <Carrusel1 />
-                </div> */}
+              <div className='items-center justify-center hidden w-full h-full p-2 sm:flex'>
+                <CarruselPro />
+              </div>
+              <div className="flex items-center justify-center w-full h-full p-2 sm:hidden ">
+                <Carrusel1 />
               </div>
             </div>
             {/*================= Section 3: ================= */}
             <div className={style.section}>
-              <div className={style.separador}></div>
+              
               <h2 id='nosotros' className={style.titulo}>
                 <FormattedMessage
                   id='home.title3'
@@ -89,7 +85,7 @@ export default function Home() {
             </div>
             {/*================= Section 4: ===================*/}
             <div className={style.section}>
-              <div className={style.separador}></div>
+              
               <h2 id='roadmap' className={style.titulo}>ROADMAP</h2>
               <Roadmap />
             </div>
