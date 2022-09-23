@@ -120,7 +120,7 @@ export default function Slider(props) {
                 />
                 <div className='z-10 flex flex-row justify-between w-full'>
                     {/* Button left */}
-                    <div className="z-50 -mt-12 md:-ml-10 sm:-ml-4 -ml-20 text-3xl h-full transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40 text-[#E1B649]"
+                    <div className="z-50 -mt-12 md:-ml-10 sm:-ml-4 -ml-16 text-lg bg-white sm:bg-inherit sm:text-3xl border-primary sm:border-none border rounded-full p-1 h-full transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40 text-[#E1B649]"
                         onClick={() => {
                             setState({ goToSlide: state.goToSlide - 1 });
                         }}>
@@ -128,7 +128,7 @@ export default function Slider(props) {
                     </div>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     {/* button right */}
-                    <div className="z-50 -mt-12 md:-mr-10 sm:-mr-4 -mr-20 text-3xl transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40   text-[#E1B649]"
+                    <div className="z-50 -mt-12 md:-mr-10 sm:-mr-4 -mr-16 text-lg bg-white sm:bg-inherit sm:text-3xl border-primary sm:border-none border rounded-full p-1 h-full transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40   text-[#E1B649]"
                         onClick={() => {
                             setState({ goToSlide: state.goToSlide + 1 });
                         }}>
