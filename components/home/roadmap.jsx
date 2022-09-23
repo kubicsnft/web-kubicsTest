@@ -8,7 +8,7 @@ const Roadmap = () => {
         row_l: 'flex flex-row justify-start md:items-center w-full ',
         row_r: 'flex md:flex-row flex-col justify-start md:items-center w-full ',
         text: 'w-9/12  text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
-        text_m: 'flex justify-center w-10/12 mb-10 text-xs text-start  shadow-md p-2 rounded-lg bg-white',
+        text_m: 'flex justify-center w-10/12 mb-10 text-xs text-start  shadow-md p-2 rounded-lg bg-white text-primary',
         div6_l: 'hidden w-6/12 h-full border-l-2 flex justify-center  border-primary md:flex ',
         div6_r: 'hidden w-6/12 h-full border-r-2 flex justify-center  border-primary md:flex',
         forMobile_l: 'flex flex-col justify-start w-full   border-l-4 border-primary h-full md:hidden',

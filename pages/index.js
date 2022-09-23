@@ -65,10 +65,10 @@ export default function Home() {
                   />
                 </h2>
               </div>
-              <div className='items-center justify-center hidden w-full h-full p-2 sm:flex'>
+              <div className='flex items-center justify-center w-10/12 h-full p-2 sm:w-full'>
                 <CarruselPro />
               </div>
-              <div className="flex items-center justify-center w-full h-full p-2 sm:hidden ">
+              <div className="flex items-center justify-center hidden w-full h-full p-2 ">
                 <Carrusel1 />
               </div>
             </div>
