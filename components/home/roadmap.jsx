@@ -50,7 +50,7 @@ const Roadmap = () => {
                                     className=''
                                     src='/logos/logo_primary.png'
                                     width={70}
-                                    height={65}
+                                    height={63}
                                     alt='logo' />
                             </div>
                         </div>
@@ -105,7 +105,7 @@ const Roadmap = () => {
                                 className=''
                                 src='/logos/logo_primary.png'
                                 width={50}
-                                height={45}
+                                height={46.5}
                                 alt='logo' />
 
                         </div>
@@ -162,7 +162,7 @@ const Roadmap = () => {
                                     className=''
                                     src='/logos/logo_primary.png'
                                     width={70}
-                                    height={65}
+                                    height={63}
                                     alt='logo' />
                             </div>
                         </div>
@@ -222,7 +222,7 @@ const Roadmap = () => {
                                 className=''
                                 src='/logos/logo_primary.png'
                                 width={50}
-                                height={45}
+                                height={46.5}
                                 alt='logo' />
 
                         </div>
@@ -281,7 +281,7 @@ const Roadmap = () => {
                                     className=''
                                     src='/logos/logo_primary.png'
                                     width={70}
-                                    height={65}
+                                    height={63}
                                     alt='logo' />
                             </div>
                         </div>
@@ -338,7 +338,7 @@ const Roadmap = () => {
                                 className=''
                                 src='/logos/logo_primary.png'
                                 width={50}
-                                height={45}
+                                height={46.5}
                                 alt='logo' />
 
                         </div>
@@ -393,7 +393,7 @@ const Roadmap = () => {
                                     className=''
                                     src='/logos/logo_primary.png'
                                     width={70}
-                                    height={65}
+                                    height={63}
                                     alt='logo' />
                             </div>
                         </div>
@@ -444,7 +444,7 @@ const Roadmap = () => {
                                 className=''
                                 src='/logos/logo_primary.png'
                                 width={50}
-                                height={45}
+                                height={46.5}
                                 alt='logo' />
 
                         </div>

@@ -12,14 +12,6 @@ import { config } from "react-spring";
 export default function Carrusel1() {
 
 
-    // const [state, setState] = useState({
-    //     goToSlide: 0,
-    //     offsetRadius: 4,
-    //     showNavigation: false,
-    //     config: config.default,
-
-    // });
-
     const [desplegar, setDesplegar] = useState({
         desplegar: 'hidden',
         mas: 'inline cursor-pointer text-tertiary'
@@ -111,17 +103,17 @@ export default function Carrusel1() {
 
     const SlidMovil = (
         <Slider>
-            <div id="slider" className="flex items-start justify-center w-full h-full transition duration-700 ease-out">
+            <div id="slider" className="flex items-start justify-center w-full h-full transition duration-75 ease-in-out">
                 <Slide index={0}>
 
                     <div className="flex flex-col items-center py-6">
                         {/* <Link href='/dragonKeeper'> */}
-                            <Image
-                                className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                                src='/cubos/Cubo_DK.png'
-                                alt='dragon Keeper'
-                                width={230}
-                                height={210} />
+                        <Image
+                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+                            src='/cubos/Cubo_DK.png'
+                            alt='dragon Keeper'
+                            width={230}
+                            height={210} />
                         {/* </Link> */}
                         <h3 className="text-center text-secondary may">DRAGONKEEPER</h3>
                         <div className='w-10/12 p-2 text-sm text-justify text-white border-t rounded-lg bg-primary'>
@@ -179,18 +171,36 @@ export default function Carrusel1() {
         </Slider>)
 
     const ButtomB = (
-    <ButtonBack role="button" aria-label="slide backward" className="text-secondary absolute -left-3 z-30 p-3  rounded-full cursor-pointer top-[15rem] opacity-40 border-primary  hover:opacity-100 " id="prev">
-        <svg width={20} height={50} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 1L1 7L7 13" stroke="#E1B649" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    </ButtonBack>)
+        <ButtonBack
+            role="button"
+            aria-label="slide backward"
+            className="text-secondary absolute -left-2 z-30 p-1   rounded-full cursor-pointer top-[10rem] opacity-40 border-primary  hover:opacity-100 "
+            id="prev">
+            <svg
+                width={20}
+                height={30}
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1L1 7L7 13" stroke="#E1B649" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        </ButtonBack>)
 
     const ButtomN = (
-    <ButtonNext role="button" aria-label="slide forward" className="text-secondary absolute -right-3 z-30 p-3  rounded-full cursor-pointer top-[15rem] opacity-40 border-primary  hover:opacity-100 " id="prev">
-        <svg width={20} height={50} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L7 7L1 13" stroke="#E1B649" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    </ButtonNext>)
+        <ButtonNext
+            role="button"
+            aria-label="slide forward"
+            className="text-secondary absolute -right-2 z-30 p-1   rounded-full cursor-pointer top-[10rem] opacity-40 border-primary  hover:opacity-100 "
+            id="prev">
+            <svg 
+                width={20}
+                height={30}
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L1 13" stroke="#E1B649" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        </ButtonNext>)
 
 
 
@@ -200,20 +210,18 @@ export default function Carrusel1() {
                 <div className="flex items-center justify-center w-full h-full ">
 
                     {/* ==================== Carousel for desktop and large size devices ===================================*/}
-
                     {/* <CarouselProvider className="hidden lg:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={2} step={1} infinite={true}>
-                        <div className="relative flex justify-center w-full">
-                            {ButtomB}
-                            <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden bg-white border rounded-lg shadow-lg shadow-gray-400">
-                                {Slid}
+                            <div className="relative flex justify-center w-full">
+                                {ButtomB}
+                                <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden bg-white border rounded-lg shadow-lg shadow-gray-400">
+                                    {Slid}
+                                </div>
+                                {ButtomN}
                             </div>
-                            {ButtomN}
-                        </div>
-                    </CarouselProvider> */}
-
+                        </CarouselProvider> */}
                     {/* ==================== Carousel for mobile and Small size Devices =================================*/}
 
-                    <CarouselProvider className="block bg-white border rounded-lg shadow-lg w-12/12 lg:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={true}>
+                    <CarouselProvider className="block bg-white border rounded-lg shadow-lg w-12/12 lg:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={false}>
                         <div className="relative flex justify-center w-full">
                             {ButtomB}
                             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">

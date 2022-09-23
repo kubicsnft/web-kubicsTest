@@ -11,7 +11,7 @@ function MobileNav({ open, setOpen }) {
     return (
         <div className={`xl:hidden absolute  backdrop-blur-3xl  top-0 left-0 h-auto pb-4 w-full sm:w-80  z-50 border-b   shadow-lg transform ${open ? "-translate-y-0 mt-4" : "-translate-y-full "} transition-transform duration-150 ease-in-out filter drop-shadow-md `}>
             <div className="flex flex-row justify-end h-16 bg-white sm:justify-center sm: ">
-                <div className='flex justify-end w-3/12 h-full text-xs scale-90 sm:hidden items-cemter'><ToggleSwitch /></div>
+                <div className='flex justify-end w-3/12 h-full text-xs scale-90 sm:hidden items-cemter text-primary'><ToggleSwitch /></div>
             </div>
             <div className="flex flex-col items-center justify-center px-4 ">
                 <div className='flex flex-row items-center justify-center w-6/12 h-full sm:w-auto'>
