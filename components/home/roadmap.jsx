@@ -7,17 +7,17 @@ const Roadmap = () => {
         wraaper: 'flex flex-col items-center w-10/12  mb-8',
         row_l: 'flex flex-row justify-start md:items-center w-full ',
         row_r: 'flex md:flex-row flex-col justify-start md:items-center w-full ',
-        text: 'w-9/12  text-xs text-start mb-10 shadow-md p-2 rounded-lg bg-white',
+        text: 'w-9/12  text-xs text-start mb-6 shadow-md p-2 rounded-lg bg-white',
         text_m: 'flex justify-center w-10/12 mb-10 text-xs text-start  shadow-md p-2 rounded-lg bg-white text-primary',
         div6_l: 'hidden w-6/12 h-full border-l-2 flex justify-center  border-primary md:flex ',
         div6_r: 'hidden w-6/12 h-full border-r-2 flex justify-center  border-primary md:flex',
         forMobile_l: 'flex flex-col justify-start w-full   border-l-4 border-primary h-full md:hidden',
-        forMobile_r: 'flex flex-col justify-start i  w-full   border-l-4 border-primary h-full md:hidden',
+        forMobile_r: 'flex flex-col justify-start w-full   border-l-4 border-primary h-full md:hidden',
         forScreem: 'flex-row items-center justify-center hidden w-6/12 h-full border-r-2 border-primary md:flex',
-        line: 'h-6  border-b-2 w-full    border-primary',
-        image_l: ' -mr-4 md:h-24 h-16 ',
-        image_r: ' -ml-4 md:h-24 h-12',
-        phase:'mb-1 text-lg may text-primary'
+        line: 'h-6  border-b-2 w-full border-primary',
+        image_l: '-mr-4 md:h-24 h-16 ',
+        image_r: ' -ml-4 md:h-24 h-12 -mt-1',
+        phase:'  text-lg may text-primary'
 
 
     }
@@ -31,8 +31,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
@@ -44,12 +44,12 @@ const Roadmap = () => {
 
                     <div className='flex flex-row w-2/12'>
                         <div className={style.line}></div>
-                        <div className={style.image_l} >
-                            <div className='absolute -ml-2'>
+                        <div className={style.image_r} >
+                            <div className='absolute -mt-4'>
                                 <Image
                                     className=''
                                     src='/logos/logo_primary.png'
-                                    width={70}
+                                    width={66}
                                     height={63}
                                     alt='logo' />
                             </div>
@@ -57,7 +57,7 @@ const Roadmap = () => {
                     </div>
                     <div className={style.text_m} >
                         <div className='w-9/12'>
-                            <p className='mt-1 mb-1 text-lg may '>phase 0 <span className='text-secondary'>✔</span></p>
+                            <p className='mt-3 mb-1 text-lg may '>phase 0 <span className='text-secondary'>✔</span></p>
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Social Networks Setup</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Website Kubics Landing Page</li></div>
@@ -89,8 +89,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const Roadmap = () => {
                             <Image
                                 className=''
                                 src='/logos/logo_primary.png'
-                                width={50}
+                                width={47}
                                 height={46.5}
                                 alt='logo' />
 
@@ -133,8 +133,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
@@ -156,12 +156,12 @@ const Roadmap = () => {
 
                     <div className='flex flex-row w-2/12'>
                         <div className={style.line}></div>
-                        <div className={style.image_l} >
-                            <div className='absolute -ml-2'>
+                        <div className={style.image_r} >
+                            <div className='absolute -mt-4'>
                                 <Image
                                     className=''
                                     src='/logos/logo_primary.png'
-                                    width={70}
+                                    width={66}
                                     height={63}
                                     alt='logo' />
                             </div>
@@ -206,8 +206,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                 </div>
@@ -221,7 +221,7 @@ const Roadmap = () => {
                             <Image
                                 className=''
                                 src='/logos/logo_primary.png'
-                                width={50}
+                                width={47}
                                 height={46.5}
                                 alt='logo' />
 
@@ -251,8 +251,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
@@ -275,12 +275,12 @@ const Roadmap = () => {
 
                     <div className='flex flex-row w-2/12'>
                         <div className={style.line}></div>
-                        <div className={style.image_l} >
-                            <div className='absolute -ml-2'>
+                        <div className={style.image_r} >
+                            <div className='absolute -mt-4'>
                                 <Image
                                     className=''
                                     src='/logos/logo_primary.png'
-                                    width={70}
+                                    width={66}
                                     height={63}
                                     alt='logo' />
                             </div>
@@ -322,8 +322,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                 </div>
@@ -337,7 +337,7 @@ const Roadmap = () => {
                             <Image
                                 className=''
                                 src='/logos/logo_primary.png'
-                                width={50}
+                                width={47}
                                 height={46.5}
                                 alt='logo' />
 
@@ -365,8 +365,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                     <div className={style.line}></div>
@@ -387,12 +387,12 @@ const Roadmap = () => {
 
                     <div className='flex flex-row w-2/12'>
                         <div className={style.line}></div>
-                        <div className={style.image_l} >
-                            <div className='absolute -ml-2'>
+                        <div className={style.image_r} >
+                            <div className='absolute -mt-4'>
                                 <Image
                                     className=''
                                     src='/logos/logo_primary.png'
-                                    width={70}
+                                    width={66}
                                     height={63}
                                     alt='logo' />
                             </div>
@@ -428,8 +428,8 @@ const Roadmap = () => {
                         <Image
                             className=''
                             src='/logos/logo_primary.png'
-                            width={135}
-                            height={120}
+                            width={128}
+                            height={117}
                             alt='logo' />
                     </div>
                 </div>
@@ -443,7 +443,7 @@ const Roadmap = () => {
                             <Image
                                 className=''
                                 src='/logos/logo_primary.png'
-                                width={50}
+                                width={47}
                                 height={46.5}
                                 alt='logo' />
 
@@ -455,7 +455,6 @@ const Roadmap = () => {
                             <ul className=''>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> Sixth Film Project Launch.</li></div>
                                 <div className='flex flex-row mb-1'><span className='mr-2'>▪</span><li> All associate activities.</li></div>
-
                             </ul>
                         </div>
                     </div>
