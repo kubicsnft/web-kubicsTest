@@ -60,7 +60,7 @@ export default function AppLayout({ children }) {
                                     quantity: 0,
                                 },
                                 repulse: {
-                                    distance: 200,
+                                    distance: 100,
                                     duration: 1,
                                 },
                             },
