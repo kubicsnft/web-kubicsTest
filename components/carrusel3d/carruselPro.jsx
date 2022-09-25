@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from "next/image";
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
+import { FormattedMessage } from "react-intl";
 
 
 
@@ -22,11 +23,11 @@ export default function Slider(props) {
 
     const [desplegar, setDesplegar] = useState({
         desplegar: 'hidden',
-        mas: 'inline cursor-pointer'
+        mas: 'inline cursor-pointer text-secondary'
     });
 
     const changueText = () => {
-        (desplegar.mas === 'inline cursor-pointer')
+        (desplegar.mas === 'inline cursor-pointer text-secondary')
             ?
             setDesplegar({
                 desplegar: 'block',
@@ -35,10 +36,10 @@ export default function Slider(props) {
             :
             setDesplegar({
                 desplegar: 'hidden',
-                mas: 'inline cursor-pointer'
+                mas: 'inline cursor-pointer text-secondary'
             })
     }
-    // console.log(desplegar.mas)
+    
 
     const slides = [
         {
@@ -46,16 +47,20 @@ export default function Slider(props) {
             content:
                 <div className="flex flex-col items-center p-2 bg-white w-72 sm:w-96 ">
                     {/* <Link href='/dragonKeeper'> */}
-                        <Image
-                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                            src='/cubos/Cubo_DK.png'
-                            alt='dragon Keeper'
-                            width={250}
-                            height={250} />
+                    <Image
+                        className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+                        src='/cubos/Cubo_DK.png'
+                        alt='dragon Keeper'
+                        width={250}
+                        height={250} />
                     {/* </Link> */}
                     <h3 className="text-xl tracking-widest text-center text-secondary text-shadow">DRAGONKEEPER</h3>
                     <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
-                        Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.</div>
+                        <FormattedMessage
+                            id="project.dragon"
+                            default=''
+                        />
+                    </div>
                 </div>
         },
         {
@@ -71,13 +76,22 @@ export default function Slider(props) {
                         width={250}
                         height={250} />
                     {/* </Link> */}
-                    <h3 className="text-xl tracking-widest text-center text-secondary">EL FUTURO YA ESTA AQUÍ</h3>
+                    <h3 className="text-xl tracking-widest text-center text-secondary">
+                    <FormattedMessage
+                            id="project.title.futuro"
+                            default=''
+                        />
+                    </h3>
                     <div className='w-full p-2 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 bg-primary '>
-                        Largometraje de imágen real dirigido por Juan Vicente Córdoba.
-                        A finales de los años 70 y principios de los 80 en Madrid algunas emisoras de radio estaban estrechamente vinculadas a la divulgación de lo que estaba fraguándose. Una peculiar explosión creativa que constituyó todo
+                    <FormattedMessage
+                            id="project.futuro1"
+                            default=''
+                        />
                         <span id='{desplegar}' className={desplegar.desplegar}>
-                            un fenómeno social que cobró su verdadera dimensión y su total plenitud en la calle.
-                            <div onClick={changueText} id="menos" className="cursor-pointer">... [leer menos]</div>
+                        <FormattedMessage
+                            id="project.futuro2"
+                            default=''
+                        />                            <div onClick={changueText} id="menos" className="cursor-pointer text-secondary">... [leer menos]</div>
                         </span>
                         <div onClick={changueText} className={desplegar.mas}>... [leer más]</div>
                     </div>
@@ -88,20 +102,20 @@ export default function Slider(props) {
         {
             key: uuidv4(),
             content:
-            
-            <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
-                <Cube3d />
-                <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
-            </div>
-        
+
+                <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
+                    <Cube3d />
+                    <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+                </div>
+
         },
         {
             key: uuidv4(),
             content:
-            <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
-            <Cube3d />
-            <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
-        </div>
+                <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
+                    <Cube3d />
+                    <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+                </div>
         },
     ]
 
@@ -109,7 +123,7 @@ export default function Slider(props) {
 
     return (
         <div className="flex items-center justify-center w-11/12 h-full p-8 ">
-        {/* <div className="absolute border   h-[32rem] shadow w-72 sm:w-[27rem] rounded-lg bg-white"></div> */}
+            {/* <div className="absolute border   h-[32rem] shadow w-72 sm:w-[27rem] rounded-lg bg-white"></div> */}
             <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex-col items-center '>
                 <Carousel
                     slides={slides}
@@ -136,8 +150,8 @@ export default function Slider(props) {
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     );
 }

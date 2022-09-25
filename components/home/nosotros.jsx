@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Cube from '../cube';
 
 const Nosotros = () => {
@@ -10,38 +11,47 @@ const Nosotros = () => {
     return (
         <>
             <div className='flex flex-wrap items-start justify-around w-full h-full felx-row sm:px-8 '>
-                
-                    <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
-                        <div className='flex justify-center mb-4 w-52 h-52'>
-                            <Cube link='' img='/team/Salvador.jpg' />
-                        </div>
-                        <p className='text-lg text-secondary may'>Salvador</p>
-                        <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
-                            Lorem Ipsum is simply dummy text of the  ever since the 1500s,Lorem Ipsum is simply dummy text of the  ever since the 1500s, and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        </div>
+
+                <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
+                    <div className='flex justify-center mb-4 w-52 h-52'>
+                        <Cube link='' img='/team/Salvador.jpg' />
                     </div>
-                    <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
-                        <div className='flex justify-center mb-4 w-52 h-52'>
-                            <Cube link='' img='/team/Pedro.jpg' />
-                        </div>
-                        <p className='text-lg text-secondary may'>Pedro</p>
-                        <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
-                        {/* Head of Research @ DappRadar involved in the blockchain industry since 2017; NFT collector, gamer, and Metaverse enthusiast. Web3 Advisor. Previously worked 6 years at EY as Sr. Financial/Data Consultant. Also passionate about sports, analytics, and Sci Fi content.                         */}
-                        Jefe de Investigación @DappRadar involucrado en la industria de blockchain desde 2017; Coleccionista de NFT, jugador y entusiasta del metaverso. Asesor Web3. Anteriormente, trabajó 6 años en EY como consultor financiero/de datos sénior. También apasionado por los deportes, el análisis y el contenido de ciencia ficción.
-                        </div>
+                    <p className='text-lg text-secondary may'>Salvador</p>
+                    <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
+                        <FormattedMessage
+                            id='team.salvador'
+                            defaultMessage=''
+                        />
                     </div>
-                
-                    <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
-                        <div className='flex justify-center mb-4 w-52 h-52 backdrop-grayscale'>
-                            <Cube link='' img='/team/Miguel.jpeg' />
-                        </div>
-                        <p className='text-lg text-secondary may'>Miguel</p>
-                        <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
-                        Desarrollador blockchain. Varios años de experiencia coordinando proyectos IT en diferentes países como Alemania, España, Reino Unido, Finlandia o Sudáfrica.                         </div>
+                </div>
+                <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
+                    <div className='flex justify-center mb-4 w-52 h-52'>
+                        <Cube link='' img='/team/Pedro.jpg' />
                     </div>
-            </div>
-        </>
-    );
+                    <p className='text-lg text-secondary may'>Pedro</p>
+                    <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
+                        <FormattedMessage
+                            id='team.pedro'
+                            defaultMessage=''
+                        />
+                    </div>
+                </div>
+
+                <div className='flex flex-col items-center w-9/12 p-2 mb-8 sm:mb-0 sm:w-56'>
+                    <div className='flex justify-center mb-4 w-52 h-52 backdrop-grayscale'>
+                        <Cube link='' img='/team/Miguel.jpeg' />
+                    </div>
+                    <p className='text-lg text-secondary may'>Miguel</p>
+                    <div className='w-full p-3 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 md:sm-48 bg-primary'>
+                        <FormattedMessage
+                            id='team.miguel'
+                            defaultMessage=''
+                        />
+                    </div>
+                </div>
+                </div>
+            </>
+            );
 }
 
-export default Nosotros;
+            export default Nosotros;

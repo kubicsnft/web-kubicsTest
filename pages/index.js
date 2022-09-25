@@ -9,6 +9,7 @@ import WhayIsKubics from '../components/home/whayIsKubics'
 import MenuMovil from "../components/MenuMovil";
 // import Carrusel1 from "../components/whitOut_using/carousel";
 import { FormattedMessage } from "react-intl";
+import TestRoadmap from "../components/test_Roadmap";
 
 
 
@@ -87,7 +88,8 @@ export default function Home() {
             <div className={style.section}>
               
               <h2 id='roadmap' className={style.titulo}>ROADMAP</h2>
-              <Roadmap />
+              {/* <Roadmap /> */}
+              <TestRoadmap/>
             </div>
           </div>
         </div>
