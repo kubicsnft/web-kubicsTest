@@ -9,7 +9,7 @@ const LateralMenu = () => {
 
 
     return (
-        <div className='w-34'>
+        <div className='w-[8.5rem]'>
             <a href="#inicio">
                 <div className={style.item} >
                     <FormattedMessage
