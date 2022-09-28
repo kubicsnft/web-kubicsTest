@@ -3,7 +3,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import logo from '../../public/logo_loop_SO.gif'
 import Newsletters from '../Newsletter';
-import SocialNetworks from '../SocialNetworks';
+import SocialNetworks from '../SocialNetworksFooter';
 
 const style = {
     container: '',

@@ -22,19 +22,19 @@ const SocialNetworks = (props) => {
     style.icono = style.icono + color
 
     return (
-        <div className='w-full'>
+        <div className='w-full '>
             <div className='flex flex-row justify-between w-full '>
-                <a href="https://mobile.twitter.com/KubicsNFT">
+                <a href="https://mobile.twitter.com/Kubics_NFT">
                     <div className={`${style.icono} ${color} ${text} `} >
                         <AiOutlineTwitter />
                     </div>
                 </a>
-                <a href="https://www.instagram.com/kubicsnft/">
+                {/* <a href="https://www.instagram.com/kubicsnft/"> */}
                     <div className={`${color} ${text} ${style.icono} `} >
                         <SiDiscord />
                     </div>
-                </a>
-                <a href="https://www.instagram.com/kubicsnft/">
+                {/* </a> */}
+                <a href="https://www.instagram.com/kubics_nft/">
                     <div className={`${color} ${text} ${style.icono}`} >
                         <AiFillInstagram />
                     </div>
