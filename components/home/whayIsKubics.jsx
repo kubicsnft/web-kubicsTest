@@ -13,8 +13,8 @@ const style = {
 const WhayIsKubics = () => {
   return (
     <>
-      <div className='flex items-center w-11/12 h-full px-2 sm:px-4 '>
-        <div className='p-1 mb-6 text-justify text-white rounded shadow-lg shadow-gray-400 sm:p-4 bg-primary'>
+      <div className='flex items-center h-full px-6 w-12/12 sm:px-10 xl:px-4 '>
+        <div className='p-1 mb-6 text-justify text-white rounded-lg shadow-lg shadow-gray-400 sm:p-4 bg-primary'>
           <div className={style.titulo}>
             <FormattedMessage
               id='k?.titulo1'
