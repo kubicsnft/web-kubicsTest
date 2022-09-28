@@ -122,9 +122,8 @@ export default function Slider(props) {
 
 
     return (
-        <div className="flex items-center justify-center w-11/12 h-full p-8 ">
-            {/* <div className="absolute border   h-[32rem] shadow w-72 sm:w-[27rem] rounded-lg bg-white"></div> */}
-            <div style={{ width: "100%", height: "100px", margin: "0 auto" }} className='flex-col items-center '>
+        <div className="flex items-center justify-center w-11/12 h-full xl:w-full">
+            <div style={{ width: "90%", height: "100px", margin: "0 auto" }} className='flex-col items-center'>
                 <Carousel
                     slides={slides}
                     goToSlide={state.goToSlide}

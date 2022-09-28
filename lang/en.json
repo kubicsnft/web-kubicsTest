@@ -2,7 +2,7 @@
     "app.slogan":"The world will never be round again",
     "app.text1":"The NFT Project that will change the course of Filmmaking History",
     "app.text2":"More info coming soon",
-    "app.text3":"SUBCRIBE TO OUR WHITELIST",
+    "app.text3":"SUBCRIBE TO OUR NEWSLETTERS",
     "app.input":"Your email address",
     "app.button":"Subscribe",
     "home.title1":"WHAT IS KUBICS?",
@@ -24,7 +24,7 @@
     "k?.parrafo7":"Because the projects that we present on our platform must have these elements from the beginning, what will do is that all parts can give a value to the NFTs of our holders when the film arrives to the audience. ¿ How much will be the value now of the NFT from the first movie of Pixar, or from a Tarantino's film, Godard or Almodóvar ?",
     "k?.parrafo8":"A Kubics's NFT is not just an image, it is a part of a film production. The world is changing and the blockchain ecosystem opens the doors to a new form of financing projects, applications, video games, multiverses and in this case Films. We all consume films, either in the cinemas or in the small screens from home, but until now it is been challenging to become part of this industry. With the NFT of each film the holder is becoming part of a new universe within the blockchain and the physical world.",
     "k?.parrafo9":"Many NFT collectors understand its value as unique pieces of art, pieces that because of many reasons might captivate us and we wish to own them. Each time more, the value of these NFTs goes further than the image itself, most of the time, what is behind is what gives the real value. In this case, behind each NFT there is a solid project that guarantees the growing value when the movie gets successful.",
-    "menu.start":"Beginning",
+    "menu.start":"Home",
     "menu.k?":"What is Kubics?",
     "menu.proyect":"Projects",
     "menu.team":"The team",
@@ -35,5 +35,9 @@
     "project.dragon":"Dragonkeeper is the first animated film co-produced between Spain and China, with the Spanish support of Antena 3 and Telefónica, distributed in Spain by Contacorriente, one of the largest distributors in the country.",
     "project.futuro1":"Real image feature film directed by Juan Vicente Córdoba. In the late 1970s and early 1980s in Madrid, some radio stations were closely linked to the dissemination of what was taking shape.",
     "project.futuro2":"A peculiar creative explosion that constituted a social phenomenon that took on its true dimension and fullness in the street.",
-    "project.title.futuro":"THE FUTURE IS HERE"
+    "project.title.futuro":"THE FUTURE IS HERE",
+    "wl.connected":"Connected! Make sure you are on the ETH Chain",
+    "wl.join":"JOIN OUR WHITELIST",
+    "wl.already":"Already whitelisted!",
+    "wl.metamask":"Connect with Metamask to join our Whitelist!"
 }

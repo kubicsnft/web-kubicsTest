@@ -2,7 +2,7 @@
     "app.slogan": "El mundo nunca volverá a ser redondo",
     "app.text1": "El Proyecto NFT que cambiará el curso de la Historia del Cine",
     "app.text2": "Más información próximamente",
-    "app.text3": "SUBCRIBETE A NUESTRA WHITELIST",
+    "app.text3": "SUBCRIBETE A NUESTRA NEWSLETTER",
     "app.input": "Su direción de email",
     "app.button": "Subcribirse",
     "home.title1": "¿QUÉ ES KUBICS?",
@@ -35,5 +35,9 @@
     "project.dragon":"Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.",
     "project.futuro1":"Largometraje de imágen real dirigido por Juan Vicente Córdoba. A finales de los años 70 y principios de los 80 en Madrid algunas emisoras de radio estaban estrechamente vinculadas a la divulgación de lo que estaba fraguándose.",
     "project.futuro2":"Una peculiar explosión creativa que constituyó todo un fenómeno social que cobró su verdadera dimensión y su total plenitud en la calle.",
-    "project.title.futuro":"EL FUTURO YA ESTA AQUÍ"
+    "project.title.futuro":"EL FUTURO YA ESTA AQUÍ",
+    "wl.connected": "¡Conectado! Asegúrate de estar en la red de ETH",
+    "wl.join": "UNETE A LA WHITELIST",
+    "wl.already": "¡Ya estás en la whitelist!",
+    "wl.metamask": "¡Conéctese con Metamask para unirse a nuestra whitelist"
 }   
