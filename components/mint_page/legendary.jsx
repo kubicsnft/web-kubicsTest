@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { useState } from "react"
 import dynamic from 'next/dynamic'
-import NftCard from "../mint_page/cardPremium";
+import NftCard from "./cardPremium";
 import { v4 as uuidv4 } from "uuid";
 // import Carrusel3d from '../carrusel3d/carrusel3d'
 
@@ -12,7 +12,7 @@ const Carrusel = dynamic(() => import('../carrusel3d/carrusel_Premium'), { ssr: 
 
 
 const style = {
-    container: 'flex-col mt-8 items-center w-11/12 p-8 pb-44 mb-4 rounded-xl shadow-lg shadow-[#7B94b1] bg-white  border-primary',
+    container: 'flex-col mt-8 items-center w-full p-8 pb-44 mb-4 ',
     category_box: ' border rounded-md cursor-pointer border-primary mr-2 text-sm w-20 translate-y-2'
 }
 
@@ -306,10 +306,16 @@ function Carousel() {
     return (
         <>
             <div className={style.container}>
-                <h2 className='mb-4 text-3xl '>LEGENDARY CATEGORY</h2>
+                <h2 className='mb-4 text-xl may text-secondary'>LEGENDARY CATEGORY</h2>
+                
+                {/* --------- Description --------- */}
+                <div className='mb-4 text-justify'>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur 
+                </div>
                 {/* --------- Categorys --------- */}
-
-                <div className='flex flex-row justify-center mt-4 mb-14'>
+                {/* <p className='border-t'>SubCategorys</p> */}
+                <div className='flex flex-row justify-center '>
+                    
                     <div
                         className={`${style.category_box}${category === gold ? " font-bold border-secondary shadow-xl shadow-[#7B94b1] transition  scale-105" : ""}`}
                         onClick={changueA}

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import logo from '../../public/logo_loop_SO.gif'
+import logo from '../../public/logos/logo_loop_SO.gif'
 import Newsletters from '../Newsletter';
 import SocialNetworks from '../SocialNetworksFooter';
 

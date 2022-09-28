@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </AppLayoutHead>
       {/* ----------------- Cokiees ----------------- */}
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="Accept"
         declineButtonText="Reject"
@@ -112,7 +112,7 @@ export default function Home() {
         expires={150}
       >
         This website uses cookies to enhance the user experience.
-      </CookieConsent>
+      </CookieConsent> */}
     </>
   )
 }
