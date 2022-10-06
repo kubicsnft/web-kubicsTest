@@ -27,13 +27,11 @@ const LangProvider = ({ children }) => {
             default:
                 setMensajes(MensajesSp);
                 setLocale('sp');
-
         }
-
     }
 
     return (
-        <langContext.Provider value={{ establecerIdioma: establecerIdioma }}>
+        <langContext.Provider value={{ establecerIdioma}}>
             <IntlProvider locale={locale} messages={mensajes}>
                 {children}
             </IntlProvider>

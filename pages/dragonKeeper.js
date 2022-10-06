@@ -3,35 +3,32 @@ import dynamic from 'next/dynamic'
 import { FormattedMessage } from 'react-intl';
 import AppLayout from '../components/layout/AppLayout';
 import Swich from '../components/toggleSwitch';
-import Premium from '../components/mint_page/legendary';
+import Premium from '../components/mint_page/Carousel_legendary';
 import { BiArrowBack } from 'react-icons/bi'
-import ReactPlayer from 'react-player';
-import Roadmap from '../components/home/roadmap'
+import Roadmap from '../components/dragonkeeper/roadmapDK'
 import Image from 'next/image'
-// import Cube from '../components/cube';
 import Link from 'next/link';
+import NFTZone from '../components/mint_page/NFT_zone';
+import DkProject from '../components/dragonKeeper/dkProject';
+
 // =========== Imagenes =================
 import titulo from '../public/dragonkeeper/titulo.png'
-import dragon1 from '../public//nft/dragon1.png'
-import dragon2 from '../public//nft/dragon2.png'
-import dragon3 from '../public//nft/dragon3.png'
-import dragon4 from '../public//nft/dragon4.png'
-import NFTZone from '../components/mint_page/NFT_zone';
+
 
 
 const style = {
     section: 'w-full  sm:px-4 md:px-6 xl:px-12 py-6 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
-    separador: 'h-1  w-4/5 border-b-2 border-primary',
+
 }
 
-// Importación dinamica para Carrusel3d
-const Carrusel3d = dynamic(() => import('../components/carrusel3d/carrusel3d'), { ssr: false })
+// Importación dinamica 
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
 const Proyecto = () => {
     return (
         <>
             <AppLayout>
-                <div className='flex flex-col justify-center w-full '>
+                <div className='flex flex-col items-center justify-center w-full '>
                     <div className={style.section}>
                         {/*  ============================ buttons ============================ */}
                         <div className='grid items-center w-full grid-cols-2' >
@@ -54,15 +51,15 @@ const Proyecto = () => {
                             />
                         </div>
                         {/* ============================ Video ============================= */}
-                        <div className='flex flex-col items-center w-4/5 p-2 border-t-2 border-b-2 border-primary'>
+                        <div className='flex flex-col items-center w-11/12 p-2 border-t-2 border-b-2 border-primary'>
                             <div className='flex justify-center w-full '>
-                                {/* <ReactPlayer
+                                <ReactPlayer
                                     url='https://www.youtube.com/watch?v=UYNH-_3SEPg'
                                     controls
-                                /> */}
+                                />
                             </div>
                             {/* ---- Sinopsis ---- */}
-                            <div className='w-full mt-2 text-justify'>
+                            <div className='w-full mt-2 text-justify bg-white'>
                                 <p>
                                     Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.
                                 </p>
@@ -80,15 +77,22 @@ const Proyecto = () => {
                     </div>
                     {/* ============================ NFT ============================= */}
                     <div className={style.section}>
-                        <NFTZone/>
+                        <NFTZone />
                     </div>
+                    {/* ============================ Project ============================= */}
                     <div className={style.section}>
-                        <h2 className='py-6 mb-8 text-3xl'>PROYECTO</h2>
-                        {/* <Roadmap /> */}
+                        <h2 className='py-6 mb-8 text-3xl may'>
+                            <FormattedMessage
+                                id='dk.project'
+                                defaultMessage='PROYECTO'
+                            />
+                        </h2>
+                        <DkProject />
                     </div>
+                    {/* ============================ ROADMAP ============================= */}
                     <div className={style.section}>
                         <h2 className='py-6 mb-8 text-3xl'>ROADMAP PROYECTO</h2>
-                        {/* <Roadmap /> */}
+                        <Roadmap />
                     </div>
                 </div>
 

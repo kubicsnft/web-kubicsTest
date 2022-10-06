@@ -21,11 +21,11 @@ export default function Slider(props) {
 
     });
 
+    // Read More button -------------------------
     const [desplegar, setDesplegar] = useState({
         desplegar: 'hidden',
         mas: 'inline cursor-pointer text-secondary'
     });
-
     const changueText = () => {
         (desplegar.mas === 'inline cursor-pointer text-secondary')
             ?
@@ -39,21 +39,21 @@ export default function Slider(props) {
                 mas: 'inline cursor-pointer text-secondary'
             })
     }
-    
+    // --------------------------------------------
 
     const slides = [
         {
             key: uuidv4(),
             content:
                 <div className="flex flex-col items-center p-2 bg-white w-72 sm:w-96 ">
-                    {/* <Link href='/dragonKeeper'> */}
+                    <Link href='/dragonKeeper'>
                     <Image
                         className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
                         src='/cubos/Cubo_DK.png'
                         alt='dragon Keeper'
                         width={250}
                         height={250} />
-                    {/* </Link> */}
+                    </Link>
                     <h3 className="text-xl tracking-widest text-center text-secondary text-shadow">DRAGONKEEPER</h3>
                     <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
                         <FormattedMessage

@@ -9,7 +9,7 @@ import { LangProvider } from '../context/langContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LangProvider>
+    <LangProvider >
       
         <Component {...pageProps} />
       

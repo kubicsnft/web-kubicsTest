@@ -4,11 +4,10 @@ import AppLayoutHead from '../components/layout/AppLayoutHead'
 import LateralMenu from '../components/lateralMenu'
 import SocialNetworks from '../components/SocialNetworks'
 import Nosotros from '../components/home/nosotros'
-import Roadmap from '../components/home/roadmap'
 import WhayIsKubics from '../components/home/whayIsKubics'
 import MenuMovil from "../components/MenuMovil";
 import { FormattedMessage } from "react-intl";
-import TestRoadmap from "../components/test_Roadmap";
+import Roadmap from "../components/home/roadmap";
 import CookieConsent from "react-cookie-consent";
 
 
@@ -16,7 +15,7 @@ import CookieConsent from "react-cookie-consent";
 
 // Importación dinamica de carrusel3d
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
-const Carrusel1 = dynamic(() => import('../components/carrusel3d/carousel'), { ssr: false })
+const Carrusel1 = dynamic(() => import('../components/carrusel3d/carouselProMobile'), { ssr: false })
 
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffe8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',
@@ -77,7 +76,6 @@ export default function Home() {
             </div>
             {/*================= Section 3: ================= */}
             <div className={style.section}>
-
               <h2 id='nosotros' className={style.titulo}>
                 <FormattedMessage
                   id='home.title3'
@@ -88,10 +86,8 @@ export default function Home() {
             </div>
             {/*================= Section 4: ===================*/}
             <div className={style.section}>
-
               <h2 id='roadmap' className={style.titulo}>ROADMAP</h2>
-              {/* <Roadmap /> */}
-              <TestRoadmap />
+              <Roadmap />
             </div>
           </div>
         </div>
