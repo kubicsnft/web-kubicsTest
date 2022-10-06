@@ -5,7 +5,7 @@ import AppLayout from '../components/layout/AppLayout';
 import Swich from '../components/toggleSwitch';
 import Premium from '../components/mint_page/Carousel_legendary';
 import { BiArrowBack } from 'react-icons/bi'
-import Roadmap from '../components/dragonkeeper/roadmapDK'
+import Roadmap from '../components/dragonKeeper/roadmapDK'
 import Image from 'next/image'
 import Link from 'next/link';
 import NFTZone from '../components/mint_page/NFT_zone';
