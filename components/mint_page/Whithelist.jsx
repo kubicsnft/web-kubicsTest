@@ -183,7 +183,9 @@ export default function Whitelist() {
           </div>
         )
       ) : (
-        "Please install metamask"
+        <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
+          ¡Instale Metamask para unirse a nuestra whitelist!
+        </div>
       )}
       <div>
         {isConnected ? (
