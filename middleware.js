@@ -15,7 +15,7 @@ export default function middleware(request) {
     // También puede obtener el país usando la notación de puntos en la función
     //   const country = geolocation(request).country;
 
-    if (url.pathname === '/dragonKeeper') {
+    if (url.pathname != '/') {
         if (country === BLOCKED_COUNTRY) {
             url.pathname = '/blocked';
         } else {
