@@ -29,30 +29,30 @@ const style = {
 
 
 
-Proyecto.getInitialProps = async ({ req }) => {
-    const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
-    return { ip };
-};
+// Proyecto.getInitialProps = async ({ req }) => {
+//     const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
+//     return { ip };
+// };
 
 
 function Proyecto({ ip }) {
 
-    console.log({ ip })
+    // console.log({ ip })
     
-    const blockedIP = ['::11']
+    // const blockedIP = ['::11']
 
-    var access = true
+    // var access = true
 
-    for(var i=0 ; i<blockedIP.length ; i++){
-        if(blockedIP[i] === ip){
-            access = false
-        }
-    }
+    // for(var i=0 ; i<blockedIP.length ; i++){
+    //     if(blockedIP[i] === ip){
+    //         access = false
+    //     }
+    // }
 
     return (
         <>
             <AppLayout>
-            {access?
+            {/* {access? */}
                 <div className='flex flex-col items-center justify-center w-full '>
                     <div className={style.section}>
                         {/*  ============================ buttons ============================ */}
@@ -125,7 +125,7 @@ function Proyecto({ ip }) {
                         <Roadmap />
                     </div>
                 </div>
-             :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                     
+             {/* :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                      */}
             </AppLayout>
         </>
     );
