@@ -20,7 +20,6 @@ const Carrusel1 = dynamic(() => import('../components/carrusel3d/carouselProMobi
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffe8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',
   titulo: 'text-shadow mt-4 mb-6 text-2xl sm:text-3xl pt-14 sm-p-3 text-primary may',
-  // separador: 'h-2  w-full bg-primary border-primary ',
 }
 
 export default function Home() {
