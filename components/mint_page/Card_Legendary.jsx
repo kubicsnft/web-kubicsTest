@@ -1,37 +1,52 @@
 import Image from 'next/image';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaEthereum } from 'react-icons/fa'
+import { MovingSquareLoader } from 'react-loaders-kit';
 // import { FormattedMessage } from 'react-intl';
 
 
 
-function cardPremium(props) {
 
+
+function CardPremium(props) {
+
+    
+    
+    console.log(props.test)
     return (
-        <div className="  bg-white p-1 flex flex-col items-cener rounded-lg shadow-md box  border-primary shadow-[#7B94b1] -primary w-96">
-            <Image
-                className="w-full rounded-md"
-                key={props.id}
-                src={props.image}
-                alt='nft image'
-                width={300}
-                height={282}
-            />
+        <div className="  bg-white p-1 flex flex-col items-cener rounded-lg shadow-md box  border-primary sm:shadow-[#7B94b1]  w-72 sm:w-96">
+            {props.sold ? <div className='rounded-lg absolute z-10  w-full h-[19.3rem] bg-[#4d4c4c9a] left-0'></div> : ''}
+            <div>
+                    <Image
+                        className="flex rounded-md"
+                        key={props.id}
+                        src={props.image}
+                        alt='nft image'
+                        layout='responsive'
+                        width={364}
+                        height={273}
+                    />
+                    {/* {setLoading(false)} */}
+                </div>
+            
+
 
             <div className='flex flex-row justify-between w-full p-2 text-primary'>
 
                 <div className="flex flex-col items-start justify-between gap-2">
-                    <h3 className="font-bold ">{props.title}</h3>
+                    <h3 className="text-sm font-bold">{props.title}</h3>
                     {/* <p className='text-sm text-start'>{props.description}</p> */}
-                    <div className='w-44'>
-                        <button className="text-sm shadow-md button learn-more" onClick={() => addToWhitelist()}>
-                            <span className="circle" aria-hidden="true">
-                                <span className="icon arrow"></span>
-                            </span>
-                            <span className="button-text" translate="no">
-                                Buy Now
-                            </span>
-                        </button>
+                    <div className='z-20 w-44'>
+                        {props.sold
+                            ? <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-red-600 -rotate-6 may'>SOLD</div>
+                            : <button className="text-sm shadow-md button learn-more" onClick={() => addToWhitelist()}>
+                                <span className="circle" aria-hidden="true">
+                                    <span className="icon arrow"></span>
+                                </span>
+                                <span className="button-text" translate="no">
+                                    Buy Now
+                                </span>
+                            </button>}
                     </div>
                 </div>
                 <div className=' text-start'>
@@ -41,11 +56,10 @@ function cardPremium(props) {
                     </p>
                 </div>
             </div>
-
         </div>
     );
 };
 
 
 
-export default cardPremium
+export default CardPremium

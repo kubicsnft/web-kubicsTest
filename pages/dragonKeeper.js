@@ -39,7 +39,7 @@ function Proyecto({ ip }) {
 
     console.log({ ip })
     
-    const blockedIP = ['::1']
+    const blockedIP = ['::11']
 
     var access = true
 
