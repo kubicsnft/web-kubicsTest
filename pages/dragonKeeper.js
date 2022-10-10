@@ -11,27 +11,52 @@ import Link from 'next/link';
 import NFTZone from '../components/mint_page/NFT_zone';
 import DkProject from '../components/dragonKeeper/dkProject';
 
-// =========== Imagenes =================
-import titulo from '../public/dragonkeeper/titulo.png'
 
+
+// =========== Import dinamic =========== 
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
+
+// =========== Import Image =================
+import titulo from '../public/dragonkeeper/titulo.png'
+import portada from '../public/dragonkeeper/portada.png'
 
 
 const style = {
-    section: 'w-full  sm:px-4 md:px-6 xl:px-12 py-6 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
+    section: 'w-full   md:px-6 xl:px-12 p-4 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
 
 }
+// ---------------------test bloqueo ip--------------------
 
-// Importación dinamica 
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
-const Proyecto = () => {
+
+Proyecto.getInitialProps = async ({ req }) => {
+    const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
+    return { ip };
+};
+
+
+function Proyecto({ ip }) {
+
+    console.log({ ip })
+    
+    const blockedIP = ['::11']
+
+    var access = true
+
+    for(var i=0 ; i<blockedIP.length ; i++){
+        if(blockedIP[i] === ip){
+            access = false
+        }
+    }
+
     return (
         <>
             <AppLayout>
+            {access?
                 <div className='flex flex-col items-center justify-center w-full '>
                     <div className={style.section}>
                         {/*  ============================ buttons ============================ */}
-                        <div className='grid items-center w-full grid-cols-2' >
+                        <div className='grid items-center w-11/12 grid-cols-2 -mt-2 ' >
                             <div className="text-lg text-start">
                                 <Link href='/'>
                                     <div className='w-8 p-1 ml-4 text-xl text-center transition duration-300 ease-in-out border-2 rounded-full cursor-pointer border-primary text-secondary hover:-translate-x-2'>
@@ -50,12 +75,17 @@ const Proyecto = () => {
                                 alt="Título película"
                             />
                         </div>
-                        {/* ============================ Video ============================= */}
+                        {/* ============================ Video/Image ============================= */}
                         <div className='flex flex-col items-center w-11/12 p-2 border-t-2 border-b-2 border-primary'>
                             <div className='flex justify-center w-full '>
-                                <ReactPlayer
+                                {/* <ReactPlayer
                                     url='https://www.youtube.com/watch?v=UYNH-_3SEPg'
                                     controls
+                                /> */}
+                                <Image
+                                    className='rounded-lg'
+                                    src={portada}
+                                    alt='niña con dragón'
                                 />
                             </div>
                             {/* ---- Sinopsis ---- */}
@@ -95,7 +125,7 @@ const Proyecto = () => {
                         <Roadmap />
                     </div>
                 </div>
-
+             :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                     
             </AppLayout>
         </>
     );

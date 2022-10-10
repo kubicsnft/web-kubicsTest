@@ -13,7 +13,7 @@ const [goToSlide, setstateGoToSlide] = useState(0);
 
 
   return (
-    <div style={{ width: "100%", height: "450px", margin: "0 auto" }} className=''>
+    <div style={{ width: "100%", margin: "0 auto" }} className='sm:h-[450px] h-[350px]'>
       <Carousel
         slides={props.category}
         goToSlide={goToSlide}
