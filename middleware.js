@@ -1,6 +1,6 @@
 import { geolocation } from '@vercel/edge';
 
-const BLOCKED_COUNTRY = 'ES';
+const BLOCKED_COUNTRY = 'SE';
 
 export const config = {
     // Solo ejecute el middleware en la ruta de inicio
