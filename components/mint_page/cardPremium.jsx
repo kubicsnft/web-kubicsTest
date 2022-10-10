@@ -10,7 +10,7 @@ import DragonKeeper from "../../artifacts/contracts/DragonKeeper.sol/DragonKeepe
 import { use } from 'chai';
 
 
-const cardPremium = (props) => {
+const CardPremium = (props) => {
 
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
@@ -285,4 +285,4 @@ const cardPremium = (props) => {
 
 
 
-export default cardPremium
+export default CardPremium

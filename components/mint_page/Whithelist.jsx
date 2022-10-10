@@ -19,7 +19,7 @@ export default function Whitelist() {
     if (typeof window.ethereum !== "undefined") {
       setHasMetamask(true);
     }
-  });
+  },[]);
 
   async function connect() {
     if (typeof window.ethereum !== "undefined") {
