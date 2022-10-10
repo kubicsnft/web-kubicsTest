@@ -1,4 +1,4 @@
-import React, { Component,useState } from "react";
+import React, { Component, useState } from "react";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
@@ -9,7 +9,7 @@ import { MdOutlineArrowForwardIos } from 'react-icons/md'
 export default function Slider(props) {
 
 
-const [goToSlide, setstateGoToSlide] = useState(0);
+  const [goToSlide, setstateGoToSlide] = useState(0);
 
 
   return (
@@ -26,15 +26,15 @@ const [goToSlide, setstateGoToSlide] = useState(0);
         {/* Button left */}
         <div className="z-50 p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
           onClick={() => {
-            setstateGoToSlide( goToSlide - 1 );
+            setstateGoToSlide(goToSlide - 1);
           }}>
           <MdOutlineArrowBackIosNew />
         </div>
-        
+
         {/* button right */}
         <div className="z-50 p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
           onClick={() => {
-            setstateGoToSlide( goToSlide + 1 );
+            setstateGoToSlide(goToSlide + 1);
           }}>
           <MdOutlineArrowForwardIos />
         </div>
