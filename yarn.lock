@@ -2869,6 +2869,11 @@
     "@typescript-eslint/types" "5.30.7"
     eslint-visitor-keys "^3.3.0"
 
+"@vercel/edge@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@vercel/edge/-/edge-0.0.4.tgz#910306deb03321f038c0981510710d436391b291"
+  integrity sha512-KzZuSib25DsYjLa7UiMhAWfhfE9Oby1T90M0mkYMjCNK71i9vvEKRQXnhs3htmyNyid11KyI4wMEnIr7M9DqAA==
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
