@@ -8,8 +8,6 @@ import { FormattedMessage } from "react-intl"
 
 export default function Whitelist() {
 
-
-
   const [isConnected, setIsConnected] = useState(false);
   const [hasMetamask, setHasMetamask] = useState(false);
   const [isWhitelisted, setIsWhitelisted] = useState(false);
