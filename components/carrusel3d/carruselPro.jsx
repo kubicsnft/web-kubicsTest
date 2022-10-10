@@ -13,6 +13,8 @@ import { FormattedMessage } from "react-intl";
 
 export default function Slider(props) {
 
+    const [goToSlide, setstateGoToSlide] = useState(0);
+
     const [state, setState] = useState({
         goToSlide: 0,
         offsetRadius: 4,
@@ -47,12 +49,12 @@ export default function Slider(props) {
             content:
                 <div className="flex flex-col items-center p-2 bg-white w-72 sm:w-96 ">
                     <Link href='/dragonKeeper'>
-                    <Image
-                        className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                        src='/cubos/Cubo_DK.png'
-                        alt='dragon Keeper'
-                        width={250}
-                        height={250} />
+                        <Image
+                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
+                            src='/cubos/Cubo_DK.png'
+                            alt='dragon Keeper'
+                            width={250}
+                            height={250} />
                     </Link>
                     <h3 className="text-xl tracking-widest text-center text-secondary text-shadow">DRAGONKEEPER</h3>
                     <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
@@ -77,21 +79,21 @@ export default function Slider(props) {
                         height={250} />
                     {/* </Link> */}
                     <h3 className="text-xl tracking-widest text-center text-secondary">
-                    <FormattedMessage
+                        <FormattedMessage
                             id="project.title.futuro"
                             default=''
                         />
                     </h3>
                     <div className='w-full p-2 text-sm text-justify text-white rounded-lg shadow-lg shadow-gray-400 bg-primary '>
-                    <FormattedMessage
+                        <FormattedMessage
                             id="project.futuro1"
                             default=''
                         />
                         <span id='{desplegar}' className={desplegar.desplegar}>
-                        <FormattedMessage
-                            id="project.futuro2"
-                            default=''
-                        />                            <div onClick={changueText} id="menos" className="cursor-pointer text-secondary">... [leer menos]</div>
+                            <FormattedMessage
+                                id="project.futuro2"
+                                default=''
+                            />                            <div onClick={changueText} id="menos" className="cursor-pointer text-secondary">... [leer menos]</div>
                         </span>
                         <div onClick={changueText} className={desplegar.mas}>... [leer más]</div>
                     </div>
@@ -123,27 +125,28 @@ export default function Slider(props) {
 
     return (
         <div className="flex items-center justify-center w-11/12 h-full xl:w-full">
-            <div style={{ width: "90%", height: "100px", margin: "0 auto" }} className='flex-col items-center'>
+            <div style={{ width: "90%", margin: "0 auto" }} className='flex-col items-center sm:h-[450px] h-[350px]'>
                 <Carousel
                     slides={slides}
-                    goToSlide={state.goToSlide}
+                    goToSlide={goToSlide}
                     offsetRadius={state.offsetRadius}
                     showNavigation={state.showNavigation}
                     animationConfig={state.config}
                 />
-                <div className='z-10 flex flex-row justify-between w-full'>
+                {/*-------- Buttoms ------- */}
+                <div className='z-10 flex flex-row justify-center w-full mt-4 text-secondary'>
                     {/* Button left */}
-                    <div className="z-50 -mt-12 md:-ml-10 sm:-ml-4 -ml-16 text-lg bg-white sm:bg-inherit sm:text-3xl border-primary sm:border-none border rounded-full p-1 h-full transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40 text-[#E1B649]"
+                    <div className="z-50 p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
                         onClick={() => {
-                            setState({ goToSlide: state.goToSlide - 1 });
+                            setstateGoToSlide(goToSlide - 1);
                         }}>
                         <MdOutlineArrowBackIosNew />
                     </div>
-                    &nbsp; &nbsp; &nbsp; &nbsp;
+
                     {/* button right */}
-                    <div className="z-50 -mt-12 md:-mr-10 sm:-mr-4 -mr-16 text-lg bg-white sm:bg-inherit sm:text-3xl border-primary sm:border-none border rounded-full p-1 h-full transition duration-150 ease-in-out cursor-pointer  hover:scale-110 hover:opacity-100 opacity-40   text-[#E1B649]"
+                    <div className="z-50 p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
                         onClick={() => {
-                            setState({ goToSlide: state.goToSlide + 1 });
+                            setstateGoToSlide(goToSlide + 1);
                         }}>
                         <MdOutlineArrowForwardIos />
                     </div>

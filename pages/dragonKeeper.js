@@ -10,7 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import NFTZone from '../components/mint_page/NFT_zone';
 import DkProject from '../components/dragonKeeper/dkProject';
-
+// import middleware from '../middleware';
 
 
 // =========== Import dinamic =========== 
@@ -29,6 +29,10 @@ const style = {
 
 
 
+
+// console.log('ffff----------------------------fffffff'+ middleware())
+
+
 // Proyecto.getInitialProps = async ({ req }) => {
 //     const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
 //     return { ip };
@@ -38,7 +42,7 @@ const style = {
 function Proyecto({ ip }) {
 
     // console.log({ ip })
-    
+
     // const blockedIP = ['::11']
 
     // var access = true
@@ -52,7 +56,7 @@ function Proyecto({ ip }) {
     return (
         <>
             <AppLayout>
-            {/* {access? */}
+                {/* {access? */}
                 <div className='flex flex-col items-center justify-center w-full '>
                     <div className={style.section}>
                         {/*  ============================ buttons ============================ */}
@@ -125,7 +129,7 @@ function Proyecto({ ip }) {
                         <Roadmap />
                     </div>
                 </div>
-             {/* :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                      */}
+                {/* :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                      */}
             </AppLayout>
         </>
     );

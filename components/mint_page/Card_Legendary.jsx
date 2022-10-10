@@ -15,7 +15,7 @@ function CardPremium(props) {
     console.log(props.test)
     return (
         <div className="  bg-white p-1 flex flex-col items-cener rounded-lg shadow-md box  border-primary sm:shadow-[#7B94b1]  w-72 sm:w-96">
-            {props.sold ? <div className='rounded-lg absolute z-10  w-full h-[19.3rem] bg-[#4d4c4c9a] left-0'></div> : ''}
+            {props.sold ? <div className='rounded-lg absolute z-10  w-full sm:h-[23.6rem] h-[19.2rem] bg-[#4d4c4c9a] left-0'></div> : ''}
             <div>
                     <Image
                         className="flex rounded-md"
