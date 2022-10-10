@@ -1,9 +1,10 @@
 import { geolocation } from '@vercel/edge';
 
+
 const BLOCKED_COUNTRY = 'ES';
 
 export const config = {
-    // Solo ejecute el middleware en la ruta de inicio
+    // Solo ejecute el middleware en la  ruta de inicio
     matcher: '/dragonKeeper',
 };
 
