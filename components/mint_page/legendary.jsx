@@ -38,7 +38,8 @@ function Carousel(props) {
             const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
             const data = await res.json();
             setNft_Legendary(data);
-            console.log(data);
+            console.log(data.data[0].id);
+            console.log(data.data.length);
             console.log("data saved")
         } catch (err) {
             console.log(err);

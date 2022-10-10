@@ -10,8 +10,7 @@ import DragonKeeper from "../../artifacts/contracts/DragonKeeper.sol/DragonKeepe
 import { use } from 'chai';
 
 
-function cardPremium(props) {
-
+const cardPremium = (props) => {
 
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
@@ -25,10 +24,10 @@ function cardPremium(props) {
         if (typeof window.ethereum !== "undefined") {
           setHasMetamask(true);
         }
-      });
+      }, []);
 
     useEffect(() => {
-             checkIfWalletIsConnected();
+        checkIfWalletIsConnected();
     }, []);
 
     //Function POST to call the API and create NFT
@@ -66,7 +65,7 @@ function cardPremium(props) {
               method: "eth_requestAccounts",
             });
             setAccount(accounts[0]);
-            console.log(accounts[0]);
+            //console.log(accounts[0]);
             setIsConnected(true);
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             setSigner(provider.getSigner());
