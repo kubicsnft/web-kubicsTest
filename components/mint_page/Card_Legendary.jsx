@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { FaEthereum } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl';
 import { MovingSquareLoader } from 'react-loaders-kit';
-// import { FormattedMessage } from 'react-intl';
+
 
 
 
