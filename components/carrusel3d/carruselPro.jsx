@@ -8,7 +8,11 @@ import Image from "next/image";
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
 import { FormattedMessage } from "react-intl";
-
+// Images
+import futuro from '../../public/cubos/elFuturo.png'
+import dk from '../../public/cubos/dragonkeeper.png'
+import mancha from '../../public/cubos/laMancha.png'
+import caramelo from '../../public/cubos/carameloW.png'
 
 
 export default function Slider(props) {
@@ -50,11 +54,11 @@ export default function Slider(props) {
                 <div className="flex flex-col items-center p-2 bg-white w-72 sm:w-96 ">
                     <Link href='/dragonKeeper'>
                         <Image
-                            className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                            src='/cubos/Cubo_DK.png'
+                            className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                            src={dk}
                             alt='dragon Keeper'
-                            width={250}
-                            height={250} />
+                            height={300}
+                        />
                     </Link>
                     <h3 className="text-xl tracking-widest text-center text-secondary text-shadow">DRAGONKEEPER</h3>
                     <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
@@ -72,11 +76,11 @@ export default function Slider(props) {
                 <div className="flex flex-col items-center bg-white rounded-lg w-72 sm:w-96 ">
                     {/* <Link href=''> */}
                     <Image
-                        className="flex transition duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:scale-105"
-                        src='/cubos/Cubo_FUT.png'
-                        alt='dragon Keeper'
-                        width={250}
-                        height={250} />
+                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        src={futuro}
+                        alt='El fututo ya está aquí'
+                        height={300}
+                    />
                     {/* </Link> */}
                     <h3 className="text-xl tracking-widest text-center text-secondary">
                         <FormattedMessage
@@ -97,7 +101,12 @@ export default function Slider(props) {
                         </span>
                         <div onClick={changueText} className={desplegar.mas}>... [leer más]</div>
                     </div>
-
+                    <h3 className="absolute  bg-[#7094b16e] rounded-lg mb-44  text-2xl tracking-widest text-center -rotate-12 p-4 text-white may">
+                        <FormattedMessage
+                            id="coming.soon"
+                            default='COMING SOON'
+                        />
+                    </h3>
                 </div>
 
         },
@@ -106,8 +115,17 @@ export default function Slider(props) {
             content:
 
                 <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
-                    <Cube3d />
-                    <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+                    <Image
+                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        src={caramelo}
+                        alt='El fututo ya está aquí'
+                        height={300}
+                    />
+                    <h3 className="absolute  bg-[#7094b16e] rounded-lg mb-44  text-2xl tracking-widest text-center -rotate-12 p-4 text-white may"><FormattedMessage
+                        id="coming.soon"
+                        default='COMING SOON'
+                    />
+                    </h3>
                 </div>
 
         },
@@ -115,8 +133,17 @@ export default function Slider(props) {
             key: uuidv4(),
             content:
                 <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
-                    <Cube3d />
-                    <h3 className="absolute mb-16 ml-8 text-2xl tracking-widest text-center -rotate-12 text-secondary may">COMING SOON...</h3>
+                    <Image
+                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        src={mancha}
+                        alt='El fututo ya está aquí'
+                        height={300}
+                    />
+                    <h3 className="absolute  bg-[#7094b16e] rounded-lg mb-44  text-2xl tracking-widest text-center -rotate-12 p-4 text-white may"><FormattedMessage
+                        id="coming.soon"
+                        default='COMING SOON'
+                    />
+                    </h3>
                 </div>
         },
     ]
@@ -124,8 +151,8 @@ export default function Slider(props) {
 
 
     return (
-        <div className="flex items-center justify-center w-11/12 h-full xl:w-full">
-            <div style={{ width: "90%", margin: "0 auto" }} className='flex-col items-center sm:h-[450px] h-[350px]'>
+        <div className="flex items-center justify-center w-11/12 h-full pb-8 xl:w-full">
+            <div style={{ width: "90%", margin: "0 auto" }} className='flex-col items-center sm:h-[480px] h-[350px]'>
                 <Carousel
                     slides={slides}
                     goToSlide={goToSlide}
@@ -134,9 +161,9 @@ export default function Slider(props) {
                     animationConfig={state.config}
                 />
                 {/*-------- Buttoms ------- */}
-                <div className='z-10 flex flex-row justify-center w-full mt-4 text-secondary'>
+                <div className='flex flex-row justify-center w-full mt-12 sm:mt-10 md:mt-4 text-secondary'>
                     {/* Button left */}
-                    <div className="z-50 p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
+                    <div className="p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-125"
                         onClick={() => {
                             setstateGoToSlide(goToSlide - 1);
                         }}>
@@ -144,7 +171,7 @@ export default function Slider(props) {
                     </div>
 
                     {/* button right */}
-                    <div className="z-50 p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
+                    <div className="p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-125"
                         onClick={() => {
                             setstateGoToSlide(goToSlide + 1);
                         }}>

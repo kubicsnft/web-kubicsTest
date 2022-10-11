@@ -20,7 +20,14 @@ const NFTZone = () => {
     return (
 
         <div className='flex-col   lg:p-12 sm:p-10 p-4 items-center w-11/12  mb-8 rounded-lg border-2 shadow-lg shadow-[#7B94b1] bg-[#ffffff]  border-primary' >
+        <div className='absolute md:w-4/12 w-6/12  bg-[#7094b16e] rounded-lg md:left-1/3 left-1/4  -mt-10 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
+                            <FormattedMessage
+                                id='imminent'
+                                defaultMessage='IMINENTE'
+                            />
+                        </div>
             <h2 className='mb-4 text-3xl'>NFTs</h2>
+
             {/* --------- Description --------- */}
             <div className='mb-8 text-justify ' >
                 <FormattedMessage

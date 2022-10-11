@@ -24,7 +24,7 @@ export default function Slider(props) {
       {/*-------- Buttoms ------- */}
       <div className='z-10 flex flex-row justify-center w-full mt-4 text-secondary'>
         {/* Button left */}
-        <div className="z-50 p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
+        <div className="z-50 p-1 mr-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-125 "
           onClick={() => {
             setstateGoToSlide(goToSlide - 1);
           }}>
@@ -32,7 +32,7 @@ export default function Slider(props) {
         </div>
 
         {/* button right */}
-        <div className="z-50 p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-150 "
+        <div className="z-50 p-1 ml-10 text-3xl transition duration-300 ease-in-out rounded-full shadow-lg cursor-pointer hover:scale-125 "
           onClick={() => {
             setstateGoToSlide(goToSlide + 1);
           }}>
