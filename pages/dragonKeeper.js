@@ -56,7 +56,12 @@ function Proyecto() {
                                 alt="Título película"
                             />
                         </div>
-                        <div className='mb-4 bg-white'><Whitelist /></div>
+                        {/* ---------- WHITELIST ----------- */}
+                        <div className='flex justify-center w-11/12 mt-4 mb-8 '>
+                            <div className='bg-white'>
+                                <Whitelist />
+                            </div>
+                        </div>
                         {/* ============================ Video/Image ============================= */}
                         <div className='flex flex-col items-center w-11/12 p-2 border-t-2 border-b-2 border-primary'>
                             <div className='flex justify-center w-full '>

@@ -42,7 +42,7 @@ const DkProject = () => {
                             </div>
                         </div>
                         {/* ----------------- Project story ----------------- */}
-                        <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md text-primary'>
+                        <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md md:shadow-none text-primary'>
                             <h3 className='text-lg text-start may text-secondary'>HISTORIA</h3>
                             <div className=''>
                                 <FormattedMessage
