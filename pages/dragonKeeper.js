@@ -34,7 +34,7 @@ function Proyecto() {
         <>
             <AppLayout>
                 {/* {access? */}
-                <div className='flex flex-col items-center justify-center w-full '>
+                <div className='flex flex-col items-center justify-center w-full text-primary'>
                     <div className={style.section}>
                         {/*  ============================ buttons ============================ */}
                         <div className='grid items-center w-11/12 grid-cols-2 -mt-2 ' >
@@ -108,11 +108,10 @@ function Proyecto() {
                     </div>
                     {/* ============================ ROADMAP ============================= */}
                     <div className={style.section}>
-                        <h2 className='py-6 mb-8 text-3xl'>ROADMAP PROYECTO</h2>
+                        <h2 className='py-6 mb-8 text-3xl'>ROADMAP</h2>
                         <Roadmap />
                     </div>
                 </div>
-                {/* :<div className='z-50 flex items-center justify-center mt-6 text-3xl text-center text-red-500 border-4 bg-primary h-96'>ESTA IP NO TIENE ACCESO</div>  }                      */}
             </AppLayout>
         </>
     );

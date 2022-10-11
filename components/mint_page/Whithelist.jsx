@@ -146,7 +146,7 @@ export default function Whitelist() {
   }
   // ========================================================
   return (
-    <div className="flex">
+    <div className="flex text-primary">
       {hasMetamask ? (
         isConnected ? ("") : (
           <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
