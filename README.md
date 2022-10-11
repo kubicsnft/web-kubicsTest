@@ -10,6 +10,37 @@ npm run dev
 yarn dev
 ```
 
+```shell
+npx hardhat help
+npx hardhat test
+GAS_REPORT=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.js --network (localhost)
+```
+
+
+```dependencies
+yarn add --dev hardhat
+(npx hardhat)?
+yarn add --dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers @openzeppelin/contracts
+yarn add --dev @nomiclabs/hardhat-etherscan
+yarn add --dev web3modal *
+yarn add --dev dotenv
+yarn add --dev hardhat-gas-reporter *
+yarn add --dev solidity-coverage   
+yarn add --dev axios
+
+yarn add --dev alchemy-sdk *
+
+yarn add --dev mongoose?
+
+```
+
+MongoDB
+
+
+ETH Whitelist contract deployed: 0x9b399a856b0016cf91c60aaae195b33738874c2b
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.

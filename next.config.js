@@ -8,10 +8,4 @@ const nextConfig = {
   },
 };
 
-// module.exports = {
-//   images: {
-//     domains: ["ipfs.io", "kubicsnft.mypinata.cloud"],
-//   },
-// };
-
 module.exports = nextConfig;

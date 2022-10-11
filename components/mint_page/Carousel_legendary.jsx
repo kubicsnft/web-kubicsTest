@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { useState } from "react"
+import { useEffect, useState } from "react";
 import dynamic from 'next/dynamic'
 import NftCard from "./Card_Legendary";
 import { v4 as uuidv4 } from "uuid";
@@ -31,6 +31,26 @@ const style = {
 
 
 function Carousel(props) {
+
+    const [nfts_legendary, setNft_Legendary ] = useState(undefined);
+    
+        useEffect(() => {
+            getAPI();
+        }, []);
+    
+        const getAPI = async () => {
+            try {
+                const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
+                const data = await res.json();
+                setNft_Legendary(data.data);
+                console.log(data.data[0].id);
+                console.log(data.data.length);
+                //console.log(nfts_legendary)
+                console.log("data saved")
+            } catch (err) {
+                console.log(err);
+            }
+        }; 
 
 
     // ------- Categorys of arrays -------
