@@ -11,7 +11,7 @@ import { FormattedMessage } from "react-intl";
 // Images
 import futuro from '../../public/cubos/elFuturo.png'
 import dk from '../../public/cubos/dragonkeeper.png'
-import mancha from '../../public/cubos/laMAncha.png'
+import mancha from '../../public/cubos/laMancha.png'
 import caramelo from '../../public/cubos/carameloW.png'
 
 
