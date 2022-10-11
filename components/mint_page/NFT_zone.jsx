@@ -28,6 +28,7 @@ const NFTZone = () => {
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
+
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
           setHasMetamask(true);
@@ -72,7 +73,7 @@ const NFTZone = () => {
                     const provider = new ethers.providers.Web3Provider(window.ethereum);
                     setSigner(provider.getSigner());
                     setAccount(accounts[0]);
-                    setIsConnected(true);
+                    setIsConnected(true)
                 } else {
                     console.log("No authorized account found");
                 }
@@ -82,6 +83,7 @@ const NFTZone = () => {
         } else {
             console.log("No Wallet found. Connect Wallet");
         }
+        return isConnected
     };
 /* ------------------ WHITELIST MINT FUNCTIONS ------------------ */
 
@@ -456,6 +458,8 @@ const NFTZone = () => {
         }
     }
 
+    console.log(`Is connected in NFT_Zone: ${isConnected}`)
+
 
 
     return (
@@ -484,7 +488,7 @@ const NFTZone = () => {
             </div>
             {/* =========================== LEGENDARY Category =========================== ) */}
             <div className='mb-32'>
-                <Carousel_Legend/>
+                <Carousel_Legend connectFunction={connect}/>
             </div>
             {/* =========================== ULTRA RARE Category =========================== */}
             <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>

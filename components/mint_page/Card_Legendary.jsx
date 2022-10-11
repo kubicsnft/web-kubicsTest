@@ -13,13 +13,19 @@ import { MovingSquareLoader } from 'react-loaders-kit';
 
 function CardPremium(props) {
 
-    const [hasMetamask, setHasMetamask] = useState();
-    const [isConnected, setIsConnected] = useState();
+    const {connectFunction}= props;
+
+    const [hasMetamask, setHasMetamask] = useState(false);
+    const [isConnected, setIsConnected] = useState(props.connected);
     const [signer, setSigner] = useState(undefined);
     const [nfts_legendary, setNft_Legendary ] = useState(undefined);
     const [account, setAccount] = useState(undefined);
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
+   
+    //const isConnected=props.connected    
+    console.log(`Is connected in Card_Legendary 0: ${props.connected}`) 
+    console.log(`Is connected in Card_Legendary 1: ${isConnected}`)
 
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
@@ -27,9 +33,10 @@ function CardPremium(props) {
         }
       }, []);
 
-   useEffect(() => {
+    
+      useEffect(() => {
         checkIfWalletIsConnected();
-    }, []); 
+    }, []);  
 
     //Function POST to call the API and create NFT
     async function postAPI (id){
@@ -58,7 +65,8 @@ function CardPremium(props) {
         }
     }; 
 
-    async function connect() {
+
+    /* async function connect() {
         if (typeof window.ethereum !== "undefined") {
           try {
             //Get account
@@ -76,7 +84,7 @@ function CardPremium(props) {
         } else {
           setIsConnected(false);
         }
-    }
+    } */
 
     // Checks if wallet is connected
     async function checkIfWalletIsConnected () {
@@ -136,7 +144,7 @@ function CardPremium(props) {
 
             setImageURI(imageURI);
             setOpenseaURL(openSeaURL);
-            await postAPI(id);
+            postAPI(id);
             getAPI();
             console.log(openSeaURL);
         } catch (error) {
@@ -240,7 +248,7 @@ function CardPremium(props) {
                                 )
 
                             ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                <button className="bg-white shadow-lg button learn-more" onClick={() => connectFunction()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
                                     </span>
