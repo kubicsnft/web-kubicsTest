@@ -11,7 +11,7 @@ import { FormattedMessage } from 'react-intl';
 const Carrusel = dynamic(() => import('../carrusel3d/carrusel'), { ssr: false })
 
 // Array nft sold
-const arrayTest = []
+const arrayTest = ['y']
 
 const SoldNft = (id) => {
     var sold = false
