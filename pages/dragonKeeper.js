@@ -3,14 +3,14 @@ import dynamic from 'next/dynamic'
 import { FormattedMessage } from 'react-intl';
 import AppLayout from '../components/layout/AppLayout';
 import Swich from '../components/toggleSwitch';
-import Premium from '../components/mint_page/Carousel_legendary';
+// import Premium from '../components/mint_page/Carousel_legendary';
 import { BiArrowBack } from 'react-icons/bi'
 import Roadmap from '../components/dragonKeeper/roadmapDK'
 import Image from 'next/image'
 import Link from 'next/link';
 import NFTZone from '../components/mint_page/NFT_zone';
 import DkProject from '../components/dragonKeeper/dkProject';
-// import middleware from '../middleware';
+import Whitelist from '../components/mint_page/Whithelist';
 
 
 // =========== Import dinamic =========== 
@@ -25,33 +25,10 @@ const style = {
     section: 'w-full   md:px-6 xl:px-12 p-4 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10',
 
 }
-// ---------------------test bloqueo ip--------------------
 
 
+function Proyecto() {
 
-
-// console.log('ffff----------------------------fffffff'+ middleware())
-
-
-// Proyecto.getInitialProps = async ({ req }) => {
-//     const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
-//     return { ip };
-// };
-
-
-function Proyecto({ ip }) {
-
-    // console.log({ ip })
-
-    // const blockedIP = ['::11']
-
-    // var access = true
-
-    // for(var i=0 ; i<blockedIP.length ; i++){
-    //     if(blockedIP[i] === ip){
-    //         access = false
-    //     }
-    // }
 
     return (
         <>
@@ -79,6 +56,7 @@ function Proyecto({ ip }) {
                                 alt="Título película"
                             />
                         </div>
+                        <div className='mb-4 bg-white'><Whitelist /></div>
                         {/* ============================ Video/Image ============================= */}
                         <div className='flex flex-col items-center w-11/12 p-2 border-t-2 border-b-2 border-primary'>
                             <div className='flex justify-center w-full '>
