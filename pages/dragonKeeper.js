@@ -76,7 +76,7 @@ function Proyecto() {
                                 />
                             </div>
                             {/* ---- Sinopsis ---- */}
-                            <div className='w-full mt-2 text-justify bg-white'>
+                            <div className='w-full mt-2 text-justify bg-white '>
                                 <p>
                                     Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.
                                 </p>

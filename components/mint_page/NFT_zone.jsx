@@ -29,7 +29,7 @@ const NFTZone = () => {
             <h2 className='mb-4 text-3xl font-bold'>NFTs</h2>
 
             {/* --------- Description --------- */}
-            <div className='mb-8 text-justify ' >
+            <div className='mb-8 text-justify' >
                 <FormattedMessage
                     id='nft.description'
                     default='description'
