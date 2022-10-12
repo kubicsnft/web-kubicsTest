@@ -29,16 +29,12 @@ function CardPremium(props) {
                 />
                 {/* {setLoading(false)} */}
             </div>
-
-
-
             <div className='flex flex-row justify-between w-full p-2 text-primary'>
-
                 <div className="flex flex-col items-start justify-between gap-2">
                     <h3 className="text-sm font-bold">{props.title}</h3>
                     {/* <p className='text-sm text-start'>{props.description}</p> */}
                     <div className='z-20 w-44'>
-                        <div className='flex items-center justify-center h-12 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                        <div className='flex items-center justify-center h-12 text-sm font-bold tracking-widest border text-primary border-secondary -rotate-6 may'>
                             <FormattedMessage
                                 id='imminent'
                                 defaultMessage='IMINENTE'
