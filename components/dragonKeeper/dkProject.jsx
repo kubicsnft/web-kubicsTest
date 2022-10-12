@@ -80,9 +80,9 @@ const DkProject = () => {
                 {/* ----------------- CASTING ------------------ */}
                 <div>
                     <h3 className='text-lg text-secondary text-start may'>CASTING VOICE</h3>
-                    <div className='flex flex-col flex-wrap items-center justify-around gap-4 2xl:gap-10 2xl:flex-nowrap md:flex-row'>
+                    <div className='flex flex-col flex-wrap items-center justify-around gap-4 2xl:gap-10 lg:flex-nowrap lg:flex-row'>
                         {/* Voice-Ping */}
-                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-6/12 xl:w-4/12'>
+                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/mayailnee.png' />
@@ -92,7 +92,7 @@ const DkProject = () => {
                             <Image src={dk_voice1} alt='Ping' className='rounded-lg' />
                         </div>
                         {/* Voice-Danzi */}
-                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-6/12 xl:w-4/12'>
+                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/Bill.png' />
@@ -102,7 +102,7 @@ const DkProject = () => {
                             <Image src={dk_voice3} alt='Ping' className='rounded-lg' />
                         </div>
                         {/* Voice-WangChao */}
-                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-6/12 xl:w-4/12'>
+                        <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/Bayble.png' />

@@ -64,7 +64,7 @@ function CardPremium(props) {
                 <div className=' text-start'>
                     <p>Price</p>
                     <p className='flex flex-row items-center ' >
-                        <FaEthereum />{props.price}
+                        <FaEthereum />0,5
                     </p>
                 </div>
             </div>

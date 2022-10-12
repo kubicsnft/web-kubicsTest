@@ -62,7 +62,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.4
                             </p>
                         </div>
                     </div>
@@ -116,7 +116,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.3
                             </p>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.3
                             </p>
                         </div>
                     </div>
@@ -222,7 +222,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.2
                             </p>
                         </div>
                     </div>
@@ -276,7 +276,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.18
                             </p>
                         </div>
                     </div>
@@ -353,7 +353,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />0.18
                             </p>
                         </div>
                     </div>
