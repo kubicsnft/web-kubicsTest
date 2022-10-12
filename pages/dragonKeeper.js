@@ -104,7 +104,7 @@ function Proyecto() {
           {/* ============================ Project ============================= */}
           <div className={style.section}>
             <h2 className="py-6 mb-8 text-3xl may">
-              <FormattedMessage id="dk.project" defaultMessage="PROYECTO" />
+              <FormattedMessage id="dk.title.project" defaultMessage="PROYECTO" />
             </h2>
             <DkProject />
           </div>
