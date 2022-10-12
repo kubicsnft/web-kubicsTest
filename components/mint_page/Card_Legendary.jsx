@@ -38,13 +38,13 @@ function CardPremium(props) {
                     <h3 className="text-sm font-bold">{props.title}</h3>
                     {/* <p className='text-sm text-start'>{props.description}</p> */}
                     <div className='z-20 w-44'>
-                        {/* <div className='flex items-center justify-center h-12 text-xl font-bold tracking-widest text-secondary -rotate-6 may'>
+                        <div className='flex items-center justify-center h-12 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
                             <FormattedMessage
                                 id='imminent'
                                 defaultMessage='IMINENTE'
                             />
-                        </div> */}
-                        {props.sold
+                        </div>
+                        {/* {props.sold
                             ? <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
                             <FormattedMessage
                                 id='sold'
@@ -58,7 +58,7 @@ function CardPremium(props) {
                                 <span className="button-text" translate="no">
                                     Buy Now
                                 </span>
-                            </button>}
+                            </button>} */}
                     </div>
                 </div>
                 <div className=' text-start'>

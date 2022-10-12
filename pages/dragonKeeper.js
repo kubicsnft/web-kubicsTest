@@ -100,7 +100,7 @@ function Proyecto() {
                     <div className={style.section}>
                         <h2 className='py-6 mb-8 text-3xl may'>
                             <FormattedMessage
-                                id='dk.project'
+                                id='dk.title.project'
                                 defaultMessage='PROYECTO'
                             />
                         </h2>

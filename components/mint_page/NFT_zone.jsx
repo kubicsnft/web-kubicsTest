@@ -20,12 +20,12 @@ const NFTZone = () => {
     return (
 
         <div className='flex-col mt-5  lg:p-12 sm:p-10 p-4 items-center w-11/12  mb-4 rounded-lg border-2 shadow-lg shadow-[#7B94b1] bg-[#ffffff]  border-primary' >
-        <div className='absolute md:w-4/12 w-6/12  bg-[#7094b16e] rounded-lg md:left-1/3 left-1/4  -mt-10 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
-                            <FormattedMessage
-                                id='imminent'
-                                defaultMessage='IMINENTE'
-                            />
-                        </div>
+            <div className='absolute md:w-4/12 w-6/12  bg-[#7094b16e] rouded-lg md:left-1/3 left-1/4  -mt-10 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
+                <FormattedMessage
+                    id='imminent'
+                    defaultMessage='IMINENTE'
+                />
+            </div>
             <h2 className='mb-4 text-3xl font-bold'>NFTs</h2>
 
             {/* --------- Description --------- */}
@@ -43,7 +43,7 @@ const NFTZone = () => {
             </div>
             {/* =========================== LEGENDARY Category =========================== ) */}
             <div className='mb-32'>
-                <Carousel_Legend/>
+                <Carousel_Legend />
             </div>
             {/* =========================== ULTRA RARE Category =========================== */}
             <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
@@ -80,20 +80,26 @@ const NFTZone = () => {
                         <li className='mb-2'><FormattedMessage id='nft.ultrarare7' default='description' /></li>
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
-                        <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
                             <span className="button-text " translate="no">
                                 Buy Now
                             </span>
-                        </button>
+                        </button> */}
+                        <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                            <FormattedMessage
+                                id='imminent'
+                                defaultMessage='IMINENTE'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
             {/* =========================== RARE Category =========================== */}
             {/* --------------- For Mobile --------------- */}
-            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
+            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg lg:hidden sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
                 <div className='w-full text-lg border-b text-start may text-secondary lg:hidden'>RARE</div>
                 {/* ----------- NFT card ----------- */}
                 <div className='flex flex-col p-1 bg-white border-2 rounded-lg'>
@@ -125,17 +131,23 @@ const NFTZone = () => {
                         <li className='mb-2'><FormattedMessage id='nft.rare4' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.rare5' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.rare6' default='description' /></li>
-                        
+
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
-                        <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
                             <span className="button-text " translate="no">
                                 Buy Now
                             </span>
-                        </button>
+                        </button> */}
+                        <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                            <FormattedMessage
+                                id='imminent'
+                                defaultMessage='IMINENTE'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,15 +165,21 @@ const NFTZone = () => {
                             <li className='mb-2'><FormattedMessage id='nft.rare5' default='description' /></li>
                             <li className='mb-2'><FormattedMessage id='nft.rare6' default='description' /></li>
                         </ul>
-                        <div className='flex items-center mt-4 ml-2 w-44'>
-                            <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        <div className='flex items-center mt-4 ml-4 w-44'>
+                            {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
                                 <span className="button-text " translate="no">
                                     Buy Now
                                 </span>
-                            </button>
+                            </button> */}
+                            <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                                <FormattedMessage
+                                    id='imminent'
+                                    defaultMessage='IMINENTE'
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -218,24 +236,30 @@ const NFTZone = () => {
                         <li className='mb-2'><FormattedMessage id='nft.uncommon3' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.uncommon4' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.uncommon5' default='description' /></li>
-                        
+
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
-                        <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
                             <span className="button-text " translate="no">
                                 Buy Now
                             </span>
-                        </button>
+                        </button> */}
+                        <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                            <FormattedMessage
+                                id='imminent'
+                                defaultMessage='IMINENTE'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             {/* =========================== COMMON Category =========================== */}
             {/* --------------- For Mobile --------------- */}
-            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
+            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
                 <div className='w-full text-lg border-b text-start may text-secondary lg:hidden'>COMMON</div>
                 {/* ----------- NFT card ----------- */}
                 <div className='flex flex-col p-1 bg-white border-2 rounded-lg'>
@@ -264,17 +288,23 @@ const NFTZone = () => {
                         <li className='mb-2'><FormattedMessage id='nft.common1' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.common2' default='description' /></li>
                         <li className='mb-2'><FormattedMessage id='nft.common3' default='description' /></li>
-                        <li className='mb-2'><FormattedMessage id='nft.common4' default='description' /></li>                       
+                        <li className='mb-2'><FormattedMessage id='nft.common4' default='description' /></li>
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
-                        <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
                             <span className="button-text " translate="no">
                                 Buy Now
                             </span>
-                        </button>
+                        </button> */}
+                        <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                            <FormattedMessage
+                                id='imminent'
+                                defaultMessage='IMINENTE'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,22 +313,28 @@ const NFTZone = () => {
                 {/* ----------- NFT DESCRIPTION ----------- */}
                 <div className='flex flex-col items-center justify-between h-12/12 '>
                     <div className='flex flex-col items-start justify-center w-full mb-8'>
-                        <div className='w-full mb-6 text-lg border-b may text-secondary text-start'>common</div>
+                        <div className='w-full mb-6 text-lg border-b may text-secondary text-start'>COMMON</div>
                         <ul className='ml-8 list-disc text-start'>
                             <li className='mb-2'><FormattedMessage id='nft.common1' default='description' /></li>
                             <li className='mb-2'><FormattedMessage id='nft.common2' default='description' /></li>
                             <li className='mb-2'><FormattedMessage id='nft.common3' default='description' /></li>
                             <li className='mb-2'><FormattedMessage id='nft.common4' default='description' /></li>
                         </ul>
-                        <div className='flex items-center mt-4 ml-2 w-44'>
-                            <button className="bg-white shadow-lg button learn-more" onClick='' >
+                        <div className='flex items-center mt-4 ml-4 w-44'>
+                            {/* <button className="bg-white shadow-lg button learn-more" onClick='' >
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
                                 <span className="button-text " translate="no">
                                     Buy Now
                                 </span>
-                            </button>
+                            </button> */}
+                            <div className='flex items-center justify-center h-12 px-5 font-bold tracking-widest border md:text-xl text-primary border-secondary -rotate-6 may'>
+                                <FormattedMessage
+                                    id='imminent'
+                                    defaultMessage='IMINENTE'
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -310,7 +346,7 @@ const NFTZone = () => {
                         alt='nft image'
 
                     />
-                    <div className='flex flex-row justify-between w-full p-2 txt-[#5d5d5d]'>
+                    <div className='flex flex-row justify-between w-full p-2 txt-[#5d5d5d] '>
                         <div className=" text-start">
                             <h3 className="font-bold ">Dragonkeeper Common </h3>
                         </div>
