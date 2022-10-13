@@ -59,8 +59,9 @@ export default function Whitelist() {
         setIsWhitelisted(true)
       } catch (err) {
         setLoading(false)
-        console.log('fffffffffffff'+err)
-        if (err.code != 4001) {
+        console.log('New ERROR: ' + err)
+        console.log('New ERROR: ' + err.code)
+        if (err.code != 4001 && err.code != 'ACTION_REJECTED') {
           if (err.error.data.originalError.data === 0x57657b77) {
             Swal.fire({
               position: 'center',
@@ -72,7 +73,7 @@ export default function Whitelist() {
             })
             setIsWhitelisted(true)
           }
-          if (err.error.data.originalError.data == 0xfa6ef231) {
+          if (err.error.data.originalError.data === 0xfa6ef231) {
             Swal.fire({
               position: 'center',
               icon: 'warning',
@@ -82,8 +83,7 @@ export default function Whitelist() {
               timer: 2500
             })
           }
-          if (err.error.data.originalError.data == 0xf236ce7a) {
-
+          if (err.error.data.originalError.data === 0xf236ce7a) {
             Swal.fire({
               position: 'center',
               icon: 'warning',
@@ -94,7 +94,7 @@ export default function Whitelist() {
             })
           }
         } else {
-          console.log(err)
+          console.log('4001' + err)
         }
       }
     } else {
@@ -177,36 +177,19 @@ export default function Whitelist() {
                   height='30'
                   alt="metamask"
                 />
-
               </button>
-
             </div>
-            {/* </button> */}
           </div>
         )
-      ) : (
-        <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
-          <p>¡Debe de tener una wallet en <a className="hover:text-[#E1B649] underline" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Metamask</a> para poder unirse a nuestra WHITELIST!</p>
-          {/* <a
-                className=' buttMeta'
-                type="button"
-                src='https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn'
-              >
-                <p className="">
-                  Connect
-                </p>
-                <svg strokeWidth="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" className="w-6 h-6 " xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinejoin="round" strokeLinecap="round"></path>
-                </svg>
-                <Image
-                  className="ml-4"
-                  src='/MetaMask.png'
-                  width='30'
-                  height='30'
-                  alt="metamask"
-                />
 
-              </a> */}
+      ) : (
+
+        <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
+          <p>
+            <FormattedMessage id="wl.metamask.install1" defaultMessage=''/>
+            <a className="hover:text-[#E1B649] underline" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Metamask</a>
+            <FormattedMessage id="wl.metamask.install2" defaultMessage=''/>
+          </p>
         </div>
       )}
       <div>

@@ -58,7 +58,11 @@ function Proyecto() {
                         </div>
                         {/* ---------- WHITELIST ----------- */}
                         <div className='flex flex-col items-center justify-center w-11/12 mt-4 mb-8 '>
-                        <p className='px-2 mb-2 bg-white  border-t-4 border-b-4 border-[#7b94b143]'>Únase a nuestra <span className='text-secondary'>WHITELIST</span> y acceda a la preventa</p>
+                            <p className='px-2 mb-2 bg-white  border-t-4 border-b-4 border-[#7b94b143]'>
+                            <FormattedMessage id="wl.metamask.tittle1" defaultMessage=''/>
+                                <span className='text-secondary'>WHITELIST</span>
+                                <FormattedMessage id="wl.metamask.tittle2" defaultMessage=''/>
+                            </p>
                             <div className='bg-white'>
                                 <Whitelist />
                             </div>
