@@ -20,7 +20,7 @@ const NFTZone = () => {
     return (
 
         <div className='flex-col mt-5  lg:p-12 sm:p-10 p-4 items-center w-11/12  mb-4 rounded-lg border-2 shadow-lg shadow-[#7B94b1] bg-[#ffffff]  border-primary' >
-            <div className='md:absolute md:w-4/12 w-12/12  bg-[#7094b16e] rouded-lg md:left-1/3 -mt-20 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
+            <div className='md:absolute md:w-6/12 w-12/12  bg-[#7094b16e] rouded-lg md:left-1/4 -mt-20 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
                 <FormattedMessage
                     id='imminent'
                     defaultMessage='IMINENTE'
