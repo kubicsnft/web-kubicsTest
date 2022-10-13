@@ -59,9 +59,9 @@ export default function Whitelist() {
         setIsWhitelisted(true)
       } catch (err) {
         setLoading(false)
-
+        console.log('fffffffffffff'+err)
         if (err.code != 4001) {
-          if (err.error.data.originalError.data == 0x57657b77) {
+          if (err.error.data.originalError.data === 0x57657b77) {
             Swal.fire({
               position: 'center',
               icon: 'warning',
@@ -122,24 +122,26 @@ export default function Whitelist() {
       )
     else {
       return (
-        <div className="flex flex-col items-center bg-[#ffffff8a] p-5 border rounded-lg shadow-lg sm:w-[30rem]">
+        <div className="flex flex-col items-center  sm:w-[30rem]">
           <div>
             <FormattedMessage
               id='wl.connected'
               defaultMessage='Connected! Make sure you are on the ETH Chain'
             />
           </div>
-          <button className="mt-4 button learn-more" onClick={() => addToWhitelist()}>
-            <span className="circle" aria-hidden="true">
-              <span className="icon arrow"></span>
-            </span>
-            <span className="button-text" translate="no">
-              <FormattedMessage
-                id='wl.join'
-                defaultMessage='JOIN OUR WHITELIST'
-              />
-            </span>
-          </button>
+          <div className="w-64">
+            <button className="w-32 mt-4 shadow-lg button learn-more" onClick={() => addToWhitelist()}>
+              <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="button-text" translate="no">
+                <FormattedMessage
+                  id='wl.join'
+                  defaultMessage='JOIN OUR WHITELIST'
+                />
+              </span>
+            </button>
+          </div>
         </div>
       )
     }
@@ -184,7 +186,27 @@ export default function Whitelist() {
         )
       ) : (
         <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
-          ¡Instale Metamask para unirse a nuestra whitelist!
+          <p>¡Debe de tener una wallet en <a className="hover:text-[#E1B649] underline" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Metamask</a> para poder unirse a nuestra WHITELIST!</p>
+          {/* <a
+                className=' buttMeta'
+                type="button"
+                src='https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn'
+              >
+                <p className="">
+                  Connect
+                </p>
+                <svg strokeWidth="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" className="w-6 h-6 " xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinejoin="round" strokeLinecap="round"></path>
+                </svg>
+                <Image
+                  className="ml-4"
+                  src='/MetaMask.png'
+                  width='30'
+                  height='30'
+                  alt="metamask"
+                />
+
+              </a> */}
         </div>
       )}
       <div>

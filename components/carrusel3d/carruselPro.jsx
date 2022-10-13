@@ -76,7 +76,7 @@ export default function Slider(props) {
                 <div className="flex flex-col items-center bg-white rounded-lg w-72 sm:w-96 ">
                     {/* <Link href=''> */}
                     <Image
-                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        className="flex transition duration-300 ease-in-out cursor-pointe over:scale-105"
                         src={futuro}
                         alt='El fututo ya está aquí'
                         height={300}
@@ -114,13 +114,25 @@ export default function Slider(props) {
             key: uuidv4(),
             content:
 
-                <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
+                <div className="flex flex-col items-center bg-white rounded-lg w-72 sm:w-96">
                     <Image
-                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        className="flex transition duration-300 ease-in-out cursor-pointe over:scale-105"
                         src={caramelo}
-                        alt='El fututo ya está aquí'
+                        alt='Caramelo world'
                         height={300}
                     />
+                    <h3 className="text-xl tracking-widest text-center text-secondary text-shadow may">
+                    <FormattedMessage
+                            id="project.caramelo.tittle"
+                            default='Palabras de caramelo'
+                        />
+                    </h3>
+                    <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
+                        <FormattedMessage
+                            id="project.caramelo"
+                            default='Película de animación CG basada en la obra universal de Cervantes. En Desarrollo.'
+                        />
+                    </div>
                     <h3 className="absolute  bg-[#7094b16e] rounded-lg mb-44  text-2xl tracking-widest text-center -rotate-12 p-4 text-white may"><FormattedMessage
                         id="coming.soon"
                         default='COMING SOON'
@@ -132,19 +144,32 @@ export default function Slider(props) {
         {
             key: uuidv4(),
             content:
-                <div className="flex flex-col items-center justify-center bg-white rounded-lg h-80 w-72 sm:w-96">
+                <div className="flex flex-col items-center bg-white rounded-lg w-72 sm:w-96">
                     <Image
-                        className="flex transition duration-300 ease-in-out cursor-pointer hover:scale-105"
+                        className="flex transition duration-300 ease-in-out cursor-pointe over:scale-105"
                         src={mancha}
-                        alt='El fututo ya está aquí'
+                        alt='En un lugar de la Mancha'
                         height={300}
                     />
+                    <h3 className="text-xl tracking-widest text-center text-secondary text-shadow may">
+                    <FormattedMessage
+                            id="project.mancha.tittle"
+                            default='En un lugar de la Mancha'
+                        />
+                    </h3>
+                    <div className='p-2 text-sm text-justify text-white rounded-lg shadow-lg w-5/5 shadow-gray-400 bg-primary '>
+                        <FormattedMessage
+                            id="project.mancha"
+                            default='Película de animación CG basada en la obra universal de Cervantes. En Desarrollo.'
+                        />
+                    </div>
                     <h3 className="absolute  bg-[#7094b16e] rounded-lg mb-44  text-2xl tracking-widest text-center -rotate-12 p-4 text-white may"><FormattedMessage
                         id="coming.soon"
                         default='COMING SOON'
                     />
                     </h3>
                 </div>
+
         },
     ]
 

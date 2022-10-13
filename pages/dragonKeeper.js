@@ -50,14 +50,15 @@ function Proyecto() {
                             </div>
                         </div>
                         {/* ============================ Img - Title ============================ */}
-                        <div className='flex justify-center w-2/5 mb-2'>
+                        <div className='flex justify-center w-7/12 mb-2 sm:w-2/5'>
                             <Image
                                 src={titulo}
                                 alt="Título película"
                             />
                         </div>
                         {/* ---------- WHITELIST ----------- */}
-                        <div className='flex justify-center w-11/12 mt-4 mb-8 '>
+                        <div className='flex flex-col items-center justify-center w-11/12 mt-4 mb-8 '>
+                        <p className='px-2 mb-2 bg-white  border-t-4 border-b-4 border-[#7b94b143]'>Únase a nuestra <span className='text-secondary'>WHITELIST</span> y acceda a la preventa</p>
                             <div className='bg-white'>
                                 <Whitelist />
                             </div>
@@ -77,18 +78,10 @@ function Proyecto() {
                             </div>
                             {/* ---- Sinopsis ---- */}
                             <div className='w-full mt-2 text-justify bg-white '>
-                                <p>
-                                    Dragonkeeper es la primera película de animación coproducida entre España y China, con el apoyo español de Antena 3 y Telefónica, distribuida en España por Contacorriente, una de las mayores distribuidoras del país.
-                                </p>
-                                <p>
-                                    Basada en el primer libro de la colección Dragonkeeper de Carol Wilkinson, best seller internacional y dirigida por el galardonado director español Salvador Simó.
-                                </p>
-                                <p>
-                                    Dragonkeeper cuenta una historia que transcurre durante la dinastía Han en la antigua China.  Ping es una joven niña  que vive como esclava en una remota fortaleza y en las mazmorras de esa fortaleza se  custodian a los últimos Dragones imperiales.
-                                </p>
-                                <p>
-                                    Ping ayudará a escapar a Danzi ,el último dragón, y recuperará el huevo de dragón de las manos del enfermo emperador y su malvado consejero Diao. Esta historia es  un viaje donde Ping conocerá su poder interior y aceptará su destino como la última cuidadora de dragones …  los llamados Dragonkeepers.
-                                </p>
+                                <p><FormattedMessage id='dk.sipnosis1' defaultMessage='sipnosis' /></p>
+                                <p><FormattedMessage id='dk.sipnosis2' defaultMessage='sipnosis' /></p>
+                                <p><FormattedMessage id='dk.sipnosis3' defaultMessage='sipnosis' /></p>
+                                <p><FormattedMessage id='dk.sipnosis4' defaultMessage='sipnosis' /></p>
                             </div>
                         </div>
                     </div>
