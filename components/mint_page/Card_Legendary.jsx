@@ -15,16 +15,18 @@ function CardPremium(props) {
 
     const {connectFunction}= props;
 
+
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(props.connected);
+    const [isSold, setIsSold]=useState(props.sold)
     const [signer, setSigner] = useState(undefined);
-    const [nfts_legendary, setNft_Legendary ] = useState(undefined);
     const [account, setAccount] = useState(undefined);
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
-   
-    //const isConnected=props.connected    
-    console.log(`Is connected in Card_Legendary 0: ${props.connected}`) 
+
+  
+    const sold=props.sold
+    console.log(`Sold: ${sold}`) 
     console.log(`Is connected in Card_Legendary 1: ${isConnected}`)
 
     useEffect(() => {
@@ -51,40 +53,6 @@ function CardPremium(props) {
           console.log(response.data)
         })
     }
-
-    //Function to call the API and get NFTS info
-    const getAPI = async () => {
-        try {
-            const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
-            const data = await res.json();
-            setNft_Legendary(data);
-            console.log(data);
-            console.log("data saved")
-        } catch (err) {
-            console.log(err);
-        }
-    }; 
-
-
-    /* async function connect() {
-        if (typeof window.ethereum !== "undefined") {
-          try {
-            //Get account
-            const accounts = await window.ethereum.request({
-              method: "eth_requestAccounts",
-            });
-            setAccount(accounts[0]);
-            //console.log(accounts[0]);
-            setIsConnected(true);
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            setSigner(provider.getSigner());
-          } catch (e) {
-            console.log(e);
-          }
-        } else {
-          setIsConnected(false);
-        }
-    } */
 
     // Checks if wallet is connected
     async function checkIfWalletIsConnected () {

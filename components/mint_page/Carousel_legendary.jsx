@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import NftCard from "./Card_Legendary";
 import { v4 as uuidv4 } from "uuid";
 import { FormattedMessage } from 'react-intl';
+import useSWR from "swr";
 
 
 // Import dynamic
@@ -55,6 +56,7 @@ import legend36 from '../../public/dragonkeeper/nft_legenday/36.webp'
 import legend37 from '../../public/dragonkeeper/nft_legenday/37.webp'
 import legend38 from '../../public/dragonkeeper/nft_legenday/38.webp'
 import legend39 from '../../public/dragonkeeper/nft_legenday/39.webp'
+import { BiUnderline } from 'react-icons/bi';
 
 
 
@@ -66,48 +68,59 @@ const style = {
 }
 
 
-function Carousel(props) {
 
-    const [nfts_legendary, setNft_Legendary] = useState(undefined);
+const fetcher = (...args) => fetch(...args).then(res=>res.json());
+
+function Carousel(props) {
+    const [reactData, setReactData] = useState([props.nfts_Sold]);
     //const [isConnected, setIsConnected] = useState(iprops.connected);
     const { connectFunction } = props;
-
     const connected = props.connected;
+    console.log("---------------------------")
+    console.log(reactData[0][0].id)
+    
+
+
+    /* useEffect(() => {
+    fetch("http://localhost:3000/api/NFTsMongo/")
+        .then((res) => res.json())
+        .then((data) => {
+        setReactData(data.data);
+        console.log(data.data);
+        })
+        .catch((e) => {
+        console.log(e);
+        });
+    }, []); */
+
+/* function getNFT() {
+    const url = "http://localhost:3000/api/NFTsMongo/"
+
+    const {data, error}= useSWR(url, fetcher);
+
+    const array_Sold =data
+    // Array nft sold
+    //setNft_Legendary(data)
+    
+    return array_Sold
+} */
+
+    
 
     //console.log(`Is connected in Carousel: ${connected}`)
 
-    useEffect(() => {
-        getAPI();
-    }, []);
-
-    const getAPI = async () => {
-        try {
-            const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
-            const data = await res.json();
-            setNft_Legendary(data.data);
-            console.log(data.data[0].id);
-            //console.log(data.data.length);
-            /* for(var i=0; data.data.length; i++){
-                SoldNft(data.data[i].id)
-            } */
-            //console.log(nfts_legendary)
-            console.log("data saved")
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    // Array nft sold
-    const arrayTest = nfts_legendary
 
     const SoldNft = (id) => {
-        var sold = false
-        for (var i = 0; i < arrayTest.length; i++) {
-            if (arrayTest[i] === id) {
+       var sold = false
+
+        for (var i = 0; i < reactData[0].length; i++) {
+            console.log(reactData[0][i].id, id)
+            if (reactData[0][i].id === id) {
                 sold = true
+                console.log(sold)
             }
         }
-        return sold
+        return sold   
     }
 
     // ------- Categorys of arrays -------
@@ -122,7 +135,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('0')}
+                sold={SoldNft(0)}
             />
         },
         {
@@ -135,7 +148,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('1')}
+                sold={SoldNft(1)}
             />
         },
         {
@@ -148,7 +161,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('2')}
+                sold={SoldNft(2)}
             />
         },
         {
@@ -161,7 +174,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('3')}
+                sold={SoldNft(3)}
             />
         },
         {
@@ -174,7 +187,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('4')}
+                sold={SoldNft(4)}
             />
         },
         {
@@ -187,7 +200,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('5')}
+                sold={SoldNft(5)}
             />
         },
         {
@@ -200,7 +213,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('6')}
+                sold={SoldNft(6)}
             />
         },
         {
@@ -213,7 +226,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('7')}
+                sold={SoldNft(7)}
             />
         }]
     const bronce = [
@@ -227,7 +240,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('8')}
+                sold={SoldNft(8)}
             />
 
         },
@@ -241,7 +254,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('9')}
+                sold={SoldNft(9)}
             />
         },
         {
@@ -254,7 +267,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('10')}
+                sold={SoldNft(10)}
             />
         },
         {
@@ -267,7 +280,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('11')}
+                sold={SoldNft(11)}
             />
         },
         {
@@ -280,7 +293,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('12')}
+                sold={SoldNft(12)}
             />
         },
         {
@@ -293,7 +306,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('13')}
+                sold={SoldNft(13)}
             />
         },
         {
@@ -306,7 +319,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('14')}
+                sold={SoldNft(14)}
             />
         },
         {
@@ -319,7 +332,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('15')}
+                sold={SoldNft(15)}
             />
         }]
     const silver = [
@@ -333,7 +346,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('16')}
+                sold={SoldNft(16)}
             />
 
         },
@@ -347,7 +360,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('17')}
+                sold={SoldNft(17)}
             />
         },
         {
@@ -360,7 +373,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('18')}
+                sold={SoldNft(18)}
             />
         },
         {
@@ -373,7 +386,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('19')}
+                sold={SoldNft(19)}
             />
         },
         {
@@ -386,7 +399,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('20')}
+                sold={SoldNft(20)}
             />
         },
         {
@@ -399,7 +412,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('21')}
+                sold={SoldNft(21)}
             />
         },
         {
@@ -412,7 +425,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('22')}
+                sold={SoldNft(22)}
             />
         },
         {
@@ -425,7 +438,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('23')}
+                sold={SoldNft(23)}
             />
         }]
     const stone = [
@@ -439,7 +452,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('32')}
+                sold={SoldNft(32)}
             />
 
         },
@@ -453,7 +466,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('33')}
+                sold={SoldNft(33)}
             />
         },
         {
@@ -466,7 +479,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('34')}
+                sold={SoldNft(34)}
             />
         },
         {
@@ -479,7 +492,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('35')}
+                sold={SoldNft(35)}
             />
         },
         {
@@ -492,7 +505,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('36')}
+                sold={SoldNft(36)}
             />
         },
         {
@@ -505,7 +518,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('37')}
+                sold={SoldNft(37)}
             />
         },
         {
@@ -518,7 +531,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('38')}
+                sold={SoldNft(38)}
             />
         },
         {
@@ -531,7 +544,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('39')}
+                sold={SoldNft(39)}
             />
         }]
     const marble = [
@@ -545,7 +558,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('24')}
+                sold={SoldNft(24)}
             />
 
         },
@@ -559,7 +572,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('25')}
+                sold={SoldNft(25)}
             />
         },
         {
@@ -572,7 +585,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('26')}
+                sold={SoldNft(26)}
             />
         },
         {
@@ -585,7 +598,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('27')}
+                sold={SoldNft(27)}
             />
         },
         {
@@ -598,7 +611,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('28')}
+                sold={SoldNft(28)}
             />
         },
         {
@@ -611,7 +624,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('29')}
+                sold={SoldNft(29)}
             />
         },
         {
@@ -624,7 +637,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('30')}
+                sold={SoldNft(30)}
             />
         },
         {
@@ -637,7 +650,7 @@ function Carousel(props) {
                 price=''
                 connectFunction={connectFunction}
                 connected={connected}
-                sold={SoldNft('31')}
+                sold={SoldNft(31)}
             />
         }]
 
@@ -698,7 +711,7 @@ function Carousel(props) {
                         className={`${style.category_box}${categoryButton === 'gold' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
                         onClick={changueA}
                     >
-                        Bold
+                        Gold
                     </div>
                     <div
                         className={`${style.category_box}${categoryButton === 'bronce' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
