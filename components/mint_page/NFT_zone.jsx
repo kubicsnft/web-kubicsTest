@@ -460,7 +460,11 @@ const NFTZone = () => {
 
     console.log(`Is connected in NFT_Zone: ${isConnected}`)
 
-
+// --------- Prices categorys ----------
+    const priceURare = 0.4
+    const priceRare = 0.3
+    const priceUCommon = 0.2
+    const priceCommon = 0.18
 
     return (
 
@@ -507,7 +511,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceURare}
                             </p>
                         </div>
                     </div>
@@ -584,7 +588,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceRare}
                             </p>
                         </div>
                     </div>
@@ -712,7 +716,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceRare}
                             </p>
                         </div>
                     </div>
@@ -736,7 +740,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceUCommon}
                             </p>
                         </div>
                     </div>
@@ -813,7 +817,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceCommon}
                             </p>
                         </div>
                     </div>
@@ -936,7 +940,7 @@ const NFTZone = () => {
                         <div className=' text-start'>
                             <p>Price</p>
                             <p className='flex flex-row items-center ' >
-                                <FaEthereum />0.001
+                                <FaEthereum />{priceCommon}
                             </p>
                         </div>
                     </div>

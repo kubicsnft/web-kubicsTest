@@ -57,18 +57,7 @@ import legend38 from '../../public/dragonkeeper/nft_legenday/38.webp'
 import legend39 from '../../public/dragonkeeper/nft_legenday/39.webp'
 
 
-// Array nft sold
-const arrayTest = ['y']
 
-const SoldNft = (id) => {
-    var sold = false
-    for (var i = 0; i < arrayTest.length; i++) {
-        if (arrayTest[i] === id) {
-            sold = true
-        }
-    }
-    return sold
-}
 
 // Syiles Tailwind 
 const style = {
@@ -79,35 +68,47 @@ const style = {
 
 function Carousel(props) {
 
-    const [nfts_legendary, setNft_Legendary ] = useState(undefined);
+    const [nfts_legendary, setNft_Legendary] = useState(undefined);
     //const [isConnected, setIsConnected] = useState(iprops.connected);
-    const {connectFunction} = props;
-    
-    const connected=props.connected;
+    const { connectFunction } = props;
+
+    const connected = props.connected;
 
     //console.log(`Is connected in Carousel: ${connected}`)
-    
-        useEffect(() => {
-            getAPI();
-        }, []);
-    
-        const getAPI = async () => {
-            try {
-                const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
-                const data = await res.json();
-                setNft_Legendary(data.data);
-                console.log(data.data[0].id);
-                //console.log(data.data.length);
-                /* for(var i=0; data.data.length; i++){
-                    SoldNft(data.data[i].id)
-                } */
-                //console.log(nfts_legendary)
-                console.log("data saved")
-            } catch (err) {
-                console.log(err);
-            }
-        }; 
 
+    useEffect(() => {
+        getAPI();
+    }, []);
+
+    const getAPI = async () => {
+        try {
+            const res = await fetch(`http://localhost:3000/api/NFTsMongo/`);
+            const data = await res.json();
+            setNft_Legendary(data.data);
+            console.log(data.data[0].id);
+            //console.log(data.data.length);
+            /* for(var i=0; data.data.length; i++){
+                SoldNft(data.data[i].id)
+            } */
+            //console.log(nfts_legendary)
+            console.log("data saved")
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    // Array nft sold
+    const arrayTest = nfts_legendary
+
+    const SoldNft = (id) => {
+        var sold = false
+        for (var i = 0; i < arrayTest.length; i++) {
+            if (arrayTest[i] === id) {
+                sold = true
+            }
+        }
+        return sold
+    }
 
     // ------- Categorys of arrays -------
     const gold = [
@@ -119,7 +120,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 0'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('0')}
             />
@@ -132,7 +133,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 1'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('1')}
             />
@@ -145,7 +146,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 2'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('2')}
             />
@@ -158,7 +159,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 3'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('3')}
             />
@@ -171,7 +172,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 4'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('4')}
             />
@@ -184,7 +185,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 5'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('5')}
             />
@@ -197,7 +198,7 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 6'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('6')}
             />
@@ -210,12 +211,12 @@ function Carousel(props) {
                 title='Dragonkeeper Legendary 7'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('7')}
             />
         }]
-const bronce = [
+    const bronce = [
         {
             key: uuidv4(),
             content: <NftCard
@@ -224,7 +225,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 8'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('8')}
             />
@@ -238,7 +239,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 9'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('9')}
             />
@@ -251,7 +252,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 10'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('10')}
             />
@@ -264,7 +265,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 11'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('11')}
             />
@@ -277,7 +278,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 12'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('12')}
             />
@@ -290,7 +291,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 13'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('13')}
             />
@@ -303,7 +304,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 14'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('14')}
             />
@@ -316,7 +317,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 15'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('15')}
             />
@@ -330,7 +331,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 16'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('16')}
             />
@@ -344,7 +345,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 17'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('17')}
             />
@@ -357,7 +358,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 18'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('18')}
             />
@@ -370,7 +371,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 19'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('19')}
             />
@@ -383,7 +384,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 20'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('20')}
             />
@@ -396,7 +397,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 21'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('21')}
             />
@@ -409,7 +410,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 22'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('22')}
             />
@@ -422,7 +423,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 23'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('23')}
             />
@@ -436,7 +437,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 32'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('32')}
             />
@@ -450,7 +451,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 33'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('33')}
             />
@@ -463,7 +464,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 34'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('34')}
             />
@@ -476,7 +477,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 35'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('35')}
             />
@@ -489,7 +490,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 36'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('36')}
             />
@@ -502,7 +503,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 37'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('37')}
             />
@@ -515,7 +516,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 38'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('38')}
             />
@@ -528,7 +529,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 39'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('39')}
             />
@@ -542,7 +543,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 24'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('24')}
             />
@@ -556,7 +557,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 25'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('25')}
             />
@@ -569,7 +570,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 26'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('26')}
             />
@@ -582,7 +583,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 27'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('27')}
             />
@@ -595,7 +596,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 28'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('28')}
             />
@@ -608,7 +609,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 29'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('29')}
             />
@@ -621,7 +622,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 30'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('30')}
             />
@@ -634,7 +635,7 @@ const bronce = [
                 title='NFT Dragonkeeper Legendary 31'
                 description=""
                 price=''
-                connectFunction = {connectFunction}
+                connectFunction={connectFunction}
                 connected={connected}
                 sold={SoldNft('31')}
             />

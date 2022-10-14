@@ -25,7 +25,9 @@ const DkProject = () => {
                     <div className='flex flex-col gap-4 bg-white rounded-lg md:shadow-md'>
                         {/* ----------------- Project description ----------------- */}
                         <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md md:shadow-none text-primary'>
-                            <h3 className='text-lg text-start may text-secondary'>PROYECTO</h3>
+                            <h3 className='text-lg text-start may text-secondary'>
+                                <FormattedMessage id='dk.title.project' defaultMessage='PROYECTO' />
+                            </h3>
                             <div className=''>
                                 <FormattedMessage
                                     id='dk.description'
@@ -43,7 +45,9 @@ const DkProject = () => {
                         </div>
                         {/* ----------------- Project story ----------------- */}
                         <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md md:shadow-none text-primary'>
-                            <h3 className='text-lg text-start may text-secondary'>HISTORIA</h3>
+                            <h3 className='text-lg text-start may text-secondary'>
+                                <FormattedMessage id='dk.title.story' defaultMessage='HISTORIA' />
+                            </h3>
                             <div className=''>
                                 <FormattedMessage
                                     id='dk.story'
@@ -87,7 +91,7 @@ const DkProject = () => {
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/mayailnee.png' />
                                 </div>
-                                <p>Mayalinee Griffiths <FormattedMessage id='AS' defaultMessage='es'/> Ping</p>
+                                <p>Mayalinee Griffiths <FormattedMessage id='AS' defaultMessage='es' /> Ping</p>
                             </div>
                             <Image src={dk_voice1} alt='Ping' className='rounded-lg' />
                         </div>
@@ -97,7 +101,7 @@ const DkProject = () => {
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/Bill.png' />
                                 </div>
-                                <p>Bill Nighy <FormattedMessage id='AS' defaultMessage='es'/> Danzi</p>
+                                <p>Bill Nighy <FormattedMessage id='AS' defaultMessage='es' /> Danzi</p>
                             </div>
                             <Image src={dk_voice3} alt='Ping' className='rounded-lg' />
                         </div>
@@ -107,7 +111,7 @@ const DkProject = () => {
                                 <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
                                     <Cube img='/dragonkeeper/voice/Bayble.png' />
                                 </div>
-                                <p>Bill Bayley <FormattedMessage id='AS' defaultMessage='es'/> Wang Chao</p>
+                                <p>Bill Bayley <FormattedMessage id='AS' defaultMessage='es' /> Wang Chao</p>
                             </div>
                             <Image src={dk_voice5} alt='Wang chao' className='rounded-lg' />
                         </div>
