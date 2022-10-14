@@ -10,23 +10,72 @@ import { FormattedMessage } from 'react-intl';
 // Import dynamic
 const Carrusel = dynamic(() => import('../carrusel3d/carrusel'), { ssr: false })
 
+// ------------------------- Import image -------------------------
+import legend0 from '../../public/dragonkeeper/nft_legenday/0.webp'
+import legend1 from '../../public/dragonkeeper/nft_legenday/1.webp'
+import legend2 from '../../public/dragonkeeper/nft_legenday/2.webp'
+import legend3 from '../../public/dragonkeeper/nft_legenday/3.webp'
+import legend4 from '../../public/dragonkeeper/nft_legenday/4.webp'
+import legend5 from '../../public/dragonkeeper/nft_legenday/5.webp'
+import legend6 from '../../public/dragonkeeper/nft_legenday/6.webp'
+import legend7 from '../../public/dragonkeeper/nft_legenday/7.webp'
+
+import legend8 from '../../public/dragonkeeper/nft_legenday/8.webp'
+import legend9 from '../../public/dragonkeeper/nft_legenday/9.webp'
+import legend10 from '../../public/dragonkeeper/nft_legenday/10.webp'
+import legend11 from '../../public/dragonkeeper/nft_legenday/11.webp'
+import legend12 from '../../public/dragonkeeper/nft_legenday/12.webp'
+import legend13 from '../../public/dragonkeeper/nft_legenday/13.webp'
+import legend14 from '../../public/dragonkeeper/nft_legenday/14.webp'
+import legend15 from '../../public/dragonkeeper/nft_legenday/15.webp'
+
+import legend16 from '../../public/dragonkeeper/nft_legenday/16.webp'
+import legend17 from '../../public/dragonkeeper/nft_legenday/17.webp'
+import legend18 from '../../public/dragonkeeper/nft_legenday/18.webp'
+import legend19 from '../../public/dragonkeeper/nft_legenday/19.webp'
+import legend20 from '../../public/dragonkeeper/nft_legenday/20.webp'
+import legend21 from '../../public/dragonkeeper/nft_legenday/21.webp'
+import legend22 from '../../public/dragonkeeper/nft_legenday/22.webp'
+import legend23 from '../../public/dragonkeeper/nft_legenday/23.webp'
+
+import legend24 from '../../public/dragonkeeper/nft_legenday/24.webp'
+import legend25 from '../../public/dragonkeeper/nft_legenday/25.webp'
+import legend26 from '../../public/dragonkeeper/nft_legenday/26.webp'
+import legend27 from '../../public/dragonkeeper/nft_legenday/27.webp'
+import legend28 from '../../public/dragonkeeper/nft_legenday/28.webp'
+import legend29 from '../../public/dragonkeeper/nft_legenday/29.webp'
+import legend30 from '../../public/dragonkeeper/nft_legenday/30.webp'
+import legend31 from '../../public/dragonkeeper/nft_legenday/31.webp'
+
+import legend32 from '../../public/dragonkeeper/nft_legenday/32.webp'
+import legend33 from '../../public/dragonkeeper/nft_legenday/33.webp'
+import legend34 from '../../public/dragonkeeper/nft_legenday/34.webp'
+import legend35 from '../../public/dragonkeeper/nft_legenday/35.webp'
+import legend36 from '../../public/dragonkeeper/nft_legenday/36.webp'
+import legend37 from '../../public/dragonkeeper/nft_legenday/37.webp'
+import legend38 from '../../public/dragonkeeper/nft_legenday/38.webp'
+import legend39 from '../../public/dragonkeeper/nft_legenday/39.webp'
+
+
+// Array nft sold
+const arrayTest = ['y']
+
+const SoldNft = (id) => {
+    var sold = false
+    for (var i = 0; i < arrayTest.length; i++) {
+        if (arrayTest[i] === id) {
+            sold = true
+        }
+    }
+    return sold
+}
+
+// Syiles Tailwind 
 const style = {
     container: 'flex-col mt-8 items-center w-full justify-center   sm:mb-16',
     category_box: ' border rounded-md cursor-pointer shadow-lg mr-2 text-sm w-20 '
 }
 
-        // Array nft sold
-const arrayTest=[];
-    const SoldNft = (id) => {
-        var sold = false
-        for (var i = 0; i < arrayTest.length; i++) {
-                
-            if (arrayTest[i].id === id) {
-                sold = true
-            }
-        }
-        return sold
-    }
 
 function Carousel(props) {
 
@@ -66,10 +115,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='0'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/0.png'
+                image={legend0}
                 title='Dragonkeeper Legendary 0'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('0')}
@@ -79,10 +128,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='1'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/1.png'
+                image={legend1}
                 title='Dragonkeeper Legendary 1'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('1')}
@@ -92,10 +141,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='2'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/2.png'
+                image={legend2}
                 title='Dragonkeeper Legendary 2'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('2')}
@@ -105,10 +154,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='3'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/3.png'
+                image={legend3}
                 title='Dragonkeeper Legendary 3'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('3')}
@@ -118,10 +167,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='4'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/4.png'
+                image={legend4}
                 title='Dragonkeeper Legendary 4'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('4')}
@@ -131,10 +180,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='5'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/5.png'
+                image={legend5}
                 title='Dragonkeeper Legendary 5'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('5')}
@@ -144,10 +193,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='6'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/6.png'
+                image={legend6}
                 title='Dragonkeeper Legendary 6'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('6')}
@@ -157,24 +206,24 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='7'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/7.png'
+                image={legend7}
                 title='Dragonkeeper Legendary 7'
-                description="DragonKeeper collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('7')}
             />
         }]
-    const bronce = [
+const bronce = [
         {
             key: uuidv4(),
             content: <NftCard
                 id='8'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/8.png'
+                image={legend8}
                 title='NFT Dragonkeeper Legendary 8'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('8')}
@@ -185,10 +234,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='9'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/9.png'
+                image={legend9}
                 title='NFT Dragonkeeper Legendary 9'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('9')}
@@ -198,10 +247,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='10'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/10.png'
+                image={legend10}
                 title='NFT Dragonkeeper Legendary 10'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('10')}
@@ -211,10 +260,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='11'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/11.png'
+                image={legend11}
                 title='NFT Dragonkeeper Legendary 11'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('11')}
@@ -224,10 +273,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='12'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/12.png'
+                image={legend12}
                 title='NFT Dragonkeeper Legendary 12'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('12')}
@@ -237,10 +286,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='13'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/13.png'
+                image={legend13}
                 title='NFT Dragonkeeper Legendary 13'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('13')}
@@ -250,10 +299,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='14'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/14.png'
+                image={legend14}
                 title='NFT Dragonkeeper Legendary 14'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('14')}
@@ -263,10 +312,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='15'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/15.png'
+                image={legend15}
                 title='NFT Dragonkeeper Legendary 15'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('15')}
@@ -277,10 +326,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='16'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/16.png'
+                image={legend16}
                 title='NFT Dragonkeeper Legendary 16'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('16')}
@@ -291,10 +340,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='17'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/17.png'
+                image={legend17}
                 title='NFT Dragonkeeper Legendary 17'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('17')}
@@ -304,10 +353,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='18'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/18.png'
+                image={legend18}
                 title='NFT Dragonkeeper Legendary 18'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('18')}
@@ -317,10 +366,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='19'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/19.png'
+                image={legend19}
                 title='NFT Dragonkeeper Legendary 19'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('19')}
@@ -330,10 +379,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='20'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/20.png'
+                image={legend20}
                 title='NFT Dragonkeeper Legendary 20'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('20')}
@@ -343,10 +392,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='21'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/21.png'
+                image={legend21}
                 title='NFT Dragonkeeper Legendary 21'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('21')}
@@ -356,10 +405,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='22'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/22.png'
+                image={legend22}
                 title='NFT Dragonkeeper Legendary 22'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('22')}
@@ -369,10 +418,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='23'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/23.png'
+                image={legend23}
                 title='NFT Dragonkeeper Legendary 23'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('23')}
@@ -383,10 +432,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='32'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/32.png'
+                image={legend32}
                 title='NFT Dragonkeeper Legendary 32'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('32')}
@@ -397,10 +446,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='33'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/33.png'
+                image={legend33}
                 title='NFT Dragonkeeper Legendary 33'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('33')}
@@ -410,10 +459,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='34'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/34.png'
+                image={legend34}
                 title='NFT Dragonkeeper Legendary 34'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('34')}
@@ -423,10 +472,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='35'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/35.png'
+                image={legend35}
                 title='NFT Dragonkeeper Legendary 35'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('35')}
@@ -436,10 +485,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='36'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/36.png'
+                image={legend36}
                 title='NFT Dragonkeeper Legendary 36'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('36')}
@@ -449,10 +498,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='37'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/37.png'
+                image={legend37}
                 title='NFT Dragonkeeper Legendary 37'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('37')}
@@ -462,10 +511,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='38'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/38.png'
+                image={legend38}
                 title='NFT Dragonkeeper Legendary 38'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('38')}
@@ -475,10 +524,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='39'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/39.png'
+                image={legend39}
                 title='NFT Dragonkeeper Legendary 39'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('39')}
@@ -489,10 +538,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='24'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/24.png'
+                image={legend24}
                 title='NFT Dragonkeeper Legendary 24'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('24')}
@@ -503,10 +552,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='25'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/25.png'
+                image={legend25}
                 title='NFT Dragonkeeper Legendary 25'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('25')}
@@ -516,10 +565,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='26'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/26.png'
+                image={legend26}
                 title='NFT Dragonkeeper Legendary 26'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('26')}
@@ -529,10 +578,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='27'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/27.png'
+                image={legend27}
                 title='NFT Dragonkeeper Legendary 27'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('27')}
@@ -542,10 +591,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='28'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/28.png'
+                image={legend28}
                 title='NFT Dragonkeeper Legendary 28'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('28')}
@@ -555,10 +604,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='29'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/29.png'
+                image={legend29}
                 title='NFT Dragonkeeper Legendary 29'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('29')}
@@ -568,10 +617,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='30'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/30.png'
+                image={legend30}
                 title='NFT Dragonkeeper Legendary 30'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('30')}
@@ -581,10 +630,10 @@ function Carousel(props) {
             key: uuidv4(),
             content: <NftCard
                 id='31'
-                image='https://kubicsnft.mypinata.cloud/ipfs/QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t/31.png'
+                image={legend31}
                 title='NFT Dragonkeeper Legendary 31'
-                description="DragonKeeper NFT collection"
-                price='0.1'
+                description=""
+                price=''
                 connectFunction = {connectFunction}
                 connected={connected}
                 sold={SoldNft('31')}

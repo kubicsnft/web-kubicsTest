@@ -262,7 +262,7 @@ function CardPremium(props) {
                                 href={`https://metamask.io/download/`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="button nav-button btn-sm mx-4"
+                                className="mx-4 button nav-button btn-sm"
                                 >
                                 <button className="bg-white shadow-lg button learn-more">
                                     <span className="circle" aria-hidden="true">
@@ -279,7 +279,8 @@ function CardPremium(props) {
                 <div className=' text-start'>
                     <p>Price</p>
                     <p className='flex flex-row items-center ' >
-                        <FaEthereum />{props.price}
+                    {/* ====== PRICE ======== */}
+                        <FaEthereum />0.5
                     </p>
                 </div>
             </div>
