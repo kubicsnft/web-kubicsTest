@@ -59,7 +59,7 @@ const NFTZone = (props) => {
         if (typeof window.ethereum !== "undefined") {
             setHasMetamask(true);
         }
-    });
+    },[]);
 
     useEffect(() => {
         if (connected===true) {
@@ -540,7 +540,7 @@ const NFTZone = (props) => {
                                     <MovingSquareLoader   {...loaderProps} />
                                     <div className="mt-3">LOADING ...</div>
                                 </div>) : (
-                                    <button button className="bg-white shadow-lg button learn-more" onClick={() => mint_UltraRare()} >
+                                    <button className="bg-white shadow-lg button learn-more" onClick={() => mint_UltraRare()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>

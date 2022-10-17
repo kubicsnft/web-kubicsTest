@@ -34,7 +34,8 @@ function CardPremium(props) {
 
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(connected);
-    const [isSold, setIsSold] = useState(props.sold)
+    const [isSold, setIsSold] = useState(props.sold);
+    const [currentSold, setCurrentSold] = useState(null)
     //const [signer, setSigner] = useState(get_Signer);
     //const [account, setAccount] = useState(get_Account);
     const [imageURI, setImageURI] = useState(undefined);
@@ -50,11 +51,6 @@ function CardPremium(props) {
             setHasMetamask(true);
         }
     }, []);
-
-
-    // useEffect(() => {
-    //     checkIfWalletIsConnected();
-    // }, []);
 
     //Function POST to call the API and create NFT
     async function postAPI(id) {
@@ -74,32 +70,6 @@ function CardPremium(props) {
         }
 
     }
-
-    // Checks if wallet is connected
-    // async function checkIfWalletIsConnected() {
-    //     if (typeof window.ethereum !== "undefined") {
-    //         try {
-    //             //console.log("Got the ethereum obejct: ", window.ethereum);
-    //             const accounts = await window.ethereum.request({
-    //                 method: "eth_accounts",
-    //             });
-
-    //             if (accounts.length !== 0) {
-    //                 //console.log("Found authorized Account: ", accounts[0]);
-    //                 const provider = new ethers.providers.Web3Provider(window.ethereum);
-    //                 setSigner(provider.getSigner());
-    //                 setAccount(accounts[0]);
-    //                 setIsConnected(true);
-    //             } else {
-    //                 console.log("No authorized account found");
-    //             }
-    //         } catch (e) {
-    //             console.log(e);
-    //         }
-    //     } else {
-    //         console.log("No Wallet found. Connect Wallet");
-    //     }
-    // };
 
     //Function Mint LEGENDARY
     async function mint_Legendary(id) {
@@ -130,23 +100,31 @@ function CardPremium(props) {
                 const result = await contract.payToMint_Legendary(metadataURI, {
                     value: ethers.utils.parseEther("0.005"),
                 });
-                await result.wait();
+                await result.wait(); 
+                
+                setImageURI(imageURI);
+                setOpenseaURL(openSeaURL);
+                setCurrentSold(true);
+                postAPI(id);
+
                 //----- ALERT ------
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
                     iconColor: '#7094b1',
-                    title: 'Excellent! ¡You have bought your NFT!',
-                    showConfirmButton: false,
-                    timer: 2500
+                    title: 'Excellent! You have bought your NFT!',
+                    confirmButtonText: '<a href="'+openSeaURL+'">Link to OpenSea. It might take a moment to load your new nft</a>',
+                    cancelButtonText: 'Close',
+                    showConfirmButton: true,
+                    //timer: 2500
                 })
+               
                 setLoading(false)
-                setImageURI(imageURI);
-                setOpenseaURL(openSeaURL);
-                postAPI(id);
+
                 console.log(openSeaURL);
             } catch (error) {
                 console.log(error);
+                setLoading(false)
             }
         } else {
             console.log("Please install MetaMask");
@@ -235,8 +213,19 @@ function CardPremium(props) {
                         ) : (
                             hasMetamask ? (
                                 isConnected ? (
-
-                                    <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
+                                    loading ? (<div className="flex flex-col items-center justify-center text-center">
+                                    <MovingSquareLoader   {...loaderProps} />
+                                    <div className="mt-3">LOADING ...</div>
+                                </div>) : (
+                                    currentSold ? (
+                                        <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
+                                        <FormattedMessage
+                                            id='sold'
+                                            defaultMessage='SOLD'
+                                        />
+                                    </div>
+                                    ) :(
+                                        <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>
@@ -244,6 +233,8 @@ function CardPremium(props) {
                                             Buy Now
                                         </span>
                                     </button>
+                                    )
+                                    )
                                 ) : (
                                     <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                         <span className="circle" aria-hidden="true">
