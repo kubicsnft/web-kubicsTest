@@ -5,7 +5,7 @@ import axios from "axios";
 import { ethers } from "ethers";
 import { dragonKeeper } from "../../constants";
 import DragonKeeper from "../../artifacts/contracts/DragonKeeper.sol/DragonKeeper.json";
-
+import Swal from 'sweetalert2'
 import { FaEthereum } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl';
 import { MovingSquareLoader } from 'react-loaders-kit';
@@ -24,22 +24,19 @@ function CardPremium(props) {
         colors: ['#7094b1', '#E1B649']
     }
 
-    const conn = useContext(ConnectContext);
+    // =================== Provider ===================
+    const conn_Context = useContext(ConnectContext)
 
-    // console.log(conn.isConnected() + ' ---in card')
-
-    const connected = conn.is_Connected()
-    const get_Signer = conn.get_Signer()
-    const get_Account = conn.get_Account()
-
-    const { connectFunction } = props;
+    const connected = conn_Context.is_Connected()
+    const signer = conn_Context.get_Signer()
+    const account = conn_Context.get_Account()
 
 
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(connected);
     const [isSold, setIsSold] = useState(props.sold)
-    const [signer, setSigner] = useState(get_Signer);
-    const [account, setAccount] = useState(get_Account);
+    //const [signer, setSigner] = useState(get_Signer);
+    //const [account, setAccount] = useState(get_Account);
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
@@ -67,10 +64,15 @@ function CardPremium(props) {
             mint: true,
         }
         //Call to Register API
-
-        axios.post('http://localhost:3000/api/NFTsMongo/', body).then(response => {
-            //   console.log(response.data)
+        try {
+            axios.post('http://localhost:3000/api/NFTsMongo/', body).then(response => {
+            console.log(response.data)
+            console.log("nft legendary saved")
         })
+        } catch (error) {
+            
+        }
+
     }
 
     // Checks if wallet is connected
@@ -142,7 +144,6 @@ function CardPremium(props) {
                 setImageURI(imageURI);
                 setOpenseaURL(openSeaURL);
                 postAPI(id);
-                getAPI();
                 console.log(openSeaURL);
             } catch (error) {
                 console.log(error);
@@ -244,7 +245,7 @@ function CardPremium(props) {
                                         </span>
                                     </button>
                                 ) : (
-                                    <button className="bg-white shadow-lg button learn-more" onClick={() => connectFunction()} >
+                                    <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>

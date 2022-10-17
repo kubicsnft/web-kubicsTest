@@ -35,13 +35,7 @@ const NFTZone = (props) => {
 
 
     // =================== Provider ===================
-    const conn_Context = useContext(ConnectContext);
-
-    console.log('--------------------------')
-    console.log(conn_Context.is_Connected())
-    console.log(conn_Context.get_Signer())
-    console.log(conn_Context.get_Account())
-    console.log('--------------------------')
+    const conn_Context = useContext(ConnectContext)
 
     const connected = conn_Context.is_Connected()
     const signer = conn_Context.get_Signer()
@@ -50,15 +44,16 @@ const NFTZone = (props) => {
     // =================== States ===================
 
     const [isConnected, setIsConnected] = useState(connected);
+    //const [hasSigner, setSigner] = useState(conn_Context.get_Signer());
     const [hasMetamask, setHasMetamask] = useState(false);
-    // const [signer, setSigner] = useState(get_Signer);
-
-    // const [account, setAccount] = useState(get_Account);
+    //const [hasAccount, setAccount] = useState(conn_Context.get_Account());
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
-
-    console.log(props.nfts_Sold)
+    console.log('--------------------------')
+    console.log(isConnected)
+    console.log('--------------------------')
+    console.log('Is connected in NFT_Zone:' + connected)
 
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
@@ -66,28 +61,14 @@ const NFTZone = (props) => {
         }
     });
 
-    async function connect() {
-        if (typeof window.ethereum !== "undefined") {
-            try {
-                //Get account
-                const accounts = await window.ethereum.request({
-                    method: "eth_requestAccounts",
-                });
-                // setAccount(accounts[0]);
-                console.log(accounts[0]);
-                // setIsConnected(true);
-                const provider = new ethers.providers.Web3Provider(window.ethereum);
-                // setSigner(provider.getSigner());
-                // window.location.reload(false);
-            } catch (e) {
-                console.log(e);
-            }
-        } else {
-            setIsConnected(false);
+    useEffect(() => {
+        if (connected===true) {
+            setIsConnected(true);
+            console.log("Ha entrado en este useEffect")
         }
-    }
+    },[connected]); 
 
-    /* ------------------ WHITELIST MINT FUNCTIONS ------------------ */
+    /* ------------------  MINT FUNCTIONS ------------------ */
 
     //Function Mint Category ULTRARARE
     async function mint_UltraRare() {
@@ -119,19 +100,23 @@ const NFTZone = (props) => {
                 const result = await contract.payToMint_UltraRare(metadataURI, {
                     value: ethers.utils.parseEther("0.005"),
                 });
-                await result.wait();
+                await result.wait(); 
+                setOpenseaURL(openSeaURL);
+                setImageURI(imageURI);                
+                setLoading(false)
                 //----- ALERT ------
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
                     iconColor: '#7094b1',
                     title: 'Excellent! ¡You have bought your NFT!',
+                    //description: `You can see it in the following link: ${openSeaURL}`,
                     showConfirmButton: false,
                     timer: 2500
                 })
-                setLoading(false)
-                setImageURI(imageURI);
-                setOpenseaURL(openSeaURL);
+
+                
+               
                 console.log(openSeaURL);
             } catch (error) {
                 console.log(error);
@@ -276,7 +261,7 @@ const NFTZone = (props) => {
     /* ------------------ WHITELIST MINT FUNCTIONS ------------------ */
 
     //Function Whitelist Mint LEGENDARY
-    async function whitelist_Mint_Legendary(id) {
+/*     async function whitelist_Mint_Legendary(id) {
         if (typeof window.ethereum !== "undefined") {
             const contract = new ethers.Contract(
                 dragonKeeper,
@@ -440,7 +425,7 @@ const NFTZone = (props) => {
     }
 
     //Function Mint Category COMMON
-    async function mint_Common() {
+    async function whitelist_Mint_Common() {
         if (typeof window.ethereum !== "undefined") {
             const contract = new ethers.Contract(
                 dragonKeeper,
@@ -478,9 +463,7 @@ const NFTZone = (props) => {
         } else {
             console.log("Please install MetaMask");
         }
-    }
-
-    console.log('Is connected in NFT_Zone:' + isConnected)
+    } */
 
     // --------- Prices categorys ----------
     const priceURare = 0.4
@@ -514,7 +497,7 @@ const NFTZone = (props) => {
             </div>
             {/* =========================== LEGENDARY Category =========================== ) */}
             <div className='mb-32'>
-                <Carousel_Legend connectFunction={connect} nfts_Sold={props.nfts_Sold} />
+                <Carousel_Legend /* connectFunction={connect} */ nfts_Sold={props.nfts_Sold} />
             </div>
             {/* =========================== ULTRA RARE Category =========================== */}
             <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
@@ -552,7 +535,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            connected ? (
+                            isConnected ? (
                                 loading ? (<div className="flex flex-col items-center justify-center text-center">
                                     <MovingSquareLoader   {...loaderProps} />
                                     <div className="mt-3">LOADING ...</div>
@@ -566,7 +549,7 @@ const NFTZone = (props) => {
                                         </span>
                                     </button>)
                             ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
                                     </span>
@@ -633,7 +616,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            connected ? (
+                            isConnected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Rare()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -643,7 +626,7 @@ const NFTZone = (props) => {
                                     </span>
                                 </button>
                             ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
                                     </span>
@@ -688,7 +671,7 @@ const NFTZone = (props) => {
                         </ul>
                         <div className='flex items-center mt-4 ml-2 w-44'>
                             {hasMetamask ? (
-                                connected ? (
+                                isConnected ? (
                                     <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Rare()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
@@ -698,7 +681,7 @@ const NFTZone = (props) => {
                                         </span>
                                     </button>
                                 ) : (
-                                    <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                    <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>
@@ -784,7 +767,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            connected ? (
+                            isConnected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Uncommon()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -794,7 +777,7 @@ const NFTZone = (props) => {
                                     </span>
                                 </button>
                             ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
                                     </span>
@@ -859,7 +842,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            connected ? (
+                            isConnected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Common()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -869,7 +852,7 @@ const NFTZone = (props) => {
                                     </span>
                                 </button>
                             ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
                                     </span>
@@ -912,7 +895,7 @@ const NFTZone = (props) => {
                         </ul>
                         <div className='flex items-center mt-4 ml-2 w-44'>
                             {hasMetamask ? (
-                                connected ? (
+                                isConnected ? (
                                     <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Common()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
@@ -922,7 +905,7 @@ const NFTZone = (props) => {
                                         </span>
                                     </button>
                                 ) : (
-                                    <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
+                                    <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>
