@@ -121,10 +121,6 @@ function Proyecto({ data }) {
             <h2 className="py-6 mb-8 text-3xl">ROADMAP</h2>
             <Roadmap />
           </div>
-          <h1>{data.data[0].id}</h1>
-          <h1>{data.data[1].id}</h1>
-          <h1>{data.data[2].id}</h1>
-          <h1>{data.data[3].id}</h1>
         </div>
       </AppLayout>
     </>

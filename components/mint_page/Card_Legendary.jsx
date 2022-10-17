@@ -92,7 +92,6 @@ function CardPremium(props) {
         const tokenID_Collection = await contract.getTokenCounter();
         console.log(`Token ID: ${tokenID_Collection.toString()}`);
 
-        const tokenId_Legendary = await contract.getTokenCounter_Legendary();
         console.log(`Token ID Category Legendary: ${id.toString()}`);
         const contentIdMetadata_Legendary =
             "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
@@ -113,7 +112,6 @@ function CardPremium(props) {
             setImageURI(imageURI);
             setOpenseaURL(openSeaURL);
             postAPI(id);
-            getAPI();
             console.log(openSeaURL);
         } catch (error) {
             console.log(error);
@@ -135,7 +133,7 @@ function CardPremium(props) {
         const tokenID_Collection = await contract.getTokenCounter();
         console.log(`Token ID: ${tokenID_Collection.toString()}`);
 
-        const tokenId_Legendary = await contract.getTokenCounter_Legendary();
+        //const tokenId_Legendary = await contract.getTokenCounter_Legendary();
         console.log(`Token ID Category Legendary: ${id.toString()}`);
         const contentIdMetadata_Legendary =
             "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
