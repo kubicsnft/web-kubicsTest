@@ -186,9 +186,9 @@ export default function Whitelist() {
 
         <div className="flex flex-col bg-[#ffffff8a] items-center justify-center p-5 rounded-lg shadow-xl sm:w-[30rem] ">
           <p>
-            <FormattedMessage id="wl.metamask.install1" defaultMessage=''/>
+            <FormattedMessage id="wl.metamask.install1" defaultMessage='' />
             <a className="hover:text-[#E1B649] underline" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Metamask</a>
-            <FormattedMessage id="wl.metamask.install2" defaultMessage=''/>
+            <FormattedMessage id="wl.metamask.install2" defaultMessage='' />
           </p>
         </div>
       )}

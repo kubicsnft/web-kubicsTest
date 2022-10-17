@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import NftCard from "./Card_Legendary";
 import { v4 as uuidv4 } from "uuid";
 import { FormattedMessage } from 'react-intl';
-import useSWR from "swr";
+
 
 
 // Import dynamic
@@ -76,8 +76,8 @@ function Carousel(props) {
     //const [isConnected, setIsConnected] = useState(iprops.connected);
     const { connectFunction } = props;
     const connected = props.connected;
-    console.log("---------------------------")
-    console.log(reactData[0][0].id)
+    // console.log("---------------------------")
+    // console.log(reactData[0][0].id)
     
 
 
@@ -114,10 +114,10 @@ function Carousel(props) {
        var sold = false
 
         for (var i = 0; i < reactData[0].length; i++) {
-            console.log(reactData[0][i].id, id)
+            // console.log(reactData[0][i].id, id)
             if (reactData[0][i].id === id) {
                 sold = true
-                console.log(sold)
+                // console.log(sold)
             }
         }
         return sold   

@@ -4,12 +4,14 @@ import NftCard from "./Card_Legendary";
 import Image from 'next/image';
 import { FaEthereum } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Link from "next/link"
 import axios from "axios";
 import { ethers } from "ethers";
 import { dragonKeeper } from "../../constants";
 import DragonKeeper from "../../artifacts/contracts/DragonKeeper.sol/DragonKeeper.json";
+import Swal from 'sweetalert2'
+import { MovingSquareLoader } from 'react-loaders-kit'
 
 // import gif categorys
 import ultraRare from '../../public/dragonkeeper/gif/ultraRare.gif'
@@ -17,20 +19,44 @@ import rare from '../../public/dragonkeeper/gif/rare.gif'
 import uncommon from '../../public/dragonkeeper/gif/uncommon.gif'
 import common from '../../public/dragonkeeper/gif/common.gif'
 
-
+import { ConnectContext } from '../../context/MyProvider'
 
 const NFTZone = (props) => {
-    const [isConnected, setIsConnected] = useState(false);
-    const [hasMetamask, setHasMetamask] = useState(false);
-    const [signer, setSigner] = useState(undefined);
 
-    const [account, setAccount] = useState(undefined);
+    // =================== Loader ===================
+    const [loading, setLoading] = useState(false);
+
+    const loaderProps = {
+        loading,
+        size: 35,
+        duration: 1,
+        colors: ['#7094b1', '#E1B649']
+    }
+
+
+    // =================== Provider ===================
+    const conn_Context = useContext(ConnectContext);
+
+    console.log('--------------------------')
+    console.log(conn_Context.is_Connected())
+    console.log(conn_Context.get_Signer())
+    console.log(conn_Context.get_Account())
+    console.log('--------------------------')
+
+    const connected = conn_Context.is_Connected()
+    const signer = conn_Context.get_Signer()
+    const account = conn_Context.get_Account()
+
+    // =================== States ===================
+
+    const [isConnected, setIsConnected] = useState(connected);
+    const [hasMetamask, setHasMetamask] = useState(false);
+    // const [signer, setSigner] = useState(get_Signer);
+
+    // const [account, setAccount] = useState(get_Account);
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
-    //const arrayTest= props.data
-  /*   console.log("Testing getServerSideProps: ")
-    console.log(props.data)  */
 
     console.log(props.nfts_Sold)
 
@@ -40,10 +66,6 @@ const NFTZone = (props) => {
         }
     });
 
-    useEffect(() => {
-        checkIfWalletIsConnected();
-    }, []);
-
     async function connect() {
         if (typeof window.ethereum !== "undefined") {
             try {
@@ -51,11 +73,12 @@ const NFTZone = (props) => {
                 const accounts = await window.ethereum.request({
                     method: "eth_requestAccounts",
                 });
-                setAccount(accounts[0]);
+                // setAccount(accounts[0]);
                 console.log(accounts[0]);
-                setIsConnected(true);
+                // setIsConnected(true);
                 const provider = new ethers.providers.Web3Provider(window.ethereum);
-                setSigner(provider.getSigner());
+                // setSigner(provider.getSigner());
+                // window.location.reload(false);
             } catch (e) {
                 console.log(e);
             }
@@ -64,32 +87,6 @@ const NFTZone = (props) => {
         }
     }
 
-    // Checks if wallet is connected
-    const checkIfWalletIsConnected = async () => {
-        if (typeof window.ethereum !== "undefined") {
-            try {
-                console.log("Got the ethereum obejct: ", window.ethereum);
-                const accounts = await window.ethereum.request({
-                    method: "eth_accounts",
-                });
-
-                if (accounts.length !== 0) {
-                    console.log("Found authorized Account: ", accounts[0]);
-                    const provider = new ethers.providers.Web3Provider(window.ethereum);
-                    setSigner(provider.getSigner());
-                    setAccount(accounts[0]);
-                    setIsConnected(true)
-                } else {
-                    console.log("No authorized account found");
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        } else {
-            console.log("No Wallet found. Connect Wallet");
-        }
-        return isConnected
-    };
     /* ------------------ WHITELIST MINT FUNCTIONS ------------------ */
 
     //Function Mint Category ULTRARARE
@@ -118,10 +115,21 @@ const NFTZone = (props) => {
             //URL Needs to be updated with production data
             const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
             try {
+                setLoading(true)
                 const result = await contract.payToMint_UltraRare(metadataURI, {
                     value: ethers.utils.parseEther("0.005"),
                 });
                 await result.wait();
+                //----- ALERT ------
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    iconColor: '#7094b1',
+                    title: 'Excellent! ¡You have bought your NFT!',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                setLoading(false)
                 setImageURI(imageURI);
                 setOpenseaURL(openSeaURL);
                 console.log(openSeaURL);
@@ -163,6 +171,15 @@ const NFTZone = (props) => {
                     value: ethers.utils.parseEther("0.005"),
                 });
                 await result.wait();
+                //----- ALERT ------
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    iconColor: '#7094b1',
+                    title: 'Excellent! ¡You have bought your NFT!',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
                 setImageURI(imageURI);
                 setOpenseaURL(openSeaURL);
                 console.log(openSeaURL);
@@ -463,9 +480,9 @@ const NFTZone = (props) => {
         }
     }
 
-    console.log(`Is connected in NFT_Zone: ${isConnected}`)
+    console.log('Is connected in NFT_Zone:' + isConnected)
 
-// --------- Prices categorys ----------
+    // --------- Prices categorys ----------
     const priceURare = 0.4
     const priceRare = 0.3
     const priceUCommon = 0.2
@@ -497,7 +514,7 @@ const NFTZone = (props) => {
             </div>
             {/* =========================== LEGENDARY Category =========================== ) */}
             <div className='mb-32'>
-                <Carousel_Legend connectFunction={connect} nfts_Sold={props.nfts_Sold}/>
+                <Carousel_Legend connectFunction={connect} nfts_Sold={props.nfts_Sold} />
             </div>
             {/* =========================== ULTRA RARE Category =========================== */}
             <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
@@ -535,15 +552,19 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            isConnected ? (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => mint_UltraRare()} >
-                                    <span className="circle" aria-hidden="true">
-                                        <span className="icon arrow"></span>
-                                    </span>
-                                    <span className="button-text " translate="no">
-                                        Buy Now
-                                    </span>
-                                </button>
+                            connected ? (
+                                loading ? (<div className="flex flex-col items-center justify-center text-center">
+                                    <MovingSquareLoader   {...loaderProps} />
+                                    <div className="mt-3">LOADING ...</div>
+                                </div>) : (
+                                    <button button className="bg-white shadow-lg button learn-more" onClick={() => mint_UltraRare()} >
+                                        <span className="circle" aria-hidden="true">
+                                            <span className="icon arrow"></span>
+                                        </span>
+                                        <span className="button-text " translate="no">
+                                            Buy Now
+                                        </span>
+                                    </button>)
                             ) : (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => connect()} >
                                     <span className="circle" aria-hidden="true">
@@ -576,7 +597,7 @@ const NFTZone = (props) => {
             </div>
             {/* =========================== RARE Category =========================== */}
             {/* --------------- For Mobile --------------- */}
-            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
+            <div className='flex flex-col items-center justify-around w-full gap-5 p-4 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
                 <div className='w-full text-lg border-b text-start may text-secondary lg:hidden'>RARE</div>
                 {/* ----------- NFT card ----------- */}
                 <div className='flex flex-col p-1 bg-white border-2 rounded-lg'>
@@ -612,7 +633,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            isConnected ? (
+                            connected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Rare()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -667,7 +688,7 @@ const NFTZone = (props) => {
                         </ul>
                         <div className='flex items-center mt-4 ml-2 w-44'>
                             {hasMetamask ? (
-                                isConnected ? (
+                                connected ? (
                                     <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Rare()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
@@ -763,7 +784,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            isConnected ? (
+                            connected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Uncommon()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -805,7 +826,7 @@ const NFTZone = (props) => {
 
             {/* =========================== COMMON Category =========================== */}
             {/* --------------- For Mobile --------------- */}
-            <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
+            <div className='flex flex-col items-center justify-around w-full gap-5 p-4 mb-20 text-justify rounded-lg lg:hidden lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
                 <div className='w-full text-lg border-b text-start may text-secondary lg:hidden'>COMMON</div>
                 {/* ----------- NFT card ----------- */}
                 <div className='flex flex-col p-1 bg-white border-2 rounded-lg'>
@@ -838,7 +859,7 @@ const NFTZone = (props) => {
                     </ul>
                     <div className='flex items-center mt-4 ml-4 w-44'>
                         {hasMetamask ? (
-                            isConnected ? (
+                            connected ? (
                                 <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Common()} >
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
@@ -891,7 +912,7 @@ const NFTZone = (props) => {
                         </ul>
                         <div className='flex items-center mt-4 ml-2 w-44'>
                             {hasMetamask ? (
-                                isConnected ? (
+                                connected ? (
                                     <button className="bg-white shadow-lg button learn-more" onClick={() => mint_Common()} >
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
@@ -951,7 +972,7 @@ const NFTZone = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 }

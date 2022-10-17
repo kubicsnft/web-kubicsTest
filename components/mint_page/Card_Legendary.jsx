@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Link from "next/link"
 import axios from "axios";
 import { ethers } from "ethers";
@@ -10,38 +10,57 @@ import { FaEthereum } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl';
 import { MovingSquareLoader } from 'react-loaders-kit';
 
+import { ConnectContext } from '../../context/MyProvider'
 
 function CardPremium(props) {
 
-    const {connectFunction}= props;
+    // =================== Loader ===================
+    const [loading, setLoading] = useState(false);
+
+    const loaderProps = {
+        loading,
+        size: 35,
+        duration: 1,
+        colors: ['#7094b1', '#E1B649']
+    }
+
+    const conn = useContext(ConnectContext);
+
+    // console.log(conn.isConnected() + ' ---in card')
+
+    const connected = conn.is_Connected()
+    const get_Signer = conn.get_Signer()
+    const get_Account = conn.get_Account()
+
+    const { connectFunction } = props;
 
 
     const [hasMetamask, setHasMetamask] = useState(false);
-    const [isConnected, setIsConnected] = useState(props.connected);
-    const [isSold, setIsSold]=useState(props.sold)
-    const [signer, setSigner] = useState(undefined);
-    const [account, setAccount] = useState(undefined);
+    const [isConnected, setIsConnected] = useState(connected);
+    const [isSold, setIsSold] = useState(props.sold)
+    const [signer, setSigner] = useState(get_Signer);
+    const [account, setAccount] = useState(get_Account);
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
-  
-    const sold=props.sold
-    console.log(`Sold: ${sold}`) 
-    console.log(`Is connected in Card_Legendary 1: ${isConnected}`)
+
+    const sold = props.sold
+    // console.log(`Sold: ${sold}`) 
+    // console.log(`Is connected in Card_Legendary 1: ${isConnected}`)
 
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
-          setHasMetamask(true);
+            setHasMetamask(true);
         }
-      }, []);
+    }, []);
 
-    
-      useEffect(() => {
-        checkIfWalletIsConnected();
-    }, []);  
+
+    // useEffect(() => {
+    //     checkIfWalletIsConnected();
+    // }, []);
 
     //Function POST to call the API and create NFT
-    async function postAPI (id){
+    async function postAPI(id) {
 
         let body = {
             id: id,
@@ -50,118 +69,128 @@ function CardPremium(props) {
         //Call to Register API
 
         axios.post('http://localhost:3000/api/NFTsMongo/', body).then(response => {
-          console.log(response.data)
+            //   console.log(response.data)
         })
     }
 
     // Checks if wallet is connected
-    async function checkIfWalletIsConnected () {
-        if (typeof window.ethereum !== "undefined") {
-            try {
-                    //console.log("Got the ethereum obejct: ", window.ethereum);
-                    const accounts = await window.ethereum.request({
-                    method: "eth_accounts",
-                });
+    // async function checkIfWalletIsConnected() {
+    //     if (typeof window.ethereum !== "undefined") {
+    //         try {
+    //             //console.log("Got the ethereum obejct: ", window.ethereum);
+    //             const accounts = await window.ethereum.request({
+    //                 method: "eth_accounts",
+    //             });
 
-                if (accounts.length !== 0) {
-                    //console.log("Found authorized Account: ", accounts[0]);
-                    const provider = new ethers.providers.Web3Provider(window.ethereum);
-                    setSigner(provider.getSigner());
-                    setAccount(accounts[0]);
-                    setIsConnected(true);
-                } else {
-                    console.log("No authorized account found");
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        } else {
-            console.log("No Wallet found. Connect Wallet");
-        }
-    };
+    //             if (accounts.length !== 0) {
+    //                 //console.log("Found authorized Account: ", accounts[0]);
+    //                 const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //                 setSigner(provider.getSigner());
+    //                 setAccount(accounts[0]);
+    //                 setIsConnected(true);
+    //             } else {
+    //                 console.log("No authorized account found");
+    //             }
+    //         } catch (e) {
+    //             console.log(e);
+    //         }
+    //     } else {
+    //         console.log("No Wallet found. Connect Wallet");
+    //     }
+    // };
 
     //Function Mint LEGENDARY
     async function mint_Legendary(id) {
         if (typeof window.ethereum !== "undefined") {
-        const contract = new ethers.Contract(
-            dragonKeeper,
-            DragonKeeper.abi,
-            signer
-        );
+            const contract = new ethers.Contract(
+                dragonKeeper,
+                DragonKeeper.abi,
+                signer
+            );
 
-        const tokenID_Collection = await contract.getTokenCounter();
-        console.log(`Token ID: ${tokenID_Collection.toString()}`);
+            const tokenID_Collection = await contract.getTokenCounter();
+            console.log(`Token ID: ${tokenID_Collection.toString()}`);
 
-        const tokenId_Legendary = await contract.getTokenCounter_Legendary();
-        console.log(`Token ID Category Legendary: ${id.toString()}`);
-        const contentIdMetadata_Legendary =
-            "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
-        const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
+            const tokenId_Legendary = await contract.getTokenCounter_Legendary();
+            console.log(`Token ID Category Legendary: ${id.toString()}`);
+            const contentIdMetadata_Legendary =
+                "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
+            const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
 
-        const contentIdImages_Legendary =
-            "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
-        const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
+            const contentIdImages_Legendary =
+                "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
+            const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
 
-        //URL Needs to be updated with production data
-        const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
-        try {
-            const result = await contract.payToMint_Legendary(metadataURI, {
-            value: ethers.utils.parseEther("0.005"),
-            });
-            await result.wait();
-
-            setImageURI(imageURI);
-            setOpenseaURL(openSeaURL);
-            postAPI(id);
-            getAPI();
-            console.log(openSeaURL);
-        } catch (error) {
-            console.log(error);
-        }
+            //URL Needs to be updated with production data
+            const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
+            try {
+                setLoading(true)
+                const result = await contract.payToMint_Legendary(metadataURI, {
+                    value: ethers.utils.parseEther("0.005"),
+                });
+                await result.wait();
+                //----- ALERT ------
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    iconColor: '#7094b1',
+                    title: 'Excellent! ¡You have bought your NFT!',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                setLoading(false)
+                setImageURI(imageURI);
+                setOpenseaURL(openSeaURL);
+                postAPI(id);
+                getAPI();
+                console.log(openSeaURL);
+            } catch (error) {
+                console.log(error);
+            }
         } else {
-        console.log("Please install MetaMask");
+            console.log("Please install MetaMask");
         }
     }
 
     //Function Whitelist Mint LEGENDARY
     async function whitelist_Mint_Legendary(id) {
         if (typeof window.ethereum !== "undefined") {
-        const contract = new ethers.Contract(
-            dragonKeeper,
-            DragonKeeper.abi,
-            signer
-        );
+            const contract = new ethers.Contract(
+                dragonKeeper,
+                DragonKeeper.abi,
+                signer
+            );
 
-        const tokenID_Collection = await contract.getTokenCounter();
-        console.log(`Token ID: ${tokenID_Collection.toString()}`);
+            const tokenID_Collection = await contract.getTokenCounter();
+            console.log(`Token ID: ${tokenID_Collection.toString()}`);
 
-        const tokenId_Legendary = await contract.getTokenCounter_Legendary();
-        console.log(`Token ID Category Legendary: ${id.toString()}`);
-        const contentIdMetadata_Legendary =
-            "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
-        const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
+            const tokenId_Legendary = await contract.getTokenCounter_Legendary();
+            console.log(`Token ID Category Legendary: ${id.toString()}`);
+            const contentIdMetadata_Legendary =
+                "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
+            const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
 
-        const contentIdImages_Legendary =
-            "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
-        const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
+            const contentIdImages_Legendary =
+                "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
+            const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
 
-        //URL Needs to be updated with production data
-        const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
-        try {
-            const result = await contract.whitelistMinting_Legendary(metadataURI, {
-            value: ethers.utils.parseEther("0.005"),
-            });
-            await result.wait();
+            //URL Needs to be updated with production data
+            const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
+            try {
+                const result = await contract.whitelistMinting_Legendary(metadataURI, {
+                    value: ethers.utils.parseEther("0.005"),
+                });
+                await result.wait();
 
-            setImageURI(imageURI);
-            setOpenseaURL(openSeaURL);
-            postAPI(id);
-            console.log(openSeaURL);
-        } catch (error) {
-            console.log(error);
-        }
+                setImageURI(imageURI);
+                setOpenseaURL(openSeaURL);
+                postAPI(id);
+                console.log(openSeaURL);
+            } catch (error) {
+                console.log(error);
+            }
         } else {
-        console.log("Please install MetaMask");
+            console.log("Please install MetaMask");
         }
     }
 
@@ -178,7 +207,6 @@ function CardPremium(props) {
                     width={364}
                     height={273}
                 />
-                {/* {setLoading(false)} */}
             </div>
 
 
@@ -195,16 +223,18 @@ function CardPremium(props) {
                                 defaultMessage='IMINENTE'
                             />
                         </div> */}
-                        {hasMetamask ? (
-                            isConnected ? (
-                                props.sold ? (
-                                    <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
-                                    <FormattedMessage
-                                        id='sold'
-                                        defaultMessage='SOLD'
-                                        />
-                                    </div>
-                                ) : (
+
+                        {props.sold ? (
+                            <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
+                                <FormattedMessage
+                                    id='sold'
+                                    defaultMessage='SOLD'
+                                />
+                            </div>
+                        ) : (
+                            hasMetamask ? (
+                                isConnected ? (
+
                                     <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
@@ -213,41 +243,40 @@ function CardPremium(props) {
                                             Buy Now
                                         </span>
                                     </button>
-                                )
-
-                            ) : (
-                                <button className="bg-white shadow-lg button learn-more" onClick={() => connectFunction()} >
-                                    <span className="circle" aria-hidden="true">
-                                        <span className="icon arrow"></span>
-                                    </span>
-                                    <span className="button-text " translate="no">
-                                        Connect
-                                    </span>
-                                </button>
-                                )
                                 ) : (
+                                    <button className="bg-white shadow-lg button learn-more" onClick={() => connectFunction()} >
+                                        <span className="circle" aria-hidden="true">
+                                            <span className="icon arrow"></span>
+                                        </span>
+                                        <span className="button-text " translate="no">
+                                            Connect
+                                        </span>
+                                    </button>
+                                )
+                            ) : (
                                 <Link
-                                href={`https://metamask.io/download/`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mx-4 button nav-button btn-sm"
+                                    href={`https://metamask.io/download/`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mx-4 button nav-button btn-sm"
                                 >
-                                <button className="bg-white shadow-lg button learn-more">
-                                    <span className="circle" aria-hidden="true">
-                                        <span className="icon arrow"></span>
-                                    </span>
-                                    <span className="button-text " translate="no">
-                                    Connect
-                                    </span>
-                                </button>
+                                    <button className="bg-white shadow-lg button learn-more">
+                                        <span className="circle" aria-hidden="true">
+                                            <span className="icon arrow"></span>
+                                        </span>
+                                        <span className="button-text " translate="no">
+                                            Connect
+                                        </span>
+                                    </button>
                                 </Link>
+                            )
                         )}
                     </div>
                 </div>
                 <div className=' text-start'>
                     <p>Price</p>
                     <p className='flex flex-row items-center ' >
-                    {/* ====== PRICE ======== */}
+                        {/* ====== PRICE ======== */}
                         <FaEthereum />0.5
                     </p>
                 </div>
