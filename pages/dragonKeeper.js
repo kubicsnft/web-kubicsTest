@@ -14,6 +14,7 @@ import Whitelist from "../components/mint_page/Whithelist";
 
 
 // =========== Import dinamic ===========
+
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 // =========== Import Image =================
