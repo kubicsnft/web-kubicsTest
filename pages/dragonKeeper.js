@@ -23,7 +23,7 @@ import portada from "../public/dragonkeeper/portada.png";
 
 const style = {
     section:
-        "w-full   md:px-6 xl:px-12 p-4 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl    z-10",
+        "w-full   md:px-6 xl:px-12 p-4 border-b flex flex-col items-center  text-center bord  bg-[#ffffffd8] pb-8 min-h-[45em]    max-w-screen-2xl   z-10 ",
 };
 
 
@@ -33,7 +33,7 @@ function Proyecto({ data }) {
             <AppLayout>
                 {/* {access? */}
                 <div className="flex flex-col items-center justify-center w-full text-primary">
-                    <div className={style.section}>
+                    <div className={`${style.section}z-10`}>
                         {/*  ============================ buttons ============================ */}
                         <div className="grid items-center w-11/12 grid-cols-2 -mt-2 ">
                             <div className="text-lg text-start">
@@ -105,11 +105,11 @@ function Proyecto({ data }) {
                         </div>
                     </div>
                     {/* ============================ NFT ============================= */}
-                    <div className={style.section}>
+                    <div className={`${style.section}z-20`}>
                         <NFTZone nfts_Sold={data.data} />
                     </div>
                     {/* ============================ Project ============================= */}
-                    <div className={style.section}>
+                    <div className={`${style.section}`}>
                         <h2 className="py-6 mb-8 text-3xl may">
                             <FormattedMessage
                                 id="dk.title.project"

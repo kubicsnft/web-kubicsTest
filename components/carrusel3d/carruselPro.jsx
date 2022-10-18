@@ -2,7 +2,6 @@ import React, { Component, useEffect, useState } from "react";
 import Carousel from 'react-spring-3d-carousel';
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
-import Cube3d from "../cube3d";
 import Link from 'next/link'
 import Image from "next/image";
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'

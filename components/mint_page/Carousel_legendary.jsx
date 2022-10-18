@@ -63,7 +63,7 @@ import { BiUnderline } from 'react-icons/bi';
 
 // Syiles Tailwind 
 const style = {
-    container: 'flex-col mt-8 items-center w-full justify-center   sm:mb-16',
+    container: 'relative flex-col mt-8 items-center w-full justify-center   sm:mb-16',
     category_box: ' border rounded-md cursor-pointer shadow-lg mr-2 text-sm w-20 '
 }
 
@@ -78,7 +78,8 @@ function Carousel(props) {
     // console.log("---------------------------")
     // console.log(reactData[0][0].id)
 
-
+const loading = props.loading
+console.log(loading)
 
     const SoldNft = (id) => {
        var sold = false
@@ -104,6 +105,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(0)}
+              loading={loading}  
             />
         },
         {
@@ -115,6 +117,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(1)}
+                loading={loading}
             />
         },
         {
@@ -126,6 +129,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(2)}
+                loading={loading}
             />
         },
         {
@@ -137,6 +141,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(3)}
+                loading={loading}
             />
         },
         {
@@ -148,6 +153,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(4)}
+                loading={loading}
             />
         },
         {
@@ -159,6 +165,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(5)}
+                loading={loading}
             />
         },
         {
@@ -170,6 +177,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(6)}
+                loading={loading}
             />
         },
         {
@@ -181,6 +189,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(7)}
+                loading={loading}
             />
         }]
     const bronce = [
@@ -193,6 +202,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(8)}
+                loading={loading}
             />
 
         },
@@ -205,6 +215,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(9)}
+                loading={loading}
             />
         },
         {
@@ -217,6 +228,7 @@ function Carousel(props) {
                 price=''
                 connected={connected}
                 sold={SoldNft(10)}
+                loading={loading}
             />
         },
         {
@@ -228,6 +240,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(11)}
+                loading={loading}
             />
         },
         {
@@ -239,6 +252,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(12)}
+                loading={loading}
             />
         },
         {
@@ -250,6 +264,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(13)}
+                loading={loading}
             />
         },
         {
@@ -261,6 +276,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(14)}
+                loading={loading}
             />
         },
         {
@@ -272,6 +288,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(15)}
+                loading={loading}
             />
         }]
     const silver = [
@@ -284,6 +301,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(16)}
+                loading={loading}
             />
 
         },
@@ -296,6 +314,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(17)}
+                loading={loading}
             />
         },
         {
@@ -307,6 +326,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(18)}
+                loading={loading}
             />
         },
         {
@@ -318,6 +338,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(19)}
+                loading={loading}
             />
         },
         {
@@ -329,6 +350,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(20)}
+                loading={loading}
             />
         },
         {
@@ -340,6 +362,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(21)}
+                loading={loading}
             />
         },
         {
@@ -351,6 +374,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(22)}
+                loading={loading}
             />
         },
         {
@@ -362,6 +386,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(23)}
+                loading={loading}
             />
         }]
     const stone = [
@@ -374,6 +399,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(32)}
+                loading={loading}
             />
 
         },
@@ -386,6 +412,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(33)}
+                loading={loading}
             />
         },
         {
@@ -397,6 +424,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(34)}
+                loading={loading}
             />
         },
         {
@@ -408,6 +436,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(35)}
+                loading={loading}
             />
         },
         {
@@ -419,6 +448,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(36)}
+                loading={loading}
             />
         },
         {
@@ -430,6 +460,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(37)}
+                loading={loading}
             />
         },
         {
@@ -441,6 +472,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(38)}
+                loading={loading}
             />
         },
         {
@@ -452,6 +484,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(39)}
+                loading={loading}
             />
         }]
     const marble = [
@@ -464,6 +497,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(24)}
+                loading={loading}
             />
 
         },
@@ -476,6 +510,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(25)}
+                loading={loading}
             />
         },
         {
@@ -487,6 +522,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(26)}
+                loading={loading}
             />
         },
         {
@@ -498,6 +534,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(27)}
+                loading={loading}
             />
         },
         {
@@ -509,6 +546,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(28)}
+                loading={loading}
             />
         },
         {
@@ -520,6 +558,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(29)}
+                loading={loading}
             />
         },
         {
@@ -531,6 +570,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(30)}
+                loading={loading}
             />
         },
         {
@@ -542,6 +582,7 @@ function Carousel(props) {
                 description=""
                 price=''
                 sold={SoldNft(31)}
+                loading={loading}
             />
         }]
 
@@ -614,7 +655,7 @@ function Carousel(props) {
                         className={`${style.category_box}${categoryButton === 'silver' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
                         onClick={changueC}
                     >
-                        Silver
+                        Platinum
                     </div>
                     <div
                         className={`${style.category_box}${categoryButton === 'marble' ? "font-bold border-secondary shadow-lg  shadow-[#7B94b1] transition  scale-105" : ""}`}

@@ -8,14 +8,14 @@ import WhayIsKubics from '../components/home/whayIsKubics'
 import MenuMovil from "../components/MenuMovil";
 import { FormattedMessage } from "react-intl";
 import Roadmap from "../components/home/roadmap";
-import CookieConsent from "react-cookie-consent";
+// import CookieConsent from "react-cookie-consent";
 
 
 
 
 // Importación dinamica de carrusel3d
 const CarruselPro = dynamic(() => import('../components/carrusel3d/carruselPro'), { ssr: false })
-const Carrusel1 = dynamic(() => import('../components/carrusel3d/carouselProMobile'), { ssr: false })
+// const Carrusel1 = dynamic(() => import('../components/carrusel3d/carouselProMobile'), { ssr: false })
 
 const style = {
   section: 'w-full  sm:px-4 md:px-6 xl:px-10  border-b flex flex-col items-center  text-center bord bg-[#ffffffe8]  pb-8 min-h-[45em]     max-w-screen-2xl    z-10',
