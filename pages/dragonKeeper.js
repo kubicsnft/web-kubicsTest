@@ -129,16 +129,16 @@ function Proyecto({ data }) {
     );
 }
 
-export async function getServerSideProps() {
+// export async function getServerSideProps() {
     
-    // Fetch data from external API
-    const url = "http://https://web-kubics.vercel.app//api/NFTsMongo/";
-    const res = await fetch(url);
-    const data = await res.json();
+//     // Fetch data from external API
+//     const url = "http://localhost:3000/api/NFTsMongo/";
+//     const res = await fetch(url);
+//     const data = await res.json();
 
-    return {
-        props: { data }, // will be passed to the page component as props
-    };
-}
+//     return {
+//         props: { data }, // will be passed to the page component as props
+//     };
+// }
 
 export default Proyecto;
