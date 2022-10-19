@@ -11,6 +11,8 @@ import Link from "next/link";
 import NFTZone from "../components/mint_page/NFT_zone";
 import DkProject from "../components/dragonKeeper/dkProject";
 import Whitelist from "../components/mint_page/Whithelist";
+import connectionDB from "../database/connectionDB";
+import NFT from "../database/NFT";
 
 // =========== Import dinamic ===========
 
@@ -26,6 +28,7 @@ const style = {
 };
 
 function Proyecto({ data }) {
+  console.log(data);
   return (
     <>
       <AppLayout>
@@ -104,7 +107,7 @@ function Proyecto({ data }) {
           </div>
           {/* ============================ NFT ============================= */}
           <div className={`${style.section}z-20`}>
-            <NFTZone nfts_Sold={data.data} />
+            <NFTZone nfts_Sold={data} />
           </div>
           {/* ============================ Project ============================= */}
           <div className={`${style.section}`}>
@@ -127,16 +130,28 @@ function Proyecto({ data }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Fetch data from external API
-  const url =
-    "http://web-kubics-ojrzilot6-tech-kubicsnft.vercel.app/api/NFTsMongo/";
-  const res = await fetch(url);
+  await connectionDB();
+  const data = await NFT.find({ mint: true });
+
+  // Pass data to the page via props
+  return {
+    props: {
+      data: JSON.parse(JSON.stringify(data)),
+    },
+  };
+}
+
+/* export async function getServerSideProps() {
+  // Fetch data from external API
+
+  const res = await fetch(`/api/NFTsMongo`);
   const data = await res.json();
 
   return {
     props: { data }, // will be passed to the page component as props
   };
-}
+} */
 
 export default Proyecto;
