@@ -27,7 +27,7 @@ const style = {
 };
 
 
-function Proyecto({ data }) {
+function Proyecto() {
     return (
         <>
             <AppLayout>
@@ -93,7 +93,7 @@ function Proyecto({ data }) {
                     {/* ============================= NFT  ============================= */}
                     <div className={`${style.section}z-20`}>
 
-                        <NFTZone nfts_Sold={data.data} />
+                        <NFTZone nfts_Sold='' />
 
                     </div>
                     {/* ============================ Project ============================= */}
@@ -117,16 +117,16 @@ function Proyecto({ data }) {
     );
 }
 
-export async function getServerSideProps() {
+// export async function getServerSideProps() {
     
-    // Fetch data from external API
-    const url = "https://web-kubics.vercel.app/api/NFTsMongo/";
-    const res = await fetch(url);
-    const data = await res.json();
+//     // Fetch data from external API
+//     const url = "https://web-kubics.vercel.app/api/NFTsMongo/";
+//     const res = await fetch(url);
+//     const data = await res.json();
 
-    return {
-        props: { data }, // will be passed to the page component as props
-    };
-}
+//     return {
+//         props: { data }, // will be passed to the page component as props
+//     };
+// }
 
-export default Proyecto;
+// export default Proyecto;

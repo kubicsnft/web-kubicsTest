@@ -511,7 +511,7 @@ const NFTZone = (props) => {
                 </div>
                 {/* =========================== LEGENDARY Category =========================== ) */}
                 <div className='mb-32'>
-                    <Carousel_Legend  loading={setLoading}  nfts_Sold={props.nfts_Sold} />
+                    <Carousel_Legend  loading={setLoading}  nfts_Sold='' />
                 </div>
                 {/* =========================== ULTRA RARE Category =========================== */}
                 <div className='flex flex-col items-center justify-around w-full gap-5 mb-20 text-justify rounded-lg sm:p-4 lg:gap-10 sm:shadow-md lg:items-start lg:flex-row'>
