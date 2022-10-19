@@ -79,7 +79,7 @@ function Carousel(props) {
     // console.log(reactData[0][0].id)
 
 const loading = props.loading
-console.log(loading)
+// console.log(loading)
 
     const SoldNft = (id) => {
        var sold = false
