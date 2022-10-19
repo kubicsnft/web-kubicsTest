@@ -71,7 +71,7 @@ const style = {
 
 
 function Carousel(props) {
-    // const [reactData, setReactData] = useState([props.nfts_Sold]);
+    const [reactData, setReactData] = useState([props.nfts_Sold]);
 
     
 
@@ -81,13 +81,13 @@ const loading = props.loading
     const SoldNft = (id) => {
        var sold = false
 
-        // for (var i = 0; i < reactData[0].length; i++) {
-        //     // console.log(reactData[0][i].id, id)
-        //     if (reactData[0][i].id === id) {
-        //         sold = true
-        //         // console.log(sold)
-        //     }
-        // }
+        for (var i = 0; i < reactData[0].length; i++) {
+            // console.log(reactData[0][i].id, id)
+            if (reactData[0][i].id === id) {
+                sold = true
+                // console.log(sold)
+            }
+        }
         return sold   
     }
 
