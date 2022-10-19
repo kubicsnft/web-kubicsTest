@@ -125,13 +125,14 @@ export async function getServerSideProps() {
         const url = "https://web-kubics.vercel.app/api/NFTsMongo/";
         const res = await fetch(url);
         const data = await res.json();
+        return {
+            props: { data }, // will be passed to the page component as props
+        };
     }catch (error) {
                 console.log(error);
                  }
     
-    return {
-        props: { data }, // will be passed to the page component as props
-    };
+    
 }
 
 export default Proyecto;
