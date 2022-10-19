@@ -225,31 +225,64 @@ function CardPremium(props) {
                                 defaultMessage='IMINENTE'
                             />
                         </div> */}
-                        {props.sold
-                            ? <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
-                            <FormattedMessage
-                                id='sold'
-                                defaultMessage='SOLD'
-                                />
-                            </div>
-                            : <button className="text-sm shadow-md button learn-more" onClick={() => addToWhitelist()}>
-                                <span className="circle" aria-hidden="true">
-                                    <span className="icon arrow"></span>
-                                </span>
-                                <span className="button-text" translate="no">
-                                    Buy Now
-                                </span>
-                            </button>}
+                            {props.sold ? (
+                                <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
+                                    <FormattedMessage
+                                        id='sold'
+                                        defaultMessage='SOLD'
+                                    />
+                                </div>
+                            ) : (
+                                hasMetamask ? (
+                                    isConnected ? (
+                                        <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text" translate="no">
+                                                Buy Now
+                                            </span>
+                                        </button>
+                                    ) : (
+                                        <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text " translate="no">
+                                                Connect
+                                            </span>
+                                        </button>
+                                    )
+                                ) : (
+                                    <Link
+                                        href={`https://metamask.io/download/`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mx-4 button nav-button btn-sm"
+                                    >
+                                        <button className="bg-white shadow-lg button learn-more">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text " translate="no">
+                                                Connect
+                                            </span>
+                                        </button>
+                                    </Link>
+                                )
+                            )}
+                        </div>
+                    </div>
+                    <div className=' text-start'>
+                        <p>Price</p>
+                        <p className='flex flex-row items-center ' >
+                            {/* ====== PRICE ======== */}
+                            <FaEthereum />0.5
+                        </p>
                     </div>
                 </div>
-                <div className=' text-start'>
-                    <p>Price</p>
-                    <p className='flex flex-row items-center ' >
-                        <FaEthereum />{props.price}
-                    </p>
-                </div>
             </div>
-        </div>
+        </>
     );
 };
 
