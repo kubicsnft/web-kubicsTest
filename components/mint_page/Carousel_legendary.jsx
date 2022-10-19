@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import React from 'react'
-import { useState } from "react"
+import { useEffect, useState } from "react";
 import dynamic from 'next/dynamic'
 import NftCard from "./Card_Legendary";
 import { v4 as uuidv4 } from "uuid";
 import { FormattedMessage } from 'react-intl';
 
 
+
 // Import dynamic
 const Carrusel = dynamic(() => import('../carrusel3d/carrusel'), { ssr: false })
 
-// Import image
+// ------------------------- Import image -------------------------
 import legend0 from '../../public/dragonkeeper/nft_legenday/0.webp'
 import legend1 from '../../public/dragonkeeper/nft_legenday/1.webp'
 import legend2 from '../../public/dragonkeeper/nft_legenday/2.webp'
@@ -55,30 +56,43 @@ import legend36 from '../../public/dragonkeeper/nft_legenday/36.webp'
 import legend37 from '../../public/dragonkeeper/nft_legenday/37.webp'
 import legend38 from '../../public/dragonkeeper/nft_legenday/38.webp'
 import legend39 from '../../public/dragonkeeper/nft_legenday/39.webp'
+import { BiUnderline } from 'react-icons/bi';
 
 
-// Array nft sold
-const arrayTest = ['y']
-
-const SoldNft = (id) => {
-    var sold = false
-    for (var i = 0; i < arrayTest.length; i++) {
-        if (arrayTest[i] === id) {
-            sold = true
-        }
-    }
-    return sold
-}
 
 
+// Syiles Tailwind 
 const style = {
-    container: 'flex-col mt-8 items-center w-full justify-center   sm:mb-16',
+    container: 'relative flex-col mt-8 items-center w-full justify-center   sm:mb-16',
     category_box: ' border rounded-md cursor-pointer shadow-lg mr-2 text-sm w-20 '
 }
 
 
-function Carousel(props) {
 
+const fetcher = (...args) => fetch(...args).then(res=>res.json());
+
+function Carousel(props) {
+    const [reactData, setReactData] = useState([props.nfts_Sold]);
+    const { connectFunction } = props;
+    const connected = props.connected;
+    // console.log("---------------------------")
+    // console.log(reactData[0][0].id)
+
+const loading = props.loading
+console.log(loading)
+
+    const SoldNft = (id) => {
+       var sold = false
+
+        for (var i = 0; i < reactData[0].length; i++) {
+            // console.log(reactData[0][i].id, id)
+            if (reactData[0][i].id === id) {
+                sold = true
+                // console.log(sold)
+            }
+        }
+        return sold   
+    }
 
     // ------- Categorys of arrays -------
     const gold = [
@@ -88,9 +102,10 @@ function Carousel(props) {
                 id='0'
                 image={legend0}
                 title='Dragonkeeper Legendary 0'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('0')}
+                description=""
+                price=''
+                sold={SoldNft(0)}
+              loading={loading}  
             />
         },
         {
@@ -99,9 +114,10 @@ function Carousel(props) {
                 id='1'
                 image={legend1}
                 title='Dragonkeeper Legendary 1'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('1')}
+                description=""
+                price=''
+                sold={SoldNft(1)}
+                loading={loading}
             />
         },
         {
@@ -110,9 +126,10 @@ function Carousel(props) {
                 id='2'
                 image={legend2}
                 title='Dragonkeeper Legendary 2'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('2')}
+                description=""
+                price=''
+                sold={SoldNft(2)}
+                loading={loading}
             />
         },
         {
@@ -121,9 +138,10 @@ function Carousel(props) {
                 id='3'
                 image={legend3}
                 title='Dragonkeeper Legendary 3'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('3')}
+                description=""
+                price=''
+                sold={SoldNft(3)}
+                loading={loading}
             />
         },
         {
@@ -132,9 +150,10 @@ function Carousel(props) {
                 id='4'
                 image={legend4}
                 title='Dragonkeeper Legendary 4'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('4')}
+                description=""
+                price=''
+                sold={SoldNft(4)}
+                loading={loading}
             />
         },
         {
@@ -143,9 +162,10 @@ function Carousel(props) {
                 id='5'
                 image={legend5}
                 title='Dragonkeeper Legendary 5'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('5')}
+                description=""
+                price=''
+                sold={SoldNft(5)}
+                loading={loading}
             />
         },
         {
@@ -154,9 +174,10 @@ function Carousel(props) {
                 id='6'
                 image={legend6}
                 title='Dragonkeeper Legendary 6'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('6')}
+                description=""
+                price=''
+                sold={SoldNft(6)}
+                loading={loading}
             />
         },
         {
@@ -165,9 +186,10 @@ function Carousel(props) {
                 id='7'
                 image={legend7}
                 title='Dragonkeeper Legendary 7'
-                description="DragonKeeper collection"
-                price='0.1'
-                sold={SoldNft('7')}
+                description=""
+                price=''
+                sold={SoldNft(7)}
+                loading={loading}
             />
         }]
     const bronce = [
@@ -176,10 +198,11 @@ function Carousel(props) {
             content: <NftCard
                 id='8'
                 image={legend8}
-                title='NFT Dragonkeeper Legendary 8'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('8')}
+                title='Dragonkeeper Legendary 8'
+                description=""
+                price=''
+                sold={SoldNft(8)}
+                loading={loading}
             />
 
         },
@@ -188,10 +211,11 @@ function Carousel(props) {
             content: <NftCard
                 id='9'
                 image={legend9}
-                title='NFT Dragonkeeper Legendary 9'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('9')}
+                title='Dragonkeeper Legendary 9'
+                description=""
+                price=''
+                sold={SoldNft(9)}
+                loading={loading}
             />
         },
         {
@@ -199,10 +223,12 @@ function Carousel(props) {
             content: <NftCard
                 id='10'
                 image={legend10}
-                title='NFT Dragonkeeper Legendary 10'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('10')}
+                title='Dragonkeeper Legendary 10'
+                description=""
+                price=''
+                connected={connected}
+                sold={SoldNft(10)}
+                loading={loading}
             />
         },
         {
@@ -210,10 +236,11 @@ function Carousel(props) {
             content: <NftCard
                 id='11'
                 image={legend11}
-                title='NFT Dragonkeeper Legendary 11'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('11')}
+                title='Dragonkeeper Legendary 11'
+                description=""
+                price=''
+                sold={SoldNft(11)}
+                loading={loading}
             />
         },
         {
@@ -221,10 +248,11 @@ function Carousel(props) {
             content: <NftCard
                 id='12'
                 image={legend12}
-                title='NFT Dragonkeeper Legendary 12'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('12')}
+                title='Dragonkeeper Legendary 12'
+                description=""
+                price=''
+                sold={SoldNft(12)}
+                loading={loading}
             />
         },
         {
@@ -232,10 +260,11 @@ function Carousel(props) {
             content: <NftCard
                 id='13'
                 image={legend13}
-                title='NFT Dragonkeeper Legendary 13'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('13')}
+                title='Dragonkeeper Legendary 13'
+                description=""
+                price=''
+                sold={SoldNft(13)}
+                loading={loading}
             />
         },
         {
@@ -243,10 +272,11 @@ function Carousel(props) {
             content: <NftCard
                 id='14'
                 image={legend14}
-                title='NFT Dragonkeeper Legendary 14'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('14')}
+                title='Dragonkeeper Legendary 14'
+                description=""
+                price=''
+                sold={SoldNft(14)}
+                loading={loading}
             />
         },
         {
@@ -254,10 +284,11 @@ function Carousel(props) {
             content: <NftCard
                 id='15'
                 image={legend15}
-                title='NFT Dragonkeeper Legendary 15'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('15')}
+                title='Dragonkeeper Legendary 15'
+                description=""
+                price=''
+                sold={SoldNft(15)}
+                loading={loading}
             />
         }]
     const silver = [
@@ -266,10 +297,11 @@ function Carousel(props) {
             content: <NftCard
                 id='16'
                 image={legend16}
-                title='NFT Dragonkeeper Legendary 16'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('16')}
+                title='Dragonkeeper Legendary 16'
+                description=""
+                price=''
+                sold={SoldNft(16)}
+                loading={loading}
             />
 
         },
@@ -278,10 +310,11 @@ function Carousel(props) {
             content: <NftCard
                 id='17'
                 image={legend17}
-                title='NFT Dragonkeeper Legendary 17'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('17')}
+                title='Dragonkeeper Legendary 17'
+                description=""
+                price=''
+                sold={SoldNft(17)}
+                loading={loading}
             />
         },
         {
@@ -289,10 +322,11 @@ function Carousel(props) {
             content: <NftCard
                 id='18'
                 image={legend18}
-                title='NFT Dragonkeeper Legendary 18'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('18')}
+                title='Dragonkeeper Legendary 18'
+                description=""
+                price=''
+                sold={SoldNft(18)}
+                loading={loading}
             />
         },
         {
@@ -300,10 +334,11 @@ function Carousel(props) {
             content: <NftCard
                 id='19'
                 image={legend19}
-                title='NFT Dragonkeeper Legendary 19'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('19')}
+                title='Dragonkeeper Legendary 19'
+                description=""
+                price=''
+                sold={SoldNft(19)}
+                loading={loading}
             />
         },
         {
@@ -311,10 +346,11 @@ function Carousel(props) {
             content: <NftCard
                 id='20'
                 image={legend20}
-                title='NFT Dragonkeeper Legendary 20'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('20')}
+                title='Dragonkeeper Legendary 20'
+                description=""
+                price=''
+                sold={SoldNft(20)}
+                loading={loading}
             />
         },
         {
@@ -322,10 +358,11 @@ function Carousel(props) {
             content: <NftCard
                 id='21'
                 image={legend21}
-                title='NFT Dragonkeeper Legendary 21'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('21')}
+                title='Dragonkeeper Legendary 21'
+                description=""
+                price=''
+                sold={SoldNft(21)}
+                loading={loading}
             />
         },
         {
@@ -333,10 +370,11 @@ function Carousel(props) {
             content: <NftCard
                 id='22'
                 image={legend22}
-                title='NFT Dragonkeeper Legendary 22'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('22')}
+                title='Dragonkeeper Legendary 22'
+                description=""
+                price=''
+                sold={SoldNft(22)}
+                loading={loading}
             />
         },
         {
@@ -344,10 +382,11 @@ function Carousel(props) {
             content: <NftCard
                 id='23'
                 image={legend23}
-                title='NFT Dragonkeeper Legendary 23'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('23')}
+                title='Dragonkeeper Legendary 23'
+                description=""
+                price=''
+                sold={SoldNft(23)}
+                loading={loading}
             />
         }]
     const stone = [
@@ -356,10 +395,11 @@ function Carousel(props) {
             content: <NftCard
                 id='32'
                 image={legend32}
-                title='NFT Dragonkeeper Legendary 32'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('32')}
+                title='Dragonkeeper Legendary 32'
+                description=""
+                price=''
+                sold={SoldNft(32)}
+                loading={loading}
             />
 
         },
@@ -368,10 +408,11 @@ function Carousel(props) {
             content: <NftCard
                 id='33'
                 image={legend33}
-                title='NFT Dragonkeeper Legendary 33'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('33')}
+                title='Dragonkeeper Legendary 33'
+                description=""
+                price=''
+                sold={SoldNft(33)}
+                loading={loading}
             />
         },
         {
@@ -380,9 +421,10 @@ function Carousel(props) {
                 id='34'
                 image={legend34}
                 title='NFT Dragonkeeper Legendary 34'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('34')}
+                description=""
+                price=''
+                sold={SoldNft(34)}
+                loading={loading}
             />
         },
         {
@@ -390,10 +432,11 @@ function Carousel(props) {
             content: <NftCard
                 id='35'
                 image={legend35}
-                title='NFT Dragonkeeper Legendary 35'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('35')}
+                title='Dragonkeeper Legendary 35'
+                description=""
+                price=''
+                sold={SoldNft(35)}
+                loading={loading}
             />
         },
         {
@@ -401,10 +444,11 @@ function Carousel(props) {
             content: <NftCard
                 id='36'
                 image={legend36}
-                title='NFT Dragonkeeper Legendary 36'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('36')}
+                title='Dragonkeeper Legendary 36'
+                description=""
+                price=''
+                sold={SoldNft(36)}
+                loading={loading}
             />
         },
         {
@@ -412,10 +456,11 @@ function Carousel(props) {
             content: <NftCard
                 id='37'
                 image={legend37}
-                title='NFT Dragonkeeper Legendary 37'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('37')}
+                title='Dragonkeeper Legendary 37'
+                description=""
+                price=''
+                sold={SoldNft(37)}
+                loading={loading}
             />
         },
         {
@@ -423,10 +468,11 @@ function Carousel(props) {
             content: <NftCard
                 id='38'
                 image={legend38}
-                title='NFT Dragonkeeper Legendary 38'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('38')}
+                title='Dragonkeeper Legendary 38'
+                description=""
+                price=''
+                sold={SoldNft(38)}
+                loading={loading}
             />
         },
         {
@@ -434,10 +480,11 @@ function Carousel(props) {
             content: <NftCard
                 id='39'
                 image={legend39}
-                title='NFT Dragonkeeper Legendary 39'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('39')}
+                title='Dragonkeeper Legendary 39'
+                description=""
+                price=''
+                sold={SoldNft(39)}
+                loading={loading}
             />
         }]
     const marble = [
@@ -446,10 +493,11 @@ function Carousel(props) {
             content: <NftCard
                 id='24'
                 image={legend24}
-                title='NFT Dragonkeeper Legendary 24'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('24')}
+                title='Dragonkeeper Legendary 24'
+                description=""
+                price=''
+                sold={SoldNft(24)}
+                loading={loading}
             />
 
         },
@@ -458,10 +506,11 @@ function Carousel(props) {
             content: <NftCard
                 id='25'
                 image={legend25}
-                title='NFT Dragonkeeper Legendary 25'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('25')}
+                title='Dragonkeeper Legendary 25'
+                description=""
+                price=''
+                sold={SoldNft(25)}
+                loading={loading}
             />
         },
         {
@@ -469,10 +518,11 @@ function Carousel(props) {
             content: <NftCard
                 id='26'
                 image={legend26}
-                title='NFT Dragonkeeper Legendary 26'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('26')}
+                title='Dragonkeeper Legendary 26'
+                description=""
+                price=''
+                sold={SoldNft(26)}
+                loading={loading}
             />
         },
         {
@@ -480,10 +530,11 @@ function Carousel(props) {
             content: <NftCard
                 id='27'
                 image={legend27}
-                title='NFT Dragonkeeper Legendary 27'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('27')}
+                title='Dragonkeeper Legendary 27'
+                description=""
+                price=''
+                sold={SoldNft(27)}
+                loading={loading}
             />
         },
         {
@@ -491,10 +542,11 @@ function Carousel(props) {
             content: <NftCard
                 id='28'
                 image={legend28}
-                title='NFT Dragonkeeper Legendary 28'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('28')}
+                title='Dragonkeeper Legendary 28'
+                description=""
+                price=''
+                sold={SoldNft(28)}
+                loading={loading}
             />
         },
         {
@@ -502,10 +554,11 @@ function Carousel(props) {
             content: <NftCard
                 id='29'
                 image={legend29}
-                title='NFT Dragonkeeper Legendary 29'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('29')}
+                title='Dragonkeeper Legendary 29'
+                description=""
+                price=''
+                sold={SoldNft(29)}
+                loading={loading}
             />
         },
         {
@@ -513,10 +566,11 @@ function Carousel(props) {
             content: <NftCard
                 id='30'
                 image={legend30}
-                title='NFT Dragonkeeper Legendary 30'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('30')}
+                title='Dragonkeeper Legendary 30'
+                description=""
+                price=''
+                sold={SoldNft(30)}
+                loading={loading}
             />
         },
         {
@@ -524,10 +578,11 @@ function Carousel(props) {
             content: <NftCard
                 id='31'
                 image={legend31}
-                title='NFT Dragonkeeper Legendary 31'
-                description="DragonKeeper NFT collection"
-                price='0.1'
-                sold={SoldNft('31')}
+                title='Dragonkeeper Legendary 31'
+                description=""
+                price=''
+                sold={SoldNft(31)}
+                loading={loading}
             />
         }]
 
@@ -588,7 +643,7 @@ function Carousel(props) {
                         className={`${style.category_box}${categoryButton === 'gold' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
                         onClick={changueA}
                     >
-                        Bold
+                        Gold
                     </div>
                     <div
                         className={`${style.category_box}${categoryButton === 'bronce' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
@@ -600,7 +655,7 @@ function Carousel(props) {
                         className={`${style.category_box}${categoryButton === 'silver' ? " font-bold border-secondary shadow-lg shadow-[#7B94b1] transition  scale-105" : ""}`}
                         onClick={changueC}
                     >
-                        Silver
+                        Platinum
                     </div>
                     <div
                         className={`${style.category_box}${categoryButton === 'marble' ? "font-bold border-secondary shadow-lg  shadow-[#7B94b1] transition  scale-105" : ""}`}

@@ -20,12 +20,14 @@ const DkProject = () => {
 
         <>
 
-            <div className='flex flex-col w-10/12 gap-8 md:w-11/12' >
+            <div className='flex flex-col w-10/12 gap-8 md:w-11/12 -z-10' >
                 <div className='flex flex-row w-full gap-8'>
                     <div className='flex flex-col gap-4 bg-white rounded-lg md:shadow-md'>
                         {/* ----------------- Project description ----------------- */}
                         <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md md:shadow-none text-primary'>
-                            <h3 className='text-lg text-start may text-secondary'>PROYECTO</h3>
+                            <h3 className='text-lg text-start may text-secondary'>
+                                <FormattedMessage id='dk.title.project' defaultMessage='PROYECTO' />
+                            </h3>
                             <div className=''>
                                 <FormattedMessage
                                     id='dk.description'
@@ -43,7 +45,9 @@ const DkProject = () => {
                         </div>
                         {/* ----------------- Project story ----------------- */}
                         <div className='flex flex-col justify-between p-3 text-justify bg-white rounded-lg shadow-md md:shadow-none text-primary'>
-                            <h3 className='text-lg text-start may text-secondary'>HISTORIA</h3>
+                            <h3 className='text-lg text-start may text-secondary'>
+                                <FormattedMessage id='dk.title.story' defaultMessage='HISTORIA' />
+                            </h3>
                             <div className=''>
                                 <FormattedMessage
                                     id='dk.story'
@@ -84,30 +88,36 @@ const DkProject = () => {
                         {/* Voice-Ping */}
                         <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
-                                <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
-                                    <Cube img='/dragonkeeper/voice/mayailnee.png' />
+                                <div className='w-4/12'>
+                                    <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
+                                        <Cube img='/dragonkeeper/voice/mayailnee.png' />
+                                    </div>
                                 </div>
-                                <p>Mayalinee Griffiths <FormattedMessage id='AS' defaultMessage='es'/> Ping</p>
+                                <p className='w-8/12'>Mayalinee Griffiths <FormattedMessage id='AS' defaultMessage='es' /> Ping</p>
                             </div>
                             <Image src={dk_voice1} alt='Ping' className='rounded-lg' />
                         </div>
                         {/* Voice-Danzi */}
                         <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
-                                <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
-                                    <Cube img='/dragonkeeper/voice/Bill.png' />
+                                <div className='w-4/12'>
+                                    <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
+                                        <Cube img='/dragonkeeper/voice/Bill.png' />
+                                    </div>
                                 </div>
-                                <p>Bill Nighy <FormattedMessage id='AS' defaultMessage='es'/> Danzi</p>
+                                <p className='w-8/12'>Bill Nighy <FormattedMessage id='AS' defaultMessage='es' /> Danzi</p>
                             </div>
                             <Image src={dk_voice3} alt='Ping' className='rounded-lg' />
                         </div>
                         {/* Voice-WangChao */}
                         <div className='flex flex-col w-full p-3 bg-white rounded-lg shadow-lg sm:w-10/12 md:w-8/12 xl:w-4/12'>
                             <div className='flex flex-row items-center gap-4 mb-2 text-lg text-start text-primary'>
-                                <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
-                                    <Cube img='/dragonkeeper/voice/Bayble.png' />
+                                <div className='w-4/12'>
+                                    <div className='w-[5rem] h-[5rem] xl:w-[7rem] xl:h-[7rem]'>
+                                        <Cube img='/dragonkeeper/voice/Bayble.png' />
+                                    </div>
                                 </div>
-                                <p>Bill Bayley <FormattedMessage id='AS' defaultMessage='es'/> Wang Chao</p>
+                                <p className='w-8/12'>Bill Bayley <FormattedMessage id='AS' defaultMessage='es' /> Wang Chao</p>
                             </div>
                             <Image src={dk_voice5} alt='Wang chao' className='rounded-lg' />
                         </div>

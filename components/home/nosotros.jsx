@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Cube from '../cube';
+import Cube from '../cube2';
 
 const Nosotros = () => {
 

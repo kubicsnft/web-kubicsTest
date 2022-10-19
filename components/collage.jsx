@@ -17,7 +17,7 @@ function collage() {
       <div className=' justify-center w-full h-[24em] md:mt-10 mt-20  hidden sm:flex '>
         <div className={`${style.container}${style.photo1}`} >
           <Image
-            src='/animals/Tiburon_04.png'
+            src='/animals/Tiburon_04.webp'
             className=''
             width={190}
             height={150}
@@ -27,7 +27,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo2}`} >
           <Image
-            src='/animals/Conejo_family.png'
+            src='/animals/Conejo_family.webp'
             className=''
             width={190}
             height={150}
@@ -37,7 +37,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo3}`} >
           <Image
-            src='/animals/RatonBlanco_01.png'
+            src='/animals/RatonBlanco_01.webp'
             className=''
             width={190}
             height={150}
@@ -47,7 +47,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo4}`} >
           <Image
-            src='/animals/Cangrejo_02.png'
+            src='/animals/Cangrejo_02.webp'
             className=''
             width={190}
             height={150}
@@ -57,7 +57,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo5}`} >
           <Image
-            src='/animals/Ardilla_01.png'
+            src='/animals/Ardilla_01.webp'
             className=''
             width={190}
             height={150}
@@ -69,7 +69,7 @@ function collage() {
       <div className='flex justify-center w-full h-[22em] mt-24 sm:hidden '>
         <div className={`${style.container}${style.photo3}`} >
           <Image
-            src='/animals/RatonBlanco_01.png'
+            src='/animals/RatonBlanco_01.webp'
             className=''
             width={190}
             height={150}
@@ -79,7 +79,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo4}`} >
           <Image
-            src='/animals/Cangrejo_02.png'
+            src='/animals/Cangrejo_02.webp'
             className=''
             width={190}
             height={150}
@@ -89,7 +89,7 @@ function collage() {
         </div>
         <div className={`${style.container}${style.photo5}`} >
           <Image
-            src='/animals/Ardilla_01.png'
+            src='/animals/Ardilla_01.webp'
             className=''
             width={190}
             height={150}

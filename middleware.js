@@ -12,7 +12,7 @@ export const config = {
 
 export function middleware(req) {
   // Extract country. Default to US if not found.
-  const country = (req.geo && req.geo.country) || 'US';
+  const country = (req.geo && req.geo.country) || 'ES';
 
   console.log(`Visitor from ${country}`);
 
