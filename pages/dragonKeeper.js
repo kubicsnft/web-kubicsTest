@@ -129,7 +129,8 @@ function Proyecto({ data }) {
 
 export async function getStaticProps() {
   // Fetch data from external API
-  const url = "http://localhost:3000/api/NFTsMongo/";
+  const url =
+    "http://web-kubics-ojrzilot6-tech-kubicsnft.vercel.app/api/NFTsMongo/";
   const res = await fetch(url);
   const data = await res.json();
 
