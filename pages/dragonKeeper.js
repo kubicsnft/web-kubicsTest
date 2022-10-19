@@ -90,9 +90,11 @@ function Proyecto({ data }) {
                             </div>
                         </div>
                     </div>
-                    {/* ============================ NFT ============================= */}
+                    {/* ============================= NFT  ============================= */}
                     <div className={`${style.section}z-20`}>
+
                         <NFTZone nfts_Sold={data.data} />
+
                     </div>
                     {/* ============================ Project ============================= */}
                     <div className={`${style.section}`}>
@@ -118,7 +120,7 @@ function Proyecto({ data }) {
 export async function getServerSideProps() {
     
     // Fetch data from external API
-    const url = "http://https://web-kubics.vercel.app/api/NFTsMongo/";
+    const url = "https://web-kubics.vercel.app/api/NFTsMongo/";
     const res = await fetch(url);
     const data = await res.json();
 
