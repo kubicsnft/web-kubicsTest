@@ -17,7 +17,7 @@ function Cube(props) {
           {props.img
             ? <div 
             className={style.cubeOn}>
-              <Image src={props.img} width='100%' height='100%'  className='object-cover duration-150 ease-in ef-img'alt="cubo"/>
+              <Image src={props.img} width='110%' height='105%'  className='object-cover duration-150 ease-in ef-img'alt="cubo"/>
             </div>
             : <div className={style.cubeOff} ></div>
           }
