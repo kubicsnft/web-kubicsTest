@@ -27,7 +27,7 @@ const style = {
 };
 
 
-function Proyecto({ data }) {
+function Proyecto() {
     return (
         <>
             <AppLayout>
