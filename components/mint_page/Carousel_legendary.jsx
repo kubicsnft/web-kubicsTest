@@ -74,11 +74,12 @@ const style = {
 function Carousel(props) {
     const [reactData, setReactData] = useState([props.nfts_Sold]);
     const connected = props.connected;
-/*      console.log("---------------------------")
-     console.log(props.nfts_Sold) */
+    //  console.log("---------------------------")
+    //  console.log(props.nfts_Sold)
 
 const loading = props.loading
-//    console.log(loading)
+// console.log(loading)
+
 
     const SoldNft = (id) => {
        var sold = false

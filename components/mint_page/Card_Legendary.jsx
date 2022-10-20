@@ -13,11 +13,13 @@ import { MovingSquareLoader } from 'react-loaders-kit';
 import { ConnectContext } from '../../context/MyProvider'
 
 function CardPremium(props) {
+    // ---- Price NFT Legendary -------
+    const price = 0.5
 
     // =================== Loader ===================
     const [loading, setLoading] = useState(false);
 
-    // ------ setState OF NFT_zone -----
+    // ----- setState OF NFT_zone ----
     const setLoadNFT_zone = props.loading
 
 
@@ -77,33 +79,33 @@ function CardPremium(props) {
     //Function Mint LEGENDARY
     async function mint_Legendary(id) {
         if (typeof window.ethereum !== "undefined") {
-            const contract = new ethers.Contract(
-                dragonKeeper,
-                DragonKeeper.abi,
-                signer
-            );
-
-            const tokenID_Collection = await contract.getTokenCounter();
-            console.log(`Token ID: ${tokenID_Collection.toString()}`);
-
-            const tokenId_Legendary = await contract.getTokenCounter_Legendary();
-            console.log(`Token ID Category Legendary: ${id.toString()}`);
-            const contentIdMetadata_Legendary =
-                "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
-            const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
-
-            const contentIdImages_Legendary =
-                "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
-            const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
-
-            //URL Needs to be updated with production data
-            const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
-
             try {
-                setLoading(true)
+                const contract = new ethers.Contract(
+                    dragonKeeper,
+                    DragonKeeper.abi,
+                    signer
+                );
+
+                const tokenID_Collection = await contract.getTokenCounter();
+                console.log(`Token ID: ${tokenID_Collection.toString()}`);
+
+                const tokenId_Legendary = await contract.getTokenCounter_Legendary();
+                console.log(`Token ID Category Legendary: ${id.toString()}`);
+                const contentIdMetadata_Legendary =
+                    "QmZUwBLjDjGfWC3mnSmMWj8CF1LTVa4di5QSeSvuDtQi2z";
+                const metadataURI = `${contentIdMetadata_Legendary}/${id}.json`;
+
+                const contentIdImages_Legendary =
+                    "QmPXHyjmy71fQgQqaNYR3h9pH2v5jqVfoYGw5uEV9ayC9t";
+                const imageURI = `https://kubicsnft.mypinata.cloud/ipfs/${contentIdImages_Legendary}/${id}.png`;
+
+                //URL Needs to be updated with production data
+                const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
+    
+                // setLoading(true)
                 setLoadNFT_zone(true)
                 const result = await contract.payToMint_Legendary(metadataURI, {
-                    value: ethers.utils.parseEther("0.005"),
+                    value: ethers.utils.parseEther("0.006"),
                 });
                 await result.wait();
                 setImageURI(imageURI);
@@ -111,7 +113,7 @@ function CardPremium(props) {
                 setCurrentSold(true);
                 postAPI(id);
                 setLoadNFT_zone(false)
-                setLoading(false)
+                // setLoading(false)
                 //----- ALERT ------
                 Swal.fire({
                     title: 'Excellent! You have bought your NFT!',
@@ -133,14 +135,78 @@ function CardPremium(props) {
                 console.log(openSeaURL);
             } catch (error) {
                 console.log(error);
-                setLoading(false)
+                setLoadNFT_zone(false)
+                // setLoading(false)
+                if (error.error) {
+                    if (error.error.code === -32603) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            iconColor: '#7094b1',
+                            title: 'Sorry, this NFT has already been sold!',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Ok',
+                        })
+                    }
+                    else if (error.error.code === -32000) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            iconColor: '#7094b1',
+                            title: 'There are not enough funds!',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Ok',
+                        })
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            iconColor: '#7094b1',
+                            title: 'Unexpected error',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Ok',
+                        })
+                    }
+                }
+                else if (error.code) {
+                    if (error.code == 'NETWORK_ERROR' || error.code == 'CALL_EXCEPTION') {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            iconColor: '#7094b1',
+                            title: 'Your not connected to the Ethereum network',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Ok',
+                        })
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            iconColor: '#7094b1',
+                            title: 'Unexpected error',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Ok',
+                        })
+                    }
+                }else{
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        iconColor: '#7094b1',
+                        title: 'Unexpected error',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Ok',
+                    })
+                }
             }
         } else {
             console.log("Please install MetaMask");
         }
     }
 
+
     //Function Whitelist Mint LEGENDARY
+
     // async function whitelist_Mint_Legendary(id) {
     //     if (typeof window.ethereum !== "undefined") {
     //         const contract = new ethers.Contract(
@@ -203,6 +269,10 @@ function CardPremium(props) {
     //     }
     // }
 
+    // 
+
+
+
     return (
         <>
             {/* ---------------------- */}
@@ -224,6 +294,7 @@ function CardPremium(props) {
                         <h3 className="text-sm font-bold">{props.title}</h3>
                         {/* <p className='text-sm text-start'>{props.description}</p> */}
                         <div className='z-20 w-44'>
+                            {/*  */}
                             {/* <div className='flex items-center justify-center h-12 text-xl font-bold tracking-widest text-secondary -rotate-6 may'>
                             <FormattedMessage
                                 id='imminent'
@@ -282,7 +353,7 @@ function CardPremium(props) {
                         <p>Price</p>
                         <p className='flex flex-row items-center ' >
                             {/* ====== PRICE ======== */}
-                            <FaEthereum />0.5
+                            <FaEthereum />{price}
                         </p>
                     </div>
                 </div>
