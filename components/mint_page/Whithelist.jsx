@@ -1,19 +1,27 @@
 import { ethers } from "ethers";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import kubicsWhitelist from "../../artifacts/kubicsWhitelist.json";
 import Swal from 'sweetalert2'
 import { MovingSquareLoader } from 'react-loaders-kit'
 import { FormattedMessage } from "react-intl"
+import { ConnectContext } from '../../context/MyProvider'
 
 export default function Whitelist() {
 
+    // =================== Provider ===================
+    const conn_Context = useContext(ConnectContext)
 
+    const connected = conn_Context.is_Connected()
+    const signer = conn_Context.get_Signer()
+    const account = conn_Context.get_Account()
 
-  const [isConnected, setIsConnected] = useState(false);
-  const [hasMetamask, setHasMetamask] = useState(false);
-  const [isWhitelisted, setIsWhitelisted] = useState(false);
-  const [signer, setSigner] = useState(undefined);
+    const [isConnected, setIsConnected] = useState(connected);
+    const [hasMetamask, setHasMetamask] = useState(false);
+    const [isWhitelisted, setIsWhitelisted] = useState(false);
+    //const [signer, setSigner] = useState(undefined);
+
+    console.log(connected)
 
   const contractAddress = "0x9B399A856B0016Cf91c60aaAE195B33738874C2B";
 
@@ -23,7 +31,13 @@ export default function Whitelist() {
     }
   });
 
-  async function connect() {
+  useEffect(() => {
+    if (connected === true) {
+        setIsConnected(true);
+    }
+  }, [connected]);
+
+/*   async function connect() {
     if (typeof window.ethereum !== "undefined") {
       try {
         await ethereum.request({ method: "eth_requestAccounts" });
@@ -36,7 +50,7 @@ export default function Whitelist() {
     } else {
       setIsConnected(false);
     }
-  }
+  } */
 
 
   async function addToWhitelist() {
@@ -162,7 +176,7 @@ export default function Whitelist() {
               <button
                 className=' buttMeta'
                 type="button"
-                onClick={() => connect()}
+                onClick={() => conn_Context.connect()}
               >
                 <p className="">
                   Connect
