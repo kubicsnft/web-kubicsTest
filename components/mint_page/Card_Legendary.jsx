@@ -44,6 +44,7 @@ function CardPremium(props) {
     const [currentSold, setCurrentSold] = useState(null)
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
+    const mongoAPI = process.env.NEXT_PUBLIC_MONGO_API
 
 
     const sold = props.sold
@@ -65,7 +66,7 @@ function CardPremium(props) {
         }
         //Call to Register API
         try {
-            axios.post('http://localhost:3000/api/NFTsMongo/', body).then(response => {
+            axios.post(mongoAPI, body).then(response => {
                 console.log(response.data)
                 console.log("nft legendary saved")
             })
@@ -235,10 +236,14 @@ function CardPremium(props) {
     //             });
     //             await result.wait();
 
-    //             setImageURI(imageURI);
-    //             setOpenseaURL(openSeaURL);
-    //             postAPI(id);
-    // Swal.fire({
+    //            setImageURI(imageURI);
+    //            setOpenseaURL(openSeaURL);
+    //            setCurrentSold(true);
+    //            postAPI(id);
+    //            setLoadNFT_zone(false)
+    //            setLoading(false)
+    //            
+    //            Swal.fire({
     //     title: 'Excellent! You have bought your NFT!',
     //     // icon: 'success',
     //     imageUrl: imageURI,

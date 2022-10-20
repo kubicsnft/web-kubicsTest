@@ -12,16 +12,44 @@ export function MyProvider({ children }) {
     checkIfWalletIsConnected();
   }, []);
 
+  useEffect(() => {
+    async function initWeb3() {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        setListener(window.ethereum);
+        // then add logic here
+      } catch (error) {
+        // handle error
+      }
+    }
+    initWeb3();
+    return () => removeListener(window.ethereum);
+  }, []);
+
+  // this has to be set once globally. metamask suggests
+  const setListener = (ethereum) => {
+    ethereum.on("chainChanged", pageReload);
+    ethereum.on("accountsChanged", pageReload);
+  };
+  const removeListener = (ethereum) => {
+    ethereum.removeListener("chainChanged", pageReload);
+    ethereum.removeListener("accountsChanged", pageReload);
+  };
+
+  function pageReload() {
+    window.location.reload();
+  }
+
   // Checks if wallet is connected
   async function checkIfWalletIsConnected() {
     if (typeof window.ethereum !== "undefined") {
       try {
-        console.log("Got the ethereum obejct: ", window.ethereum);
+        //console.log("Got the ethereum obejct: ", window.ethereum);
         const accounts = await window.ethereum.request({
           method: "eth_accounts",
         });
         if (accounts.length !== 0) {
-          console.log("Found authorized Account: ", accounts[0]);
+          //console.log("Found authorized Account: ", accounts[0]);
           const provider = new ethers.providers.Web3Provider(window.ethereum);
           setSigner(provider.getSigner());
           setAccount(accounts[0]);
@@ -68,11 +96,11 @@ export function MyProvider({ children }) {
     return account;
   };
 
-  console.log("--------------------------");
+  /*   console.log("--------------------------");
   console.log(connected);
   console.log(signer);
   console.log(account);
-  console.log("--------------------------");
+  console.log("--------------------------"); */
 
   return (
     <ConnectContext.Provider

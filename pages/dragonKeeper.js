@@ -28,7 +28,6 @@ const style = {
 };
 
 function Proyecto({ data }) {
-  console.log(data);
   return (
     <>
       <AppLayout>

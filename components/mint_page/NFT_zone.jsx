@@ -146,11 +146,6 @@ const NFTZone = (props) => {
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
 
-    // console.log('--------------------------')
-    // console.log(isConnected)
-    // console.log('--------------------------')
-    // console.log('Is connected in NFT_Zone:' + connected)
-
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
             setHasMetamask(true);
@@ -160,7 +155,6 @@ const NFTZone = (props) => {
     useEffect(() => {
         if (connected === true) {
             setIsConnected(true);
-            console.log("Ha entrado en este useEffect")
         }
     }, [connected]);
 
@@ -182,9 +176,9 @@ const NFTZone = (props) => {
                 console.log(`Token ID Category UltraRare: ${tokenId_UltraRare.toString()}`);
 
                 const contentIdMetadata_UltraRare =
-                    "QmQswc9AWienxmWLA3pGBQpMJ3R2kXdWCn51GAMxj5G9rE";
+                "QmQswc9AWienxmWLA3pGBQpMJ3R2kXdWCn51GAMxj5G9rE";
                 const metadataURI = `${contentIdMetadata_UltraRare}/${tokenId_UltraRare}.json`;
-                console.log(`https://ipfs.io/ipfs/${metadataURI}`);
+
 
                 const contentIdImages_UltraRare =
                     "QmfEimuwbfPhdgnVnx3J1gbfpfdQYMwEYxGV8RT8sKMEDe";
@@ -230,10 +224,11 @@ const NFTZone = (props) => {
                 const tokenId_Rare = await contract.getTokenCounter_Rare();
                 console.log(`Token ID Category Rare: ${tokenId_Rare.toString()}`);
 
+
                 const contentIdMetadata_Rare =
                     "QmXULEzuP1aHfgbtRMDVwH2L2qG76K48cDd8s4S3uZsHxu";
                 const metadataURI = `${contentIdMetadata_Rare}/${tokenId_Rare}.json`;
-                console.log(`https://ipfs.io/ipfs/${metadataURI}`);
+
 
                 const contentIdImages_Rare =
                     "QmQtxEB6H1PZRHSAQA4rFyUxUW4fiHbwDTVAMfw8SKkRVA";
@@ -280,10 +275,11 @@ const NFTZone = (props) => {
                 const tokenId_Uncommon = await contract.getTokenCounter_Uncommon();
                 console.log(`Token ID Category Uncommon: ${tokenId_Uncommon.toString()}`);
 
+
                 const contentIdMetadata_Uncommon =
                     "QmSuK42qdgBqhMQS69U4wJ9BBWrBRsdTgemrHqHfhAacM5";
                 const metadataURI = `${contentIdMetadata_Uncommon}/${tokenId_Uncommon}.json`;
-                console.log(`https://ipfs.io/ipfs/${metadataURI}`);
+
 
                 const contentIdImages_Uncommon =
                     "QmWBWUpMCkqFoWb9QmLwVo3qKxoY1om1aBc6QtUUDui2Y1";
@@ -329,10 +325,11 @@ const NFTZone = (props) => {
                 const tokenId_Common = await contract.getTokenCounter_Common();
                 console.log(`Token ID Category Common: ${tokenId_Common.toString()}`);
 
+
                 const contentIdMetadata_Common =
                     "QmazdhrysQenu9RePX2Y47VbJAUYMCjgtkMi6daepDLMwL";
                 const metadataURI = `${contentIdMetadata_Common}/${tokenId_Common}.json`;
-                console.log(`https://ipfs.io/ipfs/${metadataURI}`);
+
 
                 const contentIdImages_Common =
                     "QmTTYqyXV9vpgwtvn9EeknNAuGqMScyf666GpzXDJrMHtz";
