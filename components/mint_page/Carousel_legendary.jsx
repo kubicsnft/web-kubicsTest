@@ -69,17 +69,16 @@ const style = {
 
 
 
-const fetcher = (...args) => fetch(...args).then(res=>res.json());
+//const fetcher = (...args) => fetch(...args).then(res=>res.json());
 
 function Carousel(props) {
     const [reactData, setReactData] = useState([props.nfts_Sold]);
-    const { connectFunction } = props;
     const connected = props.connected;
-     console.log("---------------------------")
-     console.log(props.nfts_Sold)
+/*      console.log("---------------------------")
+     console.log(props.nfts_Sold) */
 
 const loading = props.loading
-console.log(loading)
+//    console.log(loading)
 
     const SoldNft = (id) => {
        var sold = false
@@ -88,7 +87,7 @@ console.log(loading)
             //console.log(reactData[0][0].id, id)
             if (reactData[0][i].id === id) {
                 sold = true
-                console.log(sold)
+                // console.log(sold)
             }
         }
         return sold    

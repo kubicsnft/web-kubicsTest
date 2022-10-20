@@ -170,10 +170,14 @@ function CardPremium(props) {
     //             });
     //             await result.wait();
 
-    //             setImageURI(imageURI);
-    //             setOpenseaURL(openSeaURL);
-    //             postAPI(id);
-    // Swal.fire({
+    //            setImageURI(imageURI);
+    //            setOpenseaURL(openSeaURL);
+    //            setCurrentSold(true);
+    //            postAPI(id);
+    //            setLoadNFT_zone(false)
+    //            setLoading(false)
+    //            
+    //            Swal.fire({
     //     title: 'Excellent! You have bought your NFT!',
     //     // icon: 'success',
     //     imageUrl: imageURI,
