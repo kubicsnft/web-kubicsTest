@@ -625,13 +625,13 @@ const loading = props.loading
                     <h2 className='w-full mb-4 text-lg border-b may text-secondary text-start'>LEGENDARY CATEGORY</h2>
                     <div className='flex flex-col justify-center w-full pl-6 mb-8 items-star'>
                         <ul className='mb-2 list-disc text-start'>
-                            <li><FormattedMessage id='nft.legendary1' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary2' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary3' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary4' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary5' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary6' default='description' /></li>
-                            <li><FormattedMessage id='nft.legendary7' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary1' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary2' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary3' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary4' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary5' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary6' default='description' /></li>
+                            <li className='mb-1'><FormattedMessage id='nft.legendary7' default='description' /></li>
                         </ul>
 
                     </div>
