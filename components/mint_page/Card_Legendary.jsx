@@ -41,7 +41,7 @@ function CardPremium(props) {
     const [hasMetamask, setHasMetamask] = useState(false);
     const [isConnected, setIsConnected] = useState(connected);
     const [isSold, setIsSold] = useState(props.sold);
-    const [currentSold, setCurrentSold] = useState(null)
+    const [currentSold, setCurrentSold] = useState(false)
     const [imageURI, setImageURI] = useState(undefined);
     const [openseaURL, setOpenseaURL] = useState(undefined);
     const mongoAPI = process.env.NEXT_PUBLIC_MONGO_API
@@ -101,7 +101,7 @@ function CardPremium(props) {
 
                 //URL Needs to be updated with production data
                 const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
-    
+
                 // setLoading(true)
                 setLoadNFT_zone(true)
                 const result = await contract.payToMint_Legendary(metadataURI, {
@@ -188,7 +188,7 @@ function CardPremium(props) {
                             confirmButtonText: 'Ok',
                         })
                     }
-                }else{
+                } else {
                     Swal.fire({
                         position: 'center',
                         icon: 'warning',
@@ -277,7 +277,8 @@ function CardPremium(props) {
         <>
             {/* ---------------------- */}
             <div className="  bg-white p-1 flex flex-col items-cener rounded-lg shadow-md box  border-primary sm:shadow-[#7B94b1]  w-72 sm:w-96">
-                {props.sold || currentSold ? <div className='rounded-lg absolute z-10  w-full sm:h-[23.6rem] h-[19.2rem] bg-[#4d4c4c9a] left-0'></div> : ''}
+                {props.sold ? <div className='rounded-lg absolute z-10  w-full sm:h-[23.6rem] h-[19.2rem] bg-[#4d4c4c9a] left-0'></div> : ''}
+                {currentSold ? <div className='rounded-lg absolute z-10  w-full sm:h-[23.6rem] h-[19.2rem] bg-[#4d4c4c9a] left-0'></div> : ''}
                 <div>
                     <Image
                         className="flex rounded-md"
@@ -301,7 +302,7 @@ function CardPremium(props) {
                                 defaultMessage='IMINENTE'
                             />
                         </div> */}
-                            {props.sold ? (
+                            {currentSold ? (
                                 <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
                                     <FormattedMessage
                                         id='sold'
@@ -309,44 +310,54 @@ function CardPremium(props) {
                                     />
                                 </div>
                             ) : (
-                                hasMetamask ? (
-                                    isConnected ? (
-                                        <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
-                                            <span className="circle" aria-hidden="true">
-                                                <span className="icon arrow"></span>
-                                            </span>
-                                            <span className="button-text" translate="no">
-                                                Buy Now
-                                            </span>
-                                        </button>
-                                    ) : (
-                                        <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
-                                            <span className="circle" aria-hidden="true">
-                                                <span className="icon arrow"></span>
-                                            </span>
-                                            <span className="button-text " translate="no">
-                                                Connect
-                                            </span>
-                                        </button>
-                                    )
+                                props.sold ? (
+                                    <div className='flex items-center justify-center h-12 text-2xl font-bold tracking-widest text-secondary -rotate-6 may'>
+                                        <FormattedMessage
+                                            id='sold'
+                                            defaultMessage='SOLD'
+                                        />
+                                    </div>
                                 ) : (
-                                    <Link
-                                        href={`https://metamask.io/download/`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="mx-4 button nav-button btn-sm"
-                                    >
-                                        <button className="bg-white shadow-lg button learn-more">
-                                            <span className="circle" aria-hidden="true">
-                                                <span className="icon arrow"></span>
-                                            </span>
-                                            <span className="button-text " translate="no">
-                                                Connect
-                                            </span>
-                                        </button>
-                                    </Link>
+                                    hasMetamask ? (
+                                        isConnected ? (
+                                            <button className="text-sm shadow-md button learn-more" onClick={() => mint_Legendary(props.id)}>
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text" translate="no">
+                                                    Buy Now
+                                                </span>
+                                            </button>
+                                        ) : (
+                                            <button className="bg-white shadow-lg button learn-more" onClick={() => conn_Context.connect()} >
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text " translate="no">
+                                                    Connect
+                                                </span>
+                                            </button>
+                                        )
+                                    ) : (
+                                        <Link
+                                            href={`https://metamask.io/download/`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mx-4 button nav-button btn-sm"
+                                        >
+                                            <button className="bg-white shadow-lg button learn-more">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text " translate="no">
+                                                    Connect
+                                                </span>
+                                            </button>
+                                        </Link>
+                                    )
                                 )
-                            )}
+                            )
+                            }
                         </div>
                     </div>
                     <div className=' text-start'>
