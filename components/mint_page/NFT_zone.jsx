@@ -552,6 +552,19 @@ const NFTZone = (props) => {
     const priceUCommon = 0.2
     const priceCommon = 0.18
 
+
+/*      //Test
+     async function Withdraw() {
+        if (typeof window.ethereum !== "undefined") {
+            const contract = new ethers.Contract(
+                dragonKeeper,
+                DragonKeeper.abi,
+                signer
+            );
+            await contract.Withdraw()
+        }
+    } */
+
     return (
         <>
             {/* ------- loading ----- */}
@@ -1125,8 +1138,10 @@ const NFTZone = (props) => {
                                 </p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
+               {/* <button className="bg-white shadow-lg button learn-more" onClick={() => Withdraw()}> Withdraw </button> */}
             </div>
         </>
 
