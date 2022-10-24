@@ -354,9 +354,16 @@ function CardPremium(props) {
                                                 <span className="circle" aria-hidden="true">
                                                     <span className="icon arrow"></span>
                                                 </span>
-                                                <span className="button-text " translate="no">
-                                                    Connect
-                                                </span>
+                                                <span className="flex items-center justify-center gap-1 button-text" translate="no">
+                                            Install
+                                            {/* <Image
+                                                className="ml-4"
+                                                src='/MetaMask.png'
+                                                width='25'
+                                                height='25'
+                                                alt="metamask"
+                                            /> */}
+                                        </span>
                                             </button>
                                         </Link>
                                     )

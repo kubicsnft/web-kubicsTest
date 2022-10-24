@@ -92,7 +92,10 @@
     "nft.common4":"Entradas para Dragonkeeper en cines",
     "coming.soon":"PROXIMAMENTE",
     "sold":"VENDIDO",
-    "imminent":"Venta disponible proximamente"
+    "imminent":"Venta disponible proximamente",
+    "NFT.metamask": "¡Conéctese con Metamask para comprar NFTs",
+    "NFT.metamask.install1": "¡Debe de tener una wallet en ",
+    "NFT.metamask.install2": " para poder comprar NFTs!"
     
     
     

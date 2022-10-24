@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel_Legend from './Carousel_legendary';
-import NftCard from "./Card_Legendary";
+import ConnectButton from "./connectButton";
 import Image from 'next/image';
 import { FaEthereum } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl';
@@ -564,7 +564,7 @@ const NFTZone = (props) => {
                 await contract.Withdraw()
             }
         } */
-   
+
 
 
     return (
@@ -581,13 +581,17 @@ const NFTZone = (props) => {
                 </div>) : ''}
             {/* ---------------------- */}
             <div className='flex-col mt-5  lg:p-12 sm:p-10 p-4 items-center w-11/12  mb-4 rounded-lg border-2 shadow-lg shadow-[#7B94b1] bg-[#ffffff]  border-primary' >
-                <div className='md:absolute md:w-6/12 w-12/12  bg-[#7094b16e] rouded-lg md:left-1/4 -mt-20 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
+                {/* <div className='md:absolute md:w-6/12 w-12/12  bg-[#7094b16e] rouded-lg md:left-1/4 -mt-20 md:text-2xl tracking-widest text-center -rotate-6 px-10 p-4 text-white may'>
                     <FormattedMessage
                         id='imminent'
                         defaultMessage='IMINENTE'
                     />
-                </div>
+                </div> */}
+                
                 <h2 className='mb-4 text-3xl font-bold'>NFTs</h2>
+                <div className='flex justify-center mb-6'>
+                    <ConnectButton/>
+                    </div>
 
                 {/* --------- Description --------- */}
                 <div className='mb-8 text-justify ' >
@@ -658,13 +662,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Connect
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 )
@@ -681,13 +685,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Install
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 </Link>
@@ -749,13 +753,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Connect
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 )
@@ -772,13 +776,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Install
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 </Link>
@@ -818,13 +822,13 @@ const NFTZone = (props) => {
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                                 Connect
-                                                <Image
+                                                {/* <Image
                                                     className="ml-4"
                                                     src='/MetaMask.png'
                                                     width='25'
                                                     height='25'
                                                     alt="metamask"
-                                                />
+                                                /> */}
                                             </span>
                                         </button>
                                     )
@@ -841,13 +845,13 @@ const NFTZone = (props) => {
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                                 Install
-                                                <Image
+                                                {/* <Image
                                                     className="ml-4"
                                                     src='/MetaMask.png'
                                                     width='25'
                                                     height='25'
                                                     alt="metamask"
-                                                />
+                                                /> */}
                                             </span>
                                         </button>
                                     </Link>
@@ -928,13 +932,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Connect
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 )
@@ -951,13 +955,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Install
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 </Link>
@@ -1017,13 +1021,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Connect
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 )
@@ -1040,13 +1044,13 @@ const NFTZone = (props) => {
                                         </span>
                                         <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                             Install
-                                            <Image
+                                            {/* <Image
                                                 className="ml-4"
                                                 src='/MetaMask.png'
                                                 width='25'
                                                 height='25'
                                                 alt="metamask"
-                                            />
+                                            /> */}
                                         </span>
                                     </button>
                                 </Link>
@@ -1084,13 +1088,13 @@ const NFTZone = (props) => {
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                                 Connect
-                                                <Image
+                                                {/* <Image
                                                     className="ml-4"
                                                     src='/MetaMask.png'
                                                     width='25'
                                                     height='25'
                                                     alt="metamask"
-                                                />
+                                                /> */}
                                             </span>
                                         </button>
                                     )
@@ -1107,13 +1111,13 @@ const NFTZone = (props) => {
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
                                                 Install
-                                                <Image
+                                                {/* <Image
                                                     className="ml-4"
                                                     src='/MetaMask.png'
                                                     width='25'
                                                     height='25'
                                                     alt="metamask"
-                                                />
+                                                /> */}
                                             </span>
                                         </button>
                                     </Link>
