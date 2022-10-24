@@ -47,9 +47,7 @@ function CardPremium(props) {
     const mongoAPI = process.env.NEXT_PUBLIC_MONGO_API
 
 
-    const sold = props.sold
-    // console.log(`Sold: ${sold}`) 
-    // console.log(`Is connected in Card_Legendary 1: ${isConnected}`)
+   
 
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
@@ -102,8 +100,7 @@ function CardPremium(props) {
                 //URL Needs to be updated with production data
                 const openSeaURL = `https://testnets.opensea.io/assets/goerli/${dragonKeeper}/${tokenID_Collection}`;
 
-                // setLoading(true)
-                setLoadNFT_zone(true)
+                setLoading(true)
                 const result = await contract.payToMint_Legendary(metadataURI, {
                     value: ethers.utils.parseEther("0.006"),
                 });
@@ -111,13 +108,11 @@ function CardPremium(props) {
                 setImageURI(imageURI);
                 setOpenseaURL(openSeaURL);
                 setCurrentSold(true);
-                postAPI(id);
-                setLoadNFT_zone(false)
-                // setLoading(false)
+                postAPI(id);   
+                setLoading(false)
                 //----- ALERT ------
                 Swal.fire({
                     title: 'Excellent! You have bought your NFT!',
-                    // icon: 'success',
                     imageUrl: imageURI,
                     imageWidth: 400,
                     imageHeight: 300,
@@ -132,11 +127,10 @@ function CardPremium(props) {
                     confirmButtonText: 'Exit',
                     confirmButtonColor: '#7B94b1'
                 })
-                console.log(openSeaURL);
+
             } catch (error) {
                 console.log(error);
-                setLoadNFT_zone(false)
-                // setLoading(false)
+                setLoading(false)
                 if (error.error) {
                     if (error.error.code === -32603) {
                         Swal.fire({
@@ -275,6 +269,17 @@ function CardPremium(props) {
 
     return (
         <>
+
+            {/* ------- loading ----- */}
+            {loading ? (
+                <div className='z-50 fixed w-screen  lg:h-[750rem] md:h-[1040rem] sm:h-[1060rem] h-[930rem] bg-[#9490908f] flex items-center justify-center  '>
+                    <div className='relative flex items-center justify-center bg-white rounded-lg w-52 h-44'>
+                        <div className="fixed flex flex-col items-center justify-center text-center">
+                            <MovingSquareLoader   {...loaderProps} />
+                            <div className="mt-3">LOADING ...</div>
+                        </div>
+                    </div>
+                </div>) : ''}
             {/* ---------------------- */}
             <div className="  bg-white p-1 flex flex-col items-cener rounded-lg shadow-md box  border-primary sm:shadow-[#7B94b1]  w-72 sm:w-96">
                 {props.sold ? <div className='rounded-lg absolute z-10  w-full sm:h-[23.6rem] h-[19.2rem] bg-[#4d4c4c9a] left-0'></div> : ''}

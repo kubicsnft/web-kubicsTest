@@ -176,7 +176,7 @@ const NFTZone = (props) => {
                 console.log(`Token ID Category UltraRare: ${tokenId_UltraRare.toString()}`);
 
                 const contentIdMetadata_UltraRare =
-                "QmQswc9AWienxmWLA3pGBQpMJ3R2kXdWCn51GAMxj5G9rE";
+                    "QmQswc9AWienxmWLA3pGBQpMJ3R2kXdWCn51GAMxj5G9rE";
                 const metadataURI = `${contentIdMetadata_UltraRare}/${tokenId_UltraRare}.json`;
 
 
@@ -553,17 +553,19 @@ const NFTZone = (props) => {
     const priceCommon = 0.18
 
 
-/*      //Test
-     async function Withdraw() {
-        if (typeof window.ethereum !== "undefined") {
-            const contract = new ethers.Contract(
-                dragonKeeper,
-                DragonKeeper.abi,
-                signer
-            );
-            await contract.Withdraw()
-        }
-    } */
+    /*      //Test
+         async function Withdraw() {
+            if (typeof window.ethereum !== "undefined") {
+                const contract = new ethers.Contract(
+                    dragonKeeper,
+                    DragonKeeper.abi,
+                    signer
+                );
+                await contract.Withdraw()
+            }
+        } */
+   
+
 
     return (
         <>
@@ -601,7 +603,7 @@ const NFTZone = (props) => {
                     </p>
                 </div>
                 {/* =========================== LEGENDARY Category =========================== ) */}
-                <div className='mb-32'>
+                <div className='mb-32 ' >
                     <Carousel_Legend loading={setLoading} nfts_Sold={props.nfts_Sold} />
                 </div>
                 {/* =========================== ULTRA RARE Category =========================== */}
@@ -1081,15 +1083,15 @@ const NFTZone = (props) => {
                                                 <span className="icon arrow"></span>
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
-                                            Connect
-                                            <Image
-                                                className="ml-4"
-                                                src='/MetaMask.png'
-                                                width='25'
-                                                height='25'
-                                                alt="metamask"
-                                            />
-                                        </span>
+                                                Connect
+                                                <Image
+                                                    className="ml-4"
+                                                    src='/MetaMask.png'
+                                                    width='25'
+                                                    height='25'
+                                                    alt="metamask"
+                                                />
+                                            </span>
                                         </button>
                                     )
                                 ) : (
@@ -1104,15 +1106,15 @@ const NFTZone = (props) => {
                                                 <span className="icon arrow"></span>
                                             </span>
                                             <span className="flex items-center justify-center gap-1 button-text" translate="no">
-                                            Install
-                                            <Image
-                                                className="ml-4"
-                                                src='/MetaMask.png'
-                                                width='25'
-                                                height='25'
-                                                alt="metamask"
-                                            />
-                                        </span>
+                                                Install
+                                                <Image
+                                                    className="ml-4"
+                                                    src='/MetaMask.png'
+                                                    width='25'
+                                                    height='25'
+                                                    alt="metamask"
+                                                />
+                                            </span>
                                         </button>
                                     </Link>
                                 )}
@@ -1138,10 +1140,10 @@ const NFTZone = (props) => {
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-               {/* <button className="bg-white shadow-lg button learn-more" onClick={() => Withdraw()}> Withdraw </button> */}
+                {/* <button className="bg-white shadow-lg button learn-more" onClick={() => Withdraw()}> Withdraw </button> */}
             </div>
         </>
 
